@@ -6,9 +6,15 @@
         containment="true" eOpposite="#//Expression/cell"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eOperations name="toString">
+      <eParameters name="toto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cell" eType="#//Cell" eOpposite="#//Cell/expression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinExpression" eSuperTypes="#//Expression">
+    <eOperations name="calculToi">
+      <eParameters name="addMe" eType="#//BinExpression"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subexprs" upperBound="-1"
         eType="#//Expression"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
