@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.istic.soda
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.istic.soda; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.xtext.istic.soda,
+ org.xtext.istic.soda.services,
+ org.xtext.istic.soda.soDa,
+ org.xtext.istic.soda.soDa.impl,
+ org.xtext.istic.soda.soDa.util,
+ org.xtext.istic.soda.serializer,
+ org.xtext.istic.soda.parser.antlr,
+ org.xtext.istic.soda.parser.antlr.internal,
+ org.xtext.istic.soda.validation,
+ org.xtext.istic.soda.scoping,
+ org.xtext.istic.soda.generator,
+ org.xtext.istic.soda.formatting
