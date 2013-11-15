@@ -1,0 +1,15 @@
+grammar org.xtext.istic.mapUI.MapUI with org.eclipse.xtext.common.Terminals
+
+generate mapUI "http://www.xtext.org/istic/mapUI/MapUI"
+
+MapUI:
+	Mappings+=Mapping*;
+	
+Mapping:
+	'Question ' name=ID ':' type=Type;
+
+Type: Checkbox;
+
+Checkbox:
+	'Checkbox';
+
