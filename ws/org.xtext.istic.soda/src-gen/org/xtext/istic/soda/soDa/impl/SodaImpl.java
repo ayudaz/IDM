@@ -33,60 +33,55 @@ import org.xtext.istic.soda.soDa.Soda;
  *
  * @generated
  */
-public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
-{
-  /**
+public class SodaImpl extends MinimalEObjectImpl.Container implements Soda {
+	/**
 	 * The cached value of the '{@link #getPolls() <em>Polls</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPolls()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Poll> polls;
+	protected EList<Poll> polls;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected SodaImpl()
-  {
+	protected SodaImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return SoDaPackage.Literals.SODA;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Poll> getPolls()
-  {
+	public EList<Poll> getPolls() {
 		if (polls == null) {
 			polls = new EObjectContainmentEList<Poll>(Poll.class, this, SoDaPackage.SODA__POLLS);
 		}
 		return polls;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SoDaPackage.SODA__POLLS:
 				return ((InternalEList<?>)getPolls()).basicRemove(otherEnd, msgs);
@@ -94,14 +89,13 @@ public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SoDaPackage.SODA__POLLS:
 				return getPolls();
@@ -109,15 +103,14 @@ public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SoDaPackage.SODA__POLLS:
 				getPolls().clear();
@@ -127,14 +120,13 @@ public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SoDaPackage.SODA__POLLS:
 				getPolls().clear();
@@ -143,14 +135,13 @@ public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SoDaPackage.SODA__POLLS:
 				return polls != null && !polls.isEmpty();
