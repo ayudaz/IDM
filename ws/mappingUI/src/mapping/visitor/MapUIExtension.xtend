@@ -6,6 +6,7 @@ import MMUI.Ui
 import org.xtext.istic.mapUI.mapUI.Mapping
 
 class MapUIExtension {
+	
 	def void accept(MapUI mapUI, MapUiVisitor visitor, Ui ui){
 		visitor.visit(mapUI, ui)
 		for(Mapping m : mapUI.mappings){

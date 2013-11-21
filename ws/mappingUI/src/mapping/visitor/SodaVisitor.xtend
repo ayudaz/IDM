@@ -4,8 +4,11 @@ import org.xtext.istic.soda.soDa.Poll
 import org.xtext.istic.soda.soDa.Question
 import org.xtext.istic.soda.soDa.Option
 import MMUI.Ui
+import org.xtext.istic.soda.soDa.Soda
 
 public interface SodaVisitor {
-	def void visit(Poll element, Question question)
-	def void visit(Question element, Option options)	
+	def void visit(Soda soda)
+	def void visit(Poll poll)
+	def void visit(Question question)
+	def void visit(Option option)	
 }
