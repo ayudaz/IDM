@@ -1,0 +1,24 @@
+grammar org.xtext.istic.soda.SoDa with org.eclipse.xtext.common.Terminals
+
+generate soDa "http://www.xtext.org/istic/soda/SoDa"
+
+Soda:
+	polls+=Poll*;
+	
+Poll:
+	'Poll' (name=ID)? '{'
+		(questions += Question)+
+	'}'
+	; 
+	
+Question:
+	'Question' (name=ID)? '{'
+		query=STRING
+		'options'
+		(options += Option)+
+	'}'
+;
+
+Option:
+	(id=ID '=>')? reponse=STRING
+;
