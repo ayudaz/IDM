@@ -15,56 +15,56 @@ import org.eclipse.emf.ecore.EFactory;
 public interface SoDaFactory extends EFactory
 {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   SoDaFactory eINSTANCE = org.xtext.istic.soda.soDa.impl.SoDaFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Soda</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Soda</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Soda</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Soda</em>'.
+	 * @generated
+	 */
   Soda createSoda();
 
   /**
-   * Returns a new object of class '<em>Poll</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Poll</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Poll</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Poll</em>'.
+	 * @generated
+	 */
   Poll createPoll();
 
   /**
-   * Returns a new object of class '<em>Question</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Question</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Question</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Question</em>'.
+	 * @generated
+	 */
   Question createQuestion();
 
   /**
-   * Returns a new object of class '<em>Option</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Option</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Option</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Option</em>'.
+	 * @generated
+	 */
   Option createOption();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   SoDaPackage getSoDaPackage();
 
 } //SoDaFactory

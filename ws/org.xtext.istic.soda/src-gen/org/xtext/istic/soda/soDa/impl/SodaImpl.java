@@ -36,132 +36,126 @@ import org.xtext.istic.soda.soDa.Soda;
 public class SodaImpl extends MinimalEObjectImpl.Container implements Soda
 {
   /**
-   * The cached value of the '{@link #getPolls() <em>Polls</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPolls() <em>Polls</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPolls()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPolls()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Poll> polls;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SodaImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return SoDaPackage.Literals.SODA;
-  }
+		return SoDaPackage.Literals.SODA;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Poll> getPolls()
   {
-    if (polls == null)
-    {
-      polls = new EObjectContainmentEList<Poll>(Poll.class, this, SoDaPackage.SODA__POLLS);
-    }
-    return polls;
-  }
+		if (polls == null) {
+			polls = new EObjectContainmentEList<Poll>(Poll.class, this, SoDaPackage.SODA__POLLS);
+		}
+		return polls;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.SODA__POLLS:
-        return ((InternalEList<?>)getPolls()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case SoDaPackage.SODA__POLLS:
+				return ((InternalEList<?>)getPolls()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.SODA__POLLS:
-        return getPolls();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SoDaPackage.SODA__POLLS:
+				return getPolls();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.SODA__POLLS:
-        getPolls().clear();
-        getPolls().addAll((Collection<? extends Poll>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SoDaPackage.SODA__POLLS:
+				getPolls().clear();
+				getPolls().addAll((Collection<? extends Poll>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.SODA__POLLS:
-        getPolls().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.SODA__POLLS:
+				getPolls().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.SODA__POLLS:
-        return polls != null && !polls.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.SODA__POLLS:
+				return polls != null && !polls.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SodaImpl

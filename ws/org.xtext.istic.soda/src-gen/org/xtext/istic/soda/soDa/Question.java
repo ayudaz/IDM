@@ -27,71 +27,71 @@ import org.eclipse.emf.ecore.EObject;
 public interface Question extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Name()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Name()
+	 * @model
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.istic.soda.soDa.Question#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.istic.soda.soDa.Question#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Query</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Query</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Query</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Query</em>' attribute.
-   * @see #setQuery(String)
-   * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Query()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Query</em>' attribute.
+	 * @see #setQuery(String)
+	 * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Query()
+	 * @model
+	 * @generated
+	 */
   String getQuery();
 
   /**
-   * Sets the value of the '{@link org.xtext.istic.soda.soDa.Question#getQuery <em>Query</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link org.xtext.istic.soda.soDa.Question#getQuery <em>Query</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Query</em>' attribute.
-   * @see #getQuery()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Query</em>' attribute.
+	 * @see #getQuery()
+	 * @generated
+	 */
   void setQuery(String value);
 
   /**
-   * Returns the value of the '<em><b>Options</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.istic.soda.soDa.Option}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Options</b></em>' containment reference list.
+	 * The list contents are of type {@link org.xtext.istic.soda.soDa.Option}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Options</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Options</em>' containment reference list.
-   * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Options()
-   * @model containment="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Options</em>' containment reference list.
+	 * @see org.xtext.istic.soda.soDa.SoDaPackage#getQuestion_Options()
+	 * @model containment="true"
+	 * @generated
+	 */
   EList<Option> getOptions();
 
 } // Question

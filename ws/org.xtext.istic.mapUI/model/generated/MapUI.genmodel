@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.istic.mapUI/src-gen" editDirectory="/org.xtext.istic.mapUI.edit/src"
+    editorDirectory="/org.xtext.istic.mapUI.editor/src" modelPluginID="org.xtext.istic.mapUI"
+    forceOverwrite="true" modelName="MapUI" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.istic.mapUI.edit"
+    editorPluginID="org.xtext.istic.mapUI.editor" runtimeVersion="2.9">
+  <genPackages prefix="MapUI" basePackage="org.xtext.istic.mapUI" disposableProviderFactory="true"
+      fileExtensions="MapUI" ecorePackage="MapUI.ecore#/">
+    <genClasses ecoreClass="MapUI.ecore#//MapUI">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MapUI.ecore#//MapUI/Mappings"/>
+    </genClasses>
+    <genClasses ecoreClass="MapUI.ecore#//Mapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MapUI.ecore#//Mapping/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MapUI.ecore#//Mapping/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

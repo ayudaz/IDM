@@ -29,205 +29,201 @@ import org.xtext.istic.soda.soDa.SoDaPackage;
 public class OptionImpl extends MinimalEObjectImpl.Container implements Option
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected String id = ID_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReponse()
-   * @generated
-   * @ordered
-   */
+	 * @see #getReponse()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String REPONSE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReponse()
-   * @generated
-   * @ordered
-   */
+	 * @see #getReponse()
+	 * @generated
+	 * @ordered
+	 */
   protected String reponse = REPONSE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OptionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return SoDaPackage.Literals.OPTION;
-  }
+		return SoDaPackage.Literals.OPTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getId()
   {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(String newId)
   {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.OPTION__ID, oldId, id));
-  }
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.OPTION__ID, oldId, id));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getReponse()
   {
-    return reponse;
-  }
+		return reponse;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setReponse(String newReponse)
   {
-    String oldReponse = reponse;
-    reponse = newReponse;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.OPTION__REPONSE, oldReponse, reponse));
-  }
+		String oldReponse = reponse;
+		reponse = newReponse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.OPTION__REPONSE, oldReponse, reponse));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.OPTION__ID:
-        return getId();
-      case SoDaPackage.OPTION__REPONSE:
-        return getReponse();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SoDaPackage.OPTION__ID:
+				return getId();
+			case SoDaPackage.OPTION__REPONSE:
+				return getReponse();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.OPTION__ID:
-        setId((String)newValue);
-        return;
-      case SoDaPackage.OPTION__REPONSE:
-        setReponse((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SoDaPackage.OPTION__ID:
+				setId((String)newValue);
+				return;
+			case SoDaPackage.OPTION__REPONSE:
+				setReponse((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.OPTION__ID:
-        setId(ID_EDEFAULT);
-        return;
-      case SoDaPackage.OPTION__REPONSE:
-        setReponse(REPONSE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.OPTION__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case SoDaPackage.OPTION__REPONSE:
+				setReponse(REPONSE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.OPTION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case SoDaPackage.OPTION__REPONSE:
-        return REPONSE_EDEFAULT == null ? reponse != null : !REPONSE_EDEFAULT.equals(reponse);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.OPTION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case SoDaPackage.OPTION__REPONSE:
+				return REPONSE_EDEFAULT == null ? reponse != null : !REPONSE_EDEFAULT.equals(reponse);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", reponse: ");
-    result.append(reponse);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", reponse: ");
+		result.append(reponse);
+		result.append(')');
+		return result.toString();
+	}
 
 } //OptionImpl

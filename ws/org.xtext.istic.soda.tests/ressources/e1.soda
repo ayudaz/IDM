@@ -1,5 +1,5 @@
 Poll {
-	Question {
+	Question q1 {
 		"Q ?"
 			options
 			"Oui"

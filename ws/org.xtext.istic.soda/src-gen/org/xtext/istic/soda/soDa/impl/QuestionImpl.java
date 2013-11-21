@@ -40,257 +40,251 @@ import org.xtext.istic.soda.soDa.SoDaPackage;
 public class QuestionImpl extends MinimalEObjectImpl.Container implements Question
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getQuery() <em>Query</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getQuery() <em>Query</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String QUERY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getQuery() <em>Query</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
   protected String query = QUERY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOptions()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOptions()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Option> options;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected QuestionImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return SoDaPackage.Literals.QUESTION;
-  }
+		return SoDaPackage.Literals.QUESTION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.QUESTION__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.QUESTION__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getQuery()
   {
-    return query;
-  }
+		return query;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setQuery(String newQuery)
   {
-    String oldQuery = query;
-    query = newQuery;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.QUESTION__QUERY, oldQuery, query));
-  }
+		String oldQuery = query;
+		query = newQuery;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SoDaPackage.QUESTION__QUERY, oldQuery, query));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Option> getOptions()
   {
-    if (options == null)
-    {
-      options = new EObjectContainmentEList<Option>(Option.class, this, SoDaPackage.QUESTION__OPTIONS);
-    }
-    return options;
-  }
+		if (options == null) {
+			options = new EObjectContainmentEList<Option>(Option.class, this, SoDaPackage.QUESTION__OPTIONS);
+		}
+		return options;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.QUESTION__OPTIONS:
-        return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case SoDaPackage.QUESTION__OPTIONS:
+				return ((InternalEList<?>)getOptions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.QUESTION__NAME:
-        return getName();
-      case SoDaPackage.QUESTION__QUERY:
-        return getQuery();
-      case SoDaPackage.QUESTION__OPTIONS:
-        return getOptions();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SoDaPackage.QUESTION__NAME:
+				return getName();
+			case SoDaPackage.QUESTION__QUERY:
+				return getQuery();
+			case SoDaPackage.QUESTION__OPTIONS:
+				return getOptions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.QUESTION__NAME:
-        setName((String)newValue);
-        return;
-      case SoDaPackage.QUESTION__QUERY:
-        setQuery((String)newValue);
-        return;
-      case SoDaPackage.QUESTION__OPTIONS:
-        getOptions().clear();
-        getOptions().addAll((Collection<? extends Option>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SoDaPackage.QUESTION__NAME:
+				setName((String)newValue);
+				return;
+			case SoDaPackage.QUESTION__QUERY:
+				setQuery((String)newValue);
+				return;
+			case SoDaPackage.QUESTION__OPTIONS:
+				getOptions().clear();
+				getOptions().addAll((Collection<? extends Option>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.QUESTION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case SoDaPackage.QUESTION__QUERY:
-        setQuery(QUERY_EDEFAULT);
-        return;
-      case SoDaPackage.QUESTION__OPTIONS:
-        getOptions().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.QUESTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case SoDaPackage.QUESTION__QUERY:
+				setQuery(QUERY_EDEFAULT);
+				return;
+			case SoDaPackage.QUESTION__OPTIONS:
+				getOptions().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case SoDaPackage.QUESTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SoDaPackage.QUESTION__QUERY:
-        return QUERY_EDEFAULT == null ? query != null : !QUERY_EDEFAULT.equals(query);
-      case SoDaPackage.QUESTION__OPTIONS:
-        return options != null && !options.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SoDaPackage.QUESTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SoDaPackage.QUESTION__QUERY:
+				return QUERY_EDEFAULT == null ? query != null : !QUERY_EDEFAULT.equals(query);
+			case SoDaPackage.QUESTION__OPTIONS:
+				return options != null && !options.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", query: ");
-    result.append(query);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", query: ");
+		result.append(query);
+		result.append(')');
+		return result.toString();
+	}
 
 } //QuestionImpl

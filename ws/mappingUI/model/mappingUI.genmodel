@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mappingUI/src" modelPluginID="mappingUI" modelName="MappingUI"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>mappingUI.ecore</foreignModel>
+  <genPackages prefix="MMUI" disposableProviderFactory="true" ecorePackage="mappingUI.ecore#/">
+    <genClasses ecoreClass="mappingUI.ecore#//Ui">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mappingUI.ecore#//Ui/containers"/>
+    </genClasses>
+    <genClasses ecoreClass="mappingUI.ecore#//Widget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mappingUI.ecore#//Widget/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mappingUI.ecore#//Widget/length"/>
+    </genClasses>
+    <genClasses ecoreClass="mappingUI.ecore#//Checkbox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mappingUI.ecore#//Checkbox/checked"/>
+    </genClasses>
+    <genClasses ecoreClass="mappingUI.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mappingUI.ecore#//Label/text"/>
+    </genClasses>
+    <genClasses ecoreClass="mappingUI.ecore#//Container">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mappingUI.ecore#//Container/widgets"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
