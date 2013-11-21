@@ -56,11 +56,12 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MMUIPackage.UI: return createUi();
-			case MMUIPackage.WIDGET: return createWidget();
 			case MMUIPackage.CHECKBOX: return createCheckbox();
 			case MMUIPackage.LABEL: return createLabel();
 			case MMUIPackage.CONTAINER: return createContainer();
+			case MMUIPackage.UI: return createUi();
+			case MMUIPackage.WIDGET: return createWidget();
+			case MMUIPackage.SUPER_CONTAINER: return createSuperContainer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -84,6 +85,16 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 	public Widget createWidget() {
 		WidgetImpl widget = new WidgetImpl();
 		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SuperContainer createSuperContainer() {
+		SuperContainerImpl superContainer = new SuperContainerImpl();
+		return superContainer;
 	}
 
 	/**

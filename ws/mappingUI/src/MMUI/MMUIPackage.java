@@ -64,34 +64,17 @@ public interface MMUIPackage extends EPackage {
 	 * @see MMUI.impl.MMUIPackageImpl#getUi()
 	 * @generated
 	 */
-	int UI = 0;
+	int UI = 3;
 
 	/**
-	 * The feature id for the '<em><b>Containers</b></em>' reference list.
+	 * The meta object id for the '{@link MMUI.impl.SuperContainerImpl <em>Super Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.SuperContainerImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getSuperContainer()
 	 * @generated
-	 * @ordered
 	 */
-	int UI__CONTAINERS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Ui</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UI_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Ui</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UI_OPERATION_COUNT = 0;
+	int SUPER_CONTAINER = 6;
 
 	/**
 	 * The meta object id for the '{@link MMUI.impl.WidgetImpl <em>Widget</em>}' class.
@@ -101,7 +84,7 @@ public interface MMUIPackage extends EPackage {
 	 * @see MMUI.impl.MMUIPackageImpl#getWidget()
 	 * @generated
 	 */
-	int WIDGET = 1;
+	int WIDGET = 4;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -147,7 +130,7 @@ public interface MMUIPackage extends EPackage {
 	 * @see MMUI.impl.MMUIPackageImpl#getCheckbox()
 	 * @generated
 	 */
-	int CHECKBOX = 2;
+	int CHECKBOX = 0;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -211,7 +194,7 @@ public interface MMUIPackage extends EPackage {
 	 * @see MMUI.impl.MMUIPackageImpl#getLabel()
 	 * @generated
 	 */
-	int LABEL = 3;
+	int LABEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -259,23 +242,14 @@ public interface MMUIPackage extends EPackage {
 	int LABEL_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link MMUI.impl.ContainerImpl <em>Container</em>}' class.
+	 * The meta object id for the '{@link MMUI.impl.AbstractContainerImpl <em>Abstract Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see MMUI.impl.ContainerImpl
-	 * @see MMUI.impl.MMUIPackageImpl#getContainer()
+	 * @see MMUI.impl.AbstractContainerImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getAbstractContainer()
 	 * @generated
 	 */
-	int CONTAINER = 4;
-
-	/**
-	 * The feature id for the '<em><b>Widgets</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER__WIDGETS = 0;
+	int ABSTRACT_CONTAINER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -284,7 +258,53 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__ID = 1;
+	int ABSTRACT_CONTAINER__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTAINER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTAINER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link MMUI.impl.ContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.ContainerImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ID = ABSTRACT_CONTAINER__ID;
+
+	/**
+	 * The feature id for the '<em><b>Widgets</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__WIDGETS = ABSTRACT_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Nom Question</b></em>' attribute.
@@ -293,7 +313,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER__NOM_QUESTION = 2;
+	int CONTAINER__NOM_QUESTION = ABSTRACT_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Container</em>' class.
@@ -302,7 +322,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = 3;
+	int CONTAINER_FEATURE_COUNT = ABSTRACT_CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Container</em>' class.
@@ -311,7 +331,70 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_OPERATION_COUNT = 0;
+	int CONTAINER_OPERATION_COUNT = ABSTRACT_CONTAINER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI__BODY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Ui</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Ui</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UI_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_CONTAINER__ID = ABSTRACT_CONTAINER__ID;
+
+	/**
+	 * The feature id for the '<em><b>Containers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_CONTAINER__CONTAINERS = ABSTRACT_CONTAINER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Super Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_CONTAINER_FEATURE_COUNT = ABSTRACT_CONTAINER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Super Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_CONTAINER_OPERATION_COUNT = ABSTRACT_CONTAINER_OPERATION_COUNT + 0;
 
 
 	/**
@@ -325,15 +408,15 @@ public interface MMUIPackage extends EPackage {
 	EClass getUi();
 
 	/**
-	 * Returns the meta object for the reference list '{@link MMUI.Ui#getContainers <em>Containers</em>}'.
+	 * Returns the meta object for the reference '{@link MMUI.Ui#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Containers</em>'.
-	 * @see MMUI.Ui#getContainers()
+	 * @return the meta object for the reference '<em>Body</em>'.
+	 * @see MMUI.Ui#getBody()
 	 * @see #getUi()
 	 * @generated
 	 */
-	EReference getUi_Containers();
+	EReference getUi_Body();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Widget <em>Widget</em>}'.
@@ -366,6 +449,48 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidget_Length();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.AbstractContainer <em>Abstract Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Container</em>'.
+	 * @see MMUI.AbstractContainer
+	 * @generated
+	 */
+	EClass getAbstractContainer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link MMUI.AbstractContainer#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see MMUI.AbstractContainer#getId()
+	 * @see #getAbstractContainer()
+	 * @generated
+	 */
+	EAttribute getAbstractContainer_Id();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.SuperContainer <em>Super Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Super Container</em>'.
+	 * @see MMUI.SuperContainer
+	 * @generated
+	 */
+	EClass getSuperContainer();
+
+	/**
+	 * Returns the meta object for the reference list '{@link MMUI.SuperContainer#getContainers <em>Containers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Containers</em>'.
+	 * @see MMUI.SuperContainer#getContainers()
+	 * @see #getSuperContainer()
+	 * @generated
+	 */
+	EReference getSuperContainer_Containers();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Checkbox <em>Checkbox</em>}'.
@@ -442,17 +567,6 @@ public interface MMUIPackage extends EPackage {
 	EReference getContainer_Widgets();
 
 	/**
-	 * Returns the meta object for the attribute '{@link MMUI.Container#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see MMUI.Container#getId()
-	 * @see #getContainer()
-	 * @generated
-	 */
-	EAttribute getContainer_Id();
-
-	/**
 	 * Returns the meta object for the attribute '{@link MMUI.Container#getNomQuestion <em>Nom Question</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -497,12 +611,12 @@ public interface MMUIPackage extends EPackage {
 		EClass UI = eINSTANCE.getUi();
 
 		/**
-		 * The meta object literal for the '<em><b>Containers</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UI__CONTAINERS = eINSTANCE.getUi_Containers();
+		EReference UI__BODY = eINSTANCE.getUi_Body();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.WidgetImpl <em>Widget</em>}' class.
@@ -529,6 +643,42 @@ public interface MMUIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET__LENGTH = eINSTANCE.getWidget_Length();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.AbstractContainerImpl <em>Abstract Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.AbstractContainerImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getAbstractContainer()
+		 * @generated
+		 */
+		EClass ABSTRACT_CONTAINER = eINSTANCE.getAbstractContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_CONTAINER__ID = eINSTANCE.getAbstractContainer_Id();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.SuperContainerImpl <em>Super Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.SuperContainerImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getSuperContainer()
+		 * @generated
+		 */
+		EClass SUPER_CONTAINER = eINSTANCE.getSuperContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Containers</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPER_CONTAINER__CONTAINERS = eINSTANCE.getSuperContainer_Containers();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.CheckboxImpl <em>Checkbox</em>}' class.
@@ -591,14 +741,6 @@ public interface MMUIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTAINER__WIDGETS = eINSTANCE.getContainer_Widgets();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINER__ID = eINSTANCE.getContainer_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Nom Question</b></em>' attribute feature.

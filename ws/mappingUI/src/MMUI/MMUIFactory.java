@@ -40,6 +40,15 @@ public interface MMUIFactory extends EFactory {
 	Widget createWidget();
 
 	/**
+	 * Returns a new object of class '<em>Super Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Super Container</em>'.
+	 * @generated
+	 */
+	SuperContainer createSuperContainer();
+
+	/**
 	 * Returns a new object of class '<em>Checkbox</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

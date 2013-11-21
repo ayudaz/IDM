@@ -68,14 +68,6 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 	protected MMUISwitch<Adapter> modelSwitch =
 		new MMUISwitch<Adapter>() {
 			@Override
-			public Adapter caseUi(Ui object) {
-				return createUiAdapter();
-			}
-			@Override
-			public Adapter caseWidget(Widget object) {
-				return createWidgetAdapter();
-			}
-			@Override
 			public Adapter caseCheckbox(Checkbox object) {
 				return createCheckboxAdapter();
 			}
@@ -86,6 +78,22 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseContainer(Container object) {
 				return createContainerAdapter();
+			}
+			@Override
+			public Adapter caseUi(Ui object) {
+				return createUiAdapter();
+			}
+			@Override
+			public Adapter caseWidget(Widget object) {
+				return createWidgetAdapter();
+			}
+			@Override
+			public Adapter caseAbstractContainer(AbstractContainer object) {
+				return createAbstractContainerAdapter();
+			}
+			@Override
+			public Adapter caseSuperContainer(SuperContainer object) {
+				return createSuperContainerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -132,6 +140,34 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWidgetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link MMUI.AbstractContainer <em>Abstract Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see MMUI.AbstractContainer
+	 * @generated
+	 */
+	public Adapter createAbstractContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link MMUI.SuperContainer <em>Super Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see MMUI.SuperContainer
+	 * @generated
+	 */
+	public Adapter createSuperContainerAdapter() {
 		return null;
 	}
 

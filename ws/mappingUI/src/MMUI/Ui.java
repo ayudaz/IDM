@@ -2,8 +2,6 @@
  */
 package MMUI;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link MMUI.Ui#getContainers <em>Containers</em>}</li>
+ *   <li>{@link MMUI.Ui#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,19 +22,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Ui extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Containers</b></em>' reference list.
-	 * The list contents are of type {@link MMUI.Container}.
+	 * Returns the value of the '<em><b>Body</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Containers</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Body</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Containers</em>' reference list.
-	 * @see MMUI.MMUIPackage#getUi_Containers()
-	 * @model
+	 * @return the value of the '<em>Body</em>' reference.
+	 * @see #setBody(AbstractContainer)
+	 * @see MMUI.MMUIPackage#getUi_Body()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Container> getContainers();
+	AbstractContainer getBody();
+
+	/**
+	 * Sets the value of the '{@link MMUI.Ui#getBody <em>Body</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Body</em>' reference.
+	 * @see #getBody()
+	 * @generated
+	 */
+	void setBody(AbstractContainer value);
 
 } // Ui

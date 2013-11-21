@@ -4,8 +4,6 @@ package MMUI;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Container</b></em>'.
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link MMUI.Container#getWidgets <em>Widgets</em>}</li>
- *   <li>{@link MMUI.Container#getId <em>Id</em>}</li>
  *   <li>{@link MMUI.Container#getNomQuestion <em>Nom Question</em>}</li>
  * </ul>
  * </p>
@@ -24,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Container extends EObject {
+public interface Container extends AbstractContainer {
 	/**
 	 * Returns the value of the '<em><b>Widgets</b></em>' reference list.
 	 * The list contents are of type {@link MMUI.Widget}.
@@ -40,32 +37,6 @@ public interface Container extends EObject {
 	 * @generated
 	 */
 	EList<Widget> getWidgets();
-
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(int)
-	 * @see MMUI.MMUIPackage#getContainer_Id()
-	 * @model id="true" required="true"
-	 * @generated
-	 */
-	int getId();
-
-	/**
-	 * Sets the value of the '{@link MMUI.Container#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Nom Question</b></em>' attribute.

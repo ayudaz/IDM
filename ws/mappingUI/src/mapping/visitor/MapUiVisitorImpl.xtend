@@ -5,15 +5,17 @@ import org.xtext.istic.mapUI.mapUI.MapUI
 import MMUI.Ui
 import org.xtext.istic.mapUI.mapUI.Mapping
 import MMUI.MMUIFactory
+import java.util.HashMap
 
 class MapUiVisitorImpl implements MapUiVisitor {
 	
-	override visit(MapUI element, Ui ui) {
+	private static HashMap<String, String> map = new HashMap();
+	
+	override visit(MapUI element) {
 		
 	}
 	
-	override visit(Mapping element, Ui ui) {
-		MMUIFactory.eINSTANCE.createContainer
-	}
-	
+	override visit(Mapping element) {
+		map.put(element.name,element.type)
+	}	
 }

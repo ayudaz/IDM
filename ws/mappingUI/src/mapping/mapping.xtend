@@ -1,49 +1,22 @@
-package mapping 
+package mapping
 
+import MMUI.Ui
 import org.xtext.istic.mapUI.mapUI.MapUI
 import org.xtext.istic.soda.soDa.Soda
-import MMUI.Ui
+import mapping.visitor.MapUiVisitorImpl
+import mapping.visitor.SodaVisitorImpl
+import static extension mapping.visitor.MapUIExtension
+import static extension mapping.visitor.SodaExtension
 import MMUI.MMUIFactory
-import MMUI.Container
-import org.xtext.istic.mapUI.mapUI.Mapping
-import org.xtext.istic.soda.soDa.Poll
 
 class mapping {
 // guillaume.becan@inria.fr
 // https://github.com/gbecan
-	def Ui transfo(Soda soda, MapUI mapUi) {
-
-		// Create model
-		var ui = MMUIFactory.eINSTANCE.createUi
-		ui.containers.add(MMUIFactory.eINSTANCE.createContainer)
-		ui.containers.get(0).widgets.add(MMUIFactory.eINSTANCE.createCheckbox)
-		ui.containers.get(0).widgets.add(MMUIFactory.eINSTANCE.createCheckbox)
-
-		for (Mapping c : mapUi.mappings) {
-			var container = MMUIFactory.eINSTANCE.createContainer
-			
-			var polux = soda.polls.map [ polo |
-				if (polo.name.equals(c.name))
-					return polo
-			]
-
-			if (polux != null) {
-				var polo = polux.get(0)
-				container.setNomQuestion(polo.name)
-				
-				switch c.type {
-					case "Checkbox": {
-						var question = polo.questions.map[]
-					}
-				}
-				
-				ui.containers.add(container)
-			}		
-
-			
-		}
-
-		return ui;
+	def Ui transfo(Soda soda, extension MapUI mapUi) {
+		var uiVisitor = new MapUiVisitorImpl();
+		var sodaVisitor = new SodaVisitorImpl(); 
+		
+		return null;
 	}
 
 }

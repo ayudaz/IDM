@@ -4,42 +4,54 @@ package MMUI.impl;
 
 import MMUI.AbstractContainer;
 import MMUI.MMUIPackage;
-import MMUI.Ui;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ui</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Container</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link MMUI.impl.UiImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link MMUI.impl.AbstractContainerImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
+public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container implements AbstractContainer {
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBody()
+	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractContainer body;
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UiImpl() {
+	protected AbstractContainerImpl() {
 		super();
 	}
 
@@ -50,7 +62,7 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MMUIPackage.Literals.UI;
+		return MMUIPackage.Literals.ABSTRACT_CONTAINER;
 	}
 
 	/**
@@ -58,16 +70,8 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractContainer getBody() {
-		if (body != null && body.eIsProxy()) {
-			InternalEObject oldBody = (InternalEObject)body;
-			body = (AbstractContainer)eResolveProxy(oldBody);
-			if (body != oldBody) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MMUIPackage.UI__BODY, oldBody, body));
-			}
-		}
-		return body;
+	public int getId() {
+		return id;
 	}
 
 	/**
@@ -75,20 +79,11 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractContainer basicGetBody() {
-		return body;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBody(AbstractContainer newBody) {
-		AbstractContainer oldBody = body;
-		body = newBody;
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.UI__BODY, oldBody, body));
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.ABSTRACT_CONTAINER__ID, oldId, id));
 	}
 
 	/**
@@ -99,9 +94,8 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MMUIPackage.UI__BODY:
-				if (resolve) return getBody();
-				return basicGetBody();
+			case MMUIPackage.ABSTRACT_CONTAINER__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,12 +105,11 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MMUIPackage.UI__BODY:
-				setBody((AbstractContainer)newValue);
+			case MMUIPackage.ABSTRACT_CONTAINER__ID:
+				setId((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,8 +123,8 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.UI__BODY:
-				setBody((AbstractContainer)null);
+			case MMUIPackage.ABSTRACT_CONTAINER__ID:
+				setId(ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,10 +138,26 @@ public class UiImpl extends MinimalEObjectImpl.Container implements Ui {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.UI__BODY:
-				return body != null;
+			case MMUIPackage.ABSTRACT_CONTAINER__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //UiImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
+	}
+
+} //AbstractContainerImpl

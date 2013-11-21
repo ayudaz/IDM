@@ -66,18 +66,6 @@ public class MMUISwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MMUIPackage.UI: {
-				Ui ui = (Ui)theEObject;
-				T result = caseUi(ui);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MMUIPackage.WIDGET: {
-				Widget widget = (Widget)theEObject;
-				T result = caseWidget(widget);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MMUIPackage.CHECKBOX: {
 				Checkbox checkbox = (Checkbox)theEObject;
 				T result = caseCheckbox(checkbox);
@@ -95,6 +83,32 @@ public class MMUISwitch<T> extends Switch<T> {
 			case MMUIPackage.CONTAINER: {
 				Container container = (Container)theEObject;
 				T result = caseContainer(container);
+				if (result == null) result = caseAbstractContainer(container);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.UI: {
+				Ui ui = (Ui)theEObject;
+				T result = caseUi(ui);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.WIDGET: {
+				Widget widget = (Widget)theEObject;
+				T result = caseWidget(widget);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.ABSTRACT_CONTAINER: {
+				AbstractContainer abstractContainer = (AbstractContainer)theEObject;
+				T result = caseAbstractContainer(abstractContainer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.SUPER_CONTAINER: {
+				SuperContainer superContainer = (SuperContainer)theEObject;
+				T result = caseSuperContainer(superContainer);
+				if (result == null) result = caseAbstractContainer(superContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,6 +143,36 @@ public class MMUISwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseWidget(Widget object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractContainer(AbstractContainer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Super Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Super Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSuperContainer(SuperContainer object) {
 		return null;
 	}
 

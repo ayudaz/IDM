@@ -7,37 +7,51 @@ import org.xtext.istic.soda.soDa.Option
 import MMUI.MMUIFactory
 import MMUI.Ui
 import org.xtext.istic.soda.soDa.Soda
-import java.util.List
-import java.util.ArrayList
+import MMUI.SuperContainer
+import MMUI.Container
+import java.util.HashMap
+import MMUI.Widget
 
 class SodaVisitorImpl implements SodaVisitor {
 
-	private static List<Ui> ui = new ArrayList<Ui>()
-	private static int indice=0	
+	private static Ui ui = MMUIFactory.eINSTANCE.createUi
+	private HashMap<String, String> map;
+
+	def SodaVisitorImpl(HashMap<String, String> map)
+	{
+		this.map=map;
+	}
 
 	override visit(Soda soda) {
-		ui.add(MMUIFactory.eINSTANCE.createUi)
-		indice = indice +1 ;
+		ui.body=MMUIFactory.eINSTANCE.createSuperContainer
 	}
 
 	override visit(Poll poll) {
-		
+		var body = ui.body as SuperContainer
+		body.containers.add(MMUIFactory.eINSTANCE.createSuperContainer)
 	}
 
 	override visit(Question question) {
+		var body = ui.body as SuperContainer
+		var containerPoll = body.containers.last as SuperContainer
+		
 		var container = MMUIFactory.eINSTANCE.createContainer
 		container.nomQuestion = question.name
-
-		ui.containers.add(container)
-		question.options.forEach [ option |
-			question.visit(option)
-		]
+		
+		containerPoll.containers.add(container)		
 	}
 
 	override visit(Option option) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		var body = ui.body as SuperContainer
+		var containerPoll = body.containers.last as SuperContainer
+		var containerQuestion = containerPoll.containers.last as Container
+		
+		var Widget widget=null;
+		switch map.get(containerQuestion.nomQuestion) {
+			case "Checkbox" : widget = MMUIFactory.eINSTANCE.createCheckbox 
+		}
+		
+		if(widget!=null)
+			containerQuestion.widgets.add(widget)		
 	}
-	
-	
-
 }

@@ -2,10 +2,12 @@
  */
 package MMUI.impl;
 
+import MMUI.AbstractContainer;
 import MMUI.Checkbox;
 import MMUI.Label;
 import MMUI.MMUIFactory;
 import MMUI.MMUIPackage;
+import MMUI.SuperContainer;
 import MMUI.Ui;
 import MMUI.Widget;
 
@@ -36,6 +38,20 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * @generated
 	 */
 	private EClass widgetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass superContainerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,7 +149,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUi_Containers() {
+	public EReference getUi_Body() {
 		return (EReference)uiEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -162,6 +178,42 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 */
 	public EAttribute getWidget_Length() {
 		return (EAttribute)widgetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbstractContainer() {
+		return abstractContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractContainer_Id() {
+		return (EAttribute)abstractContainerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSuperContainer() {
+		return superContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSuperContainer_Containers() {
+		return (EReference)superContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -232,17 +284,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainer_Id() {
-		return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getContainer_NomQuestion() {
-		return (EAttribute)containerEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -273,13 +316,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		uiEClass = createEClass(UI);
-		createEReference(uiEClass, UI__CONTAINERS);
-
-		widgetEClass = createEClass(WIDGET);
-		createEAttribute(widgetEClass, WIDGET__WIDTH);
-		createEAttribute(widgetEClass, WIDGET__LENGTH);
-
 		checkboxEClass = createEClass(CHECKBOX);
 		createEAttribute(checkboxEClass, CHECKBOX__CHECKED);
 		createEAttribute(checkboxEClass, CHECKBOX__REPONSE);
@@ -289,8 +325,20 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__WIDGETS);
-		createEAttribute(containerEClass, CONTAINER__ID);
 		createEAttribute(containerEClass, CONTAINER__NOM_QUESTION);
+
+		uiEClass = createEClass(UI);
+		createEReference(uiEClass, UI__BODY);
+
+		widgetEClass = createEClass(WIDGET);
+		createEAttribute(widgetEClass, WIDGET__WIDTH);
+		createEAttribute(widgetEClass, WIDGET__LENGTH);
+
+		abstractContainerEClass = createEClass(ABSTRACT_CONTAINER);
+		createEAttribute(abstractContainerEClass, ABSTRACT_CONTAINER__ID);
+
+		superContainerEClass = createEClass(SUPER_CONTAINER);
+		createEReference(superContainerEClass, SUPER_CONTAINER__CONTAINERS);
 	}
 
 	/**
@@ -323,15 +371,10 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		// Add supertypes to classes
 		checkboxEClass.getESuperTypes().add(this.getWidget());
 		labelEClass.getESuperTypes().add(this.getWidget());
+		containerEClass.getESuperTypes().add(this.getAbstractContainer());
+		superContainerEClass.getESuperTypes().add(this.getAbstractContainer());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(uiEClass, Ui.class, "Ui", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUi_Containers(), this.getContainer(), null, "containers", null, 0, -1, Ui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(widgetEClass, Widget.class, "Widget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWidget_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWidget_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(checkboxEClass, Checkbox.class, "Checkbox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCheckbox_Checked(), ecorePackage.getEBoolean(), "checked", null, 1, 1, Checkbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCheckbox_Reponse(), ecorePackage.getEString(), "reponse", null, 1, 1, Checkbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -341,8 +384,20 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		initEClass(containerEClass, MMUI.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainer_Widgets(), this.getWidget(), null, "widgets", null, 0, -1, MMUI.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainer_Id(), ecorePackage.getEInt(), "id", null, 1, 1, MMUI.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainer_NomQuestion(), ecorePackage.getEString(), "nomQuestion", null, 1, 1, MMUI.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uiEClass, Ui.class, "Ui", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUi_Body(), this.getAbstractContainer(), null, "Body", null, 1, 1, Ui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(widgetEClass, Widget.class, "Widget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWidget_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidget_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractContainerEClass, AbstractContainer.class, "AbstractContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractContainer_Id(), ecorePackage.getEInt(), "id", null, 0, 1, AbstractContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(superContainerEClass, SuperContainer.class, "SuperContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSuperContainer_Containers(), this.getAbstractContainer(), null, "containers", null, 0, -1, SuperContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

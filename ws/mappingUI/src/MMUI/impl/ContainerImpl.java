@@ -4,17 +4,11 @@ package MMUI.impl;
 
 import MMUI.MMUIPackage;
 import MMUI.Widget;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -25,14 +19,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link MMUI.impl.ContainerImpl#getWidgets <em>Widgets</em>}</li>
- *   <li>{@link MMUI.impl.ContainerImpl#getId <em>Id</em>}</li>
  *   <li>{@link MMUI.impl.ContainerImpl#getNomQuestion <em>Nom Question</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.Container {
+public class ContainerImpl extends AbstractContainerImpl implements MMUI.Container {
 	/**
 	 * The cached value of the '{@link #getWidgets() <em>Widgets</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -42,25 +35,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 	 * @ordered
 	 */
 	protected EList<Widget> widgets;
-
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int ID_EDEFAULT = 0;
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected int id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNomQuestion() <em>Nom Question</em>}' attribute.
@@ -118,27 +92,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(int newId) {
-		int oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CONTAINER__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getNomQuestion() {
 		return nomQuestion;
 	}
@@ -165,8 +118,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 		switch (featureID) {
 			case MMUIPackage.CONTAINER__WIDGETS:
 				return getWidgets();
-			case MMUIPackage.CONTAINER__ID:
-				return getId();
 			case MMUIPackage.CONTAINER__NOM_QUESTION:
 				return getNomQuestion();
 		}
@@ -186,9 +137,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 				getWidgets().clear();
 				getWidgets().addAll((Collection<? extends Widget>)newValue);
 				return;
-			case MMUIPackage.CONTAINER__ID:
-				setId((Integer)newValue);
-				return;
 			case MMUIPackage.CONTAINER__NOM_QUESTION:
 				setNomQuestion((String)newValue);
 				return;
@@ -207,9 +155,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 			case MMUIPackage.CONTAINER__WIDGETS:
 				getWidgets().clear();
 				return;
-			case MMUIPackage.CONTAINER__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case MMUIPackage.CONTAINER__NOM_QUESTION:
 				setNomQuestion(NOM_QUESTION_EDEFAULT);
 				return;
@@ -227,8 +172,6 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 		switch (featureID) {
 			case MMUIPackage.CONTAINER__WIDGETS:
 				return widgets != null && !widgets.isEmpty();
-			case MMUIPackage.CONTAINER__ID:
-				return id != ID_EDEFAULT;
 			case MMUIPackage.CONTAINER__NOM_QUESTION:
 				return NOM_QUESTION_EDEFAULT == null ? nomQuestion != null : !NOM_QUESTION_EDEFAULT.equals(nomQuestion);
 		}
@@ -245,9 +188,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements MMUI.
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", nomQuestion: ");
+		result.append(" (nomQuestion: ");
 		result.append(nomQuestion);
 		result.append(')');
 		return result.toString();
