@@ -20,7 +20,7 @@ import org.xtext.istic.soda.soDa.Soda;
 
 @SuppressWarnings("all")
 public class SodaVisitorImpl implements SodaVisitor {
-  private static Ui ui = new Function0<Ui>() {
+  public Ui ui = new Function0<Ui>() {
     public Ui apply() {
       Ui _createUi = MMUIFactory.eINSTANCE.createUi();
       return _createUi;
@@ -29,18 +29,17 @@ public class SodaVisitorImpl implements SodaVisitor {
   
   private HashMap<String,String> map;
   
-  public HashMap<String,String> SodaVisitorImpl(final HashMap<String,String> map) {
-    HashMap<String,String> _map = this.map = map;
-    return _map;
+  public SodaVisitorImpl(final HashMap<String,String> map) {
+    this.map = map;
   }
   
   public void visit(final Soda soda) {
     SuperContainer _createSuperContainer = MMUIFactory.eINSTANCE.createSuperContainer();
-    SodaVisitorImpl.ui.setBody(_createSuperContainer);
+    this.ui.setBody(_createSuperContainer);
   }
   
   public void visit(final Poll poll) {
-    AbstractContainer _body = SodaVisitorImpl.ui.getBody();
+    AbstractContainer _body = this.ui.getBody();
     SuperContainer body = ((SuperContainer) _body);
     EList<AbstractContainer> _containers = body.getContainers();
     SuperContainer _createSuperContainer = MMUIFactory.eINSTANCE.createSuperContainer();
@@ -48,7 +47,7 @@ public class SodaVisitorImpl implements SodaVisitor {
   }
   
   public void visit(final Question question) {
-    AbstractContainer _body = SodaVisitorImpl.ui.getBody();
+    AbstractContainer _body = this.ui.getBody();
     SuperContainer body = ((SuperContainer) _body);
     EList<AbstractContainer> _containers = body.getContainers();
     AbstractContainer _last = IterableExtensions.<AbstractContainer>last(_containers);
@@ -61,7 +60,7 @@ public class SodaVisitorImpl implements SodaVisitor {
   }
   
   public void visit(final Option option) {
-    AbstractContainer _body = SodaVisitorImpl.ui.getBody();
+    AbstractContainer _body = this.ui.getBody();
     SuperContainer body = ((SuperContainer) _body);
     EList<AbstractContainer> _containers = body.getContainers();
     AbstractContainer _last = IterableExtensions.<AbstractContainer>last(_containers);

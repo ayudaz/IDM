@@ -14,13 +14,13 @@ import MMUI.Widget
 
 class SodaVisitorImpl implements SodaVisitor {
 
-	private static Ui ui = MMUIFactory.eINSTANCE.createUi
+	public Ui ui = MMUIFactory.eINSTANCE.createUi
 	private HashMap<String, String> map;
-
-	def SodaVisitorImpl(HashMap<String, String> map)
-	{
-		this.map=map;
+	
+	new(HashMap<String, String> map) {
+		this.map = map
 	}
+	
 
 	override visit(Soda soda) {
 		ui.body=MMUIFactory.eINSTANCE.createSuperContainer

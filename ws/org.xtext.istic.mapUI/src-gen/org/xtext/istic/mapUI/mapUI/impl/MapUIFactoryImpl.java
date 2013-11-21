@@ -21,98 +21,94 @@ import org.xtext.istic.mapUI.mapUI.*;
 public class MapUIFactoryImpl extends EFactoryImpl implements MapUIFactory
 {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static MapUIFactory init()
   {
-    try
-    {
-      MapUIFactory theMapUIFactory = (MapUIFactory)EPackage.Registry.INSTANCE.getEFactory(MapUIPackage.eNS_URI);
-      if (theMapUIFactory != null)
-      {
-        return theMapUIFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new MapUIFactoryImpl();
-  }
+		try {
+			MapUIFactory theMapUIFactory = (MapUIFactory)EPackage.Registry.INSTANCE.getEFactory(MapUIPackage.eNS_URI);
+			if (theMapUIFactory != null) {
+				return theMapUIFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new MapUIFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MapUIFactoryImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass)
   {
-    switch (eClass.getClassifierID())
-    {
-      case MapUIPackage.MAP_UI: return createMapUI();
-      case MapUIPackage.MAPPING: return createMapping();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case MapUIPackage.MAP_UI: return createMapUI();
+			case MapUIPackage.MAPPING: return createMapping();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MapUI createMapUI()
   {
-    MapUIImpl mapUI = new MapUIImpl();
-    return mapUI;
-  }
+		MapUIImpl mapUI = new MapUIImpl();
+		return mapUI;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Mapping createMapping()
   {
-    MappingImpl mapping = new MappingImpl();
-    return mapping;
-  }
+		MappingImpl mapping = new MappingImpl();
+		return mapping;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MapUIPackage getMapUIPackage()
   {
-    return (MapUIPackage)getEPackage();
-  }
+		return (MapUIPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static MapUIPackage getPackage()
   {
-    return MapUIPackage.eINSTANCE;
-  }
+		return MapUIPackage.eINSTANCE;
+	}
 
 } //MapUIFactoryImpl
