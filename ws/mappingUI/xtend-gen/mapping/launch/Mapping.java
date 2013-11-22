@@ -6,20 +6,23 @@ import mapping.visitor.MapUIExtension;
 import mapping.visitor.MapUiVisitorImpl;
 import mapping.visitor.SodaExtension;
 import mapping.visitor.SodaVisitorImpl;
-import org.eclipse.xtext.xbase.lib.Extension;
 import org.xtext.istic.mapUI.mapUI.MapUI;
 import org.xtext.istic.soda.soDa.Soda;
 
 @SuppressWarnings("all")
 public class Mapping {
-  public Ui transfo(@Extension final Soda soda, @Extension final MapUI mapUi) {
+  public Ui transfo(final Soda soda, final MapUI mapUi) {
     MapUiVisitorImpl _mapUiVisitorImpl = new MapUiVisitorImpl();
-    MapUiVisitorImpl uiVisitor = _mapUiVisitorImpl;
-    MapUIExtension.accept(mapUi, uiVisitor);
-    HashMap<String,String> _map = uiVisitor.getMap();
+    MapUiVisitorImpl mapUiVisitor = _mapUiVisitorImpl;
+    MapUIExtension.accept(mapUi, mapUiVisitor);
+    HashMap<String,String> _map = mapUiVisitor.getMap();
     SodaVisitorImpl _sodaVisitorImpl = new SodaVisitorImpl(_map);
     SodaVisitorImpl sodaVisitor = _sodaVisitorImpl;
     SodaExtension.accept(soda, sodaVisitor);
     return sodaVisitor.ui;
+  }
+  
+  public String generation(final Ui ui) {
+    return null;
   }
 }

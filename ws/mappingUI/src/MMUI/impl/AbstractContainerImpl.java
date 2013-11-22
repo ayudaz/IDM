@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link MMUI.impl.AbstractContainerImpl#getId <em>Id</em>}</li>
+ *   <li>{@link MMUI.impl.AbstractContainerImpl#getLabel <em>Label</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +35,7 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ID_EDEFAULT = 0;
+	protected static final String ID_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -44,7 +45,27 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 * @ordered
 	 */
-	protected int id = ID_EDEFAULT;
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LABEL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLabel()
+	 * @generated
+	 * @ordered
+	 */
+	protected String label = LABEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +91,7 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -79,11 +100,32 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(int newId) {
-		int oldId = id;
+	public void setId(String newId) {
+		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.ABSTRACT_CONTAINER__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLabel(String newLabel) {
+		String oldLabel = label;
+		label = newLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.ABSTRACT_CONTAINER__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -96,6 +138,8 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case MMUIPackage.ABSTRACT_CONTAINER__ID:
 				return getId();
+			case MMUIPackage.ABSTRACT_CONTAINER__LABEL:
+				return getLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,7 +153,10 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MMUIPackage.ABSTRACT_CONTAINER__ID:
-				setId((Integer)newValue);
+				setId((String)newValue);
+				return;
+			case MMUIPackage.ABSTRACT_CONTAINER__LABEL:
+				setLabel((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 			case MMUIPackage.ABSTRACT_CONTAINER__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case MMUIPackage.ABSTRACT_CONTAINER__LABEL:
+				setLabel(LABEL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,7 +189,9 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MMUIPackage.ABSTRACT_CONTAINER__ID:
-				return id != ID_EDEFAULT;
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case MMUIPackage.ABSTRACT_CONTAINER__LABEL:
+				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public abstract class AbstractContainerImpl extends MinimalEObjectImpl.Container
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
+		result.append(", label: ");
+		result.append(label);
 		result.append(')');
 		return result.toString();
 	}

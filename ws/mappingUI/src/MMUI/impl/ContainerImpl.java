@@ -5,10 +5,8 @@ package MMUI.impl;
 import MMUI.MMUIPackage;
 import MMUI.Widget;
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -19,7 +17,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link MMUI.impl.ContainerImpl#getWidgets <em>Widgets</em>}</li>
- *   <li>{@link MMUI.impl.ContainerImpl#getNomQuestion <em>Nom Question</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,26 +32,6 @@ public class ContainerImpl extends AbstractContainerImpl implements MMUI.Contain
 	 * @ordered
 	 */
 	protected EList<Widget> widgets;
-
-	/**
-	 * The default value of the '{@link #getNomQuestion() <em>Nom Question</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNomQuestion()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOM_QUESTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNomQuestion() <em>Nom Question</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNomQuestion()
-	 * @generated
-	 * @ordered
-	 */
-	protected String nomQuestion = NOM_QUESTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,34 +69,11 @@ public class ContainerImpl extends AbstractContainerImpl implements MMUI.Contain
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNomQuestion() {
-		return nomQuestion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNomQuestion(String newNomQuestion) {
-		String oldNomQuestion = nomQuestion;
-		nomQuestion = newNomQuestion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CONTAINER__NOM_QUESTION, oldNomQuestion, nomQuestion));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MMUIPackage.CONTAINER__WIDGETS:
 				return getWidgets();
-			case MMUIPackage.CONTAINER__NOM_QUESTION:
-				return getNomQuestion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -137,9 +91,6 @@ public class ContainerImpl extends AbstractContainerImpl implements MMUI.Contain
 				getWidgets().clear();
 				getWidgets().addAll((Collection<? extends Widget>)newValue);
 				return;
-			case MMUIPackage.CONTAINER__NOM_QUESTION:
-				setNomQuestion((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -155,9 +106,6 @@ public class ContainerImpl extends AbstractContainerImpl implements MMUI.Contain
 			case MMUIPackage.CONTAINER__WIDGETS:
 				getWidgets().clear();
 				return;
-			case MMUIPackage.CONTAINER__NOM_QUESTION:
-				setNomQuestion(NOM_QUESTION_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -172,26 +120,8 @@ public class ContainerImpl extends AbstractContainerImpl implements MMUI.Contain
 		switch (featureID) {
 			case MMUIPackage.CONTAINER__WIDGETS:
 				return widgets != null && !widgets.isEmpty();
-			case MMUIPackage.CONTAINER__NOM_QUESTION:
-				return NOM_QUESTION_EDEFAULT == null ? nomQuestion != null : !NOM_QUESTION_EDEFAULT.equals(nomQuestion);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (nomQuestion: ");
-		result.append(nomQuestion);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ContainerImpl

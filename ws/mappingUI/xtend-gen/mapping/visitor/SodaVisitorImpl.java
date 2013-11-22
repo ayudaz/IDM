@@ -54,7 +54,9 @@ public class SodaVisitorImpl implements SodaVisitor {
     SuperContainer containerPoll = ((SuperContainer) _last);
     Container container = MMUIFactory.eINSTANCE.createContainer();
     String _name = question.getName();
-    container.setNomQuestion(_name);
+    container.setId(_name);
+    String _query = question.getQuery();
+    container.setLabel(_query);
     EList<AbstractContainer> _containers_1 = containerPoll.getContainers();
     _containers_1.add(container);
   }
@@ -69,8 +71,8 @@ public class SodaVisitorImpl implements SodaVisitor {
     AbstractContainer _last_1 = IterableExtensions.<AbstractContainer>last(_containers_1);
     Container containerQuestion = ((Container) _last_1);
     Widget widget = null;
-    String _nomQuestion = containerQuestion.getNomQuestion();
-    String _get = this.map.get(_nomQuestion);
+    String _id = containerQuestion.getId();
+    String _get = this.map.get(_id);
     final String _switchValue = _get;
     boolean _matched = false;
     if (!_matched) {

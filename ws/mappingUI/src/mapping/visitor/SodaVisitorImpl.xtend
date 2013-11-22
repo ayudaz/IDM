@@ -36,7 +36,8 @@ class SodaVisitorImpl implements SodaVisitor {
 		var containerPoll = body.containers.last as SuperContainer
 		
 		var container = MMUIFactory.eINSTANCE.createContainer
-		container.nomQuestion = question.name
+		container.id = question.name
+		container.label = question.query
 		
 		containerPoll.containers.add(container)		
 	}
@@ -47,7 +48,7 @@ class SodaVisitorImpl implements SodaVisitor {
 		var containerQuestion = containerPoll.containers.last as Container
 		
 		var Widget widget=null;
-		switch map.get(containerQuestion.nomQuestion) {
+		switch map.get(containerQuestion.id) {
 			case "Checkbox" : widget = MMUIFactory.eINSTANCE.createCheckbox 
 		}
 		

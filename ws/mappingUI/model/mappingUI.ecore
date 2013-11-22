@@ -13,8 +13,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//AbstractContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="widgets" upperBound="-1"
         eType="#//Widget"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomQuestion" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ui">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Body" lowerBound="1" eType="#//AbstractContainer"/>
@@ -24,8 +22,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractContainer" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperContainer" eSuperTypes="#//AbstractContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"

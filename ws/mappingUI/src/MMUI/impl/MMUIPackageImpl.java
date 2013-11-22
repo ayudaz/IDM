@@ -203,6 +203,15 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAbstractContainer_Label() {
+		return (EAttribute)abstractContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSuperContainer() {
 		return superContainerEClass;
 	}
@@ -284,15 +293,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainer_NomQuestion() {
-		return (EAttribute)containerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MMUIFactory getMMUIFactory() {
 		return (MMUIFactory)getEFactoryInstance();
 	}
@@ -325,7 +325,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__WIDGETS);
-		createEAttribute(containerEClass, CONTAINER__NOM_QUESTION);
 
 		uiEClass = createEClass(UI);
 		createEReference(uiEClass, UI__BODY);
@@ -336,6 +335,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		abstractContainerEClass = createEClass(ABSTRACT_CONTAINER);
 		createEAttribute(abstractContainerEClass, ABSTRACT_CONTAINER__ID);
+		createEAttribute(abstractContainerEClass, ABSTRACT_CONTAINER__LABEL);
 
 		superContainerEClass = createEClass(SUPER_CONTAINER);
 		createEReference(superContainerEClass, SUPER_CONTAINER__CONTAINERS);
@@ -384,7 +384,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		initEClass(containerEClass, MMUI.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainer_Widgets(), this.getWidget(), null, "widgets", null, 0, -1, MMUI.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainer_NomQuestion(), ecorePackage.getEString(), "nomQuestion", null, 1, 1, MMUI.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uiEClass, Ui.class, "Ui", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUi_Body(), this.getAbstractContainer(), null, "Body", null, 1, 1, Ui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -394,7 +393,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		initEAttribute(getWidget_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractContainerEClass, AbstractContainer.class, "AbstractContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractContainer_Id(), ecorePackage.getEInt(), "id", null, 0, 1, AbstractContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractContainer_Id(), ecorePackage.getEString(), "id", null, 0, 1, AbstractContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractContainer_Label(), ecorePackage.getEString(), "label", null, 0, 1, AbstractContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(superContainerEClass, SuperContainer.class, "SuperContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSuperContainer_Containers(), this.getAbstractContainer(), null, "containers", null, 0, -1, SuperContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

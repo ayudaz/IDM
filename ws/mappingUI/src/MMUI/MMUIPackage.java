@@ -261,13 +261,22 @@ public interface MMUIPackage extends EPackage {
 	int ABSTRACT_CONTAINER__ID = 0;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_CONTAINER__LABEL = 1;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_CONTAINER_FEATURE_COUNT = 1;
+	int ABSTRACT_CONTAINER_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Abstract Container</em>' class.
@@ -298,6 +307,15 @@ public interface MMUIPackage extends EPackage {
 	int CONTAINER__ID = ABSTRACT_CONTAINER__ID;
 
 	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__LABEL = ABSTRACT_CONTAINER__LABEL;
+
+	/**
 	 * The feature id for the '<em><b>Widgets</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,22 +325,13 @@ public interface MMUIPackage extends EPackage {
 	int CONTAINER__WIDGETS = ABSTRACT_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Nom Question</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER__NOM_QUESTION = ABSTRACT_CONTAINER_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = ABSTRACT_CONTAINER_FEATURE_COUNT + 2;
+	int CONTAINER_FEATURE_COUNT = ABSTRACT_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Container</em>' class.
@@ -368,6 +377,15 @@ public interface MMUIPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUPER_CONTAINER__ID = ABSTRACT_CONTAINER__ID;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_CONTAINER__LABEL = ABSTRACT_CONTAINER__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Containers</b></em>' reference list.
@@ -472,6 +490,17 @@ public interface MMUIPackage extends EPackage {
 	EAttribute getAbstractContainer_Id();
 
 	/**
+	 * Returns the meta object for the attribute '{@link MMUI.AbstractContainer#getLabel <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label</em>'.
+	 * @see MMUI.AbstractContainer#getLabel()
+	 * @see #getAbstractContainer()
+	 * @generated
+	 */
+	EAttribute getAbstractContainer_Label();
+
+	/**
 	 * Returns the meta object for class '{@link MMUI.SuperContainer <em>Super Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,17 +596,6 @@ public interface MMUIPackage extends EPackage {
 	EReference getContainer_Widgets();
 
 	/**
-	 * Returns the meta object for the attribute '{@link MMUI.Container#getNomQuestion <em>Nom Question</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom Question</em>'.
-	 * @see MMUI.Container#getNomQuestion()
-	 * @see #getContainer()
-	 * @generated
-	 */
-	EAttribute getContainer_NomQuestion();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +681,14 @@ public interface MMUIPackage extends EPackage {
 		EAttribute ABSTRACT_CONTAINER__ID = eINSTANCE.getAbstractContainer_Id();
 
 		/**
+		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_CONTAINER__LABEL = eINSTANCE.getAbstractContainer_Label();
+
+		/**
 		 * The meta object literal for the '{@link MMUI.impl.SuperContainerImpl <em>Super Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -741,14 +767,6 @@ public interface MMUIPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTAINER__WIDGETS = eINSTANCE.getContainer_Widgets();
-
-		/**
-		 * The meta object literal for the '<em><b>Nom Question</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINER__NOM_QUESTION = eINSTANCE.getContainer_NomQuestion();
 
 	}
 
