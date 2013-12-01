@@ -2,6 +2,7 @@ package mapping.test;
 
 import MMUI.Ui;
 import mapping.launch.Mapping;
+import mapping.transformation.TransfoHTML;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -34,5 +35,6 @@ public class Help {
     Mapping _mapping = new Mapping();
     Mapping mapping = _mapping;
     Ui ui = mapping.transfo(soda, mapUi);
+    TransfoHTML.TransfoEnHTML(ui);
   }
 }

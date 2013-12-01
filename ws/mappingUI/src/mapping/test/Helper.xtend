@@ -12,6 +12,7 @@ import static extension mapping.visitor.MapUIExtension.*
 import static extension mapping.visitor.SodaExtension.*
 import mapping.visitor.SodaVisitorImpl
 import mapping.launch.Mapping
+import mapping.transformation.TransfoHTML
 
 class Help {
 
@@ -30,5 +31,7 @@ class Help {
 		
 		var mapping = new Mapping
 		var ui = mapping.transfo(soda, mapUi)
+		
+		TransfoHTML.TransfoEnHTML(ui)
 	}
 }
