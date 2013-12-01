@@ -1,7 +1,6 @@
 package mapping.transformation;
 
 import MMUI.AbstractContainer;
-import MMUI.Container;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 import java.io.File;
@@ -15,23 +14,26 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public class TransfoHTML {
   public static String TransfoEnHTML(final Ui ui) {
-    String _plus = ("<!doctype html>" + 
-      "<html lang=\"fr\">");
+    String _plus = ("<!doctype html> \n" + 
+      "<html lang=\"fr\"> \n");
     String result = (_plus + 
-      "<body>");
+      "<body>\n ");
     AbstractContainer _body = ui.getBody();
     SuperContainer body = ((SuperContainer) _body);
     String _id = body.getId();
-    String _plus_1 = ("<form id=" + _id);
-    String formHtml = (_plus_1 + ">");
+    String _plus_1 = ("<form id=\'" + _id);
+    String formHtml = (_plus_1 + "\'> \n");
     EList<AbstractContainer> _containers = body.getContainers();
     final Procedure1<AbstractContainer> _function = new Procedure1<AbstractContainer>() {
       public void apply(final AbstractContainer q) {
-        Container question = ((Container) q);
+        AbstractContainer Aquestion = ((AbstractContainer) q);
       }
     };
     IterableExtensions.<AbstractContainer>forEach(_containers, _function);
-    result.concat("</body>");
+    String _plus_2 = (result + formHtml);
+    result = _plus_2;
+    String _plus_3 = (result + "</body>");
+    result = _plus_3;
     TransfoHTML.writeFileObject(result);
     return "";
   }
@@ -43,6 +45,7 @@ public class TransfoHTML {
       FileWriter _fileWriter = new FileWriter(file, true);
       FileWriter fw = _fileWriter;
       fw.write(append);
+      System.out.println(append);
       fw.close();
     } catch (final Throwable _t) {
       if (_t instanceof IOException) {

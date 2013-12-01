@@ -9,26 +9,29 @@ import java.util.List
 import MMUI.SuperContainer
 import MMUI.Container
 import org.eclipse.emf.common.command.AbstractCommand.NonDirtying
+import MMUI.impl.ContainerImpl
+import MMUI.impl.SuperContainerImpl
+import MMUI.AbstractContainer
 
 static class TransfoHTML {
 	
 	def static String TransfoEnHTML(Ui ui)
 	{
-		var result = 	"<!doctype html>" +
-				 		"<html lang=\"fr\">" +
-				 		"<body>"
+		var result = 	'<!doctype html> \n' +
+				 		'<html lang="fr"> \n' +
+				 		'<body>\n '
 		
 			var body = ui.body as SuperContainer
 			
 			
-			var formHtml = "<form id="+ body.id +">"
+			var formHtml = "<form id='"+ body.id +"'> \n"
 			body.containers.forEach[ q |
-				var question = q as Container				
+				var Aquestion = q as AbstractContainer	
 				
 			]
-			
 		
-		result.concat("</body>")
+		result = result  + formHtml
+		result = result + "</body>"
 		writeFileObject(result);
 		return ""
 	}
@@ -39,6 +42,7 @@ static class TransfoHTML {
         try {
             var fw = new FileWriter(file, true);
             fw.write(append);
+            System.out.println(append)
             fw.close();
         } catch (IOException e) {
             e.printStackTrace();
