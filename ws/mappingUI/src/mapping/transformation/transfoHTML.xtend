@@ -1,17 +1,14 @@
 package mapping.transformation
 
-import java.util.Collection
+import MMUI.AbstractContainer
+import MMUI.Checkbox
+import MMUI.Container
+import MMUI.SuperContainer
 import MMUI.Ui
+import MMUI.Widget
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
-import java.util.List
-import MMUI.SuperContainer
-import MMUI.Container
-import org.eclipse.emf.common.command.AbstractCommand.NonDirtying
-import MMUI.impl.ContainerImpl
-import MMUI.impl.SuperContainerImpl
-import MMUI.AbstractContainer
 
 static class TransfoHTML {
 	
@@ -22,15 +19,23 @@ static class TransfoHTML {
 				 		'<body>\n '
 		
 			var body = ui.body as SuperContainer
-			
-			
-			var formHtml = "<form id='"+ body.id +"'> \n"
-			body.containers.forEach[ q |
-				var Aquestion = q as AbstractContainer	
-				
-			]
+			var tousLesForm = body.containers.get(0) as SuperContainer
+			result =  result + "<form id='"+ body.id +"'> \n"
+			for(AbstractContainer c : tousLesForm.containers)
+			{
+				var f = c as Container
+				result = result + '<label>' + f.label + '</label>\n'
+				for(Widget wid : f.widgets)
+				{
+					if(wid instanceof Checkbox)
+					{
+						var check = wid as Checkbox
+						result = result + "<input type=\"checkbox\">" + check.reponse + "<br>\n"
+					}
+				}
+			}		
+			result =  result + "</form> \n"
 		
-		result = result  + formHtml
 		result = result + "</body>"
 		writeFileObject(result);
 		return ""
