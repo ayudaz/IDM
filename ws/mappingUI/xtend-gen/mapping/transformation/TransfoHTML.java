@@ -30,9 +30,9 @@ public class TransfoHTML {
     String _plus_3 = (_plus_2 + "\'> \n");
     result = _plus_3;
     EList<AbstractContainer> _containers_1 = tousLesForm.getContainers();
-    for (final AbstractContainer c : _containers_1) {
+    for (final AbstractContainer form : _containers_1) {
       {
-        Container f = ((Container) c);
+        Container f = ((Container) form);
         String _plus_4 = (result + "<label>");
         String _label = f.getLabel();
         String _plus_5 = (_plus_4 + _label);

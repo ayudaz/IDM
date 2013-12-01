@@ -80,6 +80,9 @@ public class SodaVisitorImpl implements SodaVisitor {
         _matched=true;
         Checkbox _createCheckbox = MMUIFactory.eINSTANCE.createCheckbox();
         widget = _createCheckbox;
+        Checkbox tmp = ((Checkbox) widget);
+        String _reponse = option.getReponse();
+        tmp.setReponse(_reponse);
       }
     }
     boolean _notEquals = (!Objects.equal(widget, null));

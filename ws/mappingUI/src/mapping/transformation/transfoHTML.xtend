@@ -21,9 +21,10 @@ static class TransfoHTML {
 			var body = ui.body as SuperContainer
 			var tousLesForm = body.containers.get(0) as SuperContainer
 			result =  result + "<form id='"+ body.id +"'> \n"
-			for(AbstractContainer c : tousLesForm.containers)
+			for(AbstractContainer form : tousLesForm.containers)
 			{
-				var f = c as Container
+				var f = form as Container
+				
 				result = result + '<label>' + f.label + '</label>\n'
 				for(Widget wid : f.widgets)
 				{
