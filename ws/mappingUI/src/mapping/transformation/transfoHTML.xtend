@@ -20,12 +20,13 @@ static class TransfoHTML {
 		
 			var body = ui.body as SuperContainer
 			var tousLesForm = body.containers.get(0) as SuperContainer
-			result =  result + "<form id='"+ body.id +"'> \n"
+			
+			result =  result + "<form id='"+ body.id +"'> \n"	
 			for(AbstractContainer form : tousLesForm.containers)
 			{
 				var f = form as Container
-				
-				result = result + '<label>' + f.label + '</label>\n'
+				result = result + '<fieldset>'
+				result = result + '<label>' + f.label + '</label><br>\n'
 				for(Widget wid : f.widgets)
 				{
 					if(wid instanceof Checkbox)
@@ -34,6 +35,7 @@ static class TransfoHTML {
 						result = result + "<input type=\"checkbox\">" + check.reponse + "<br>\n"
 					}
 				}
+				result = result + '</fieldset>'
 			}		
 			result =  result + "</form> \n"
 		
