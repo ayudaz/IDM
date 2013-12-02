@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see MMUI.MMUIPackage#getWidget()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Widget extends EObject {

@@ -5,22 +5,22 @@ package MMUI;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Checkbox</b></em>'.
+ * A representation of the model object '<em><b>Check Box</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link MMUI.Checkbox#isChecked <em>Checked</em>}</li>
- *   <li>{@link MMUI.Checkbox#getReponse <em>Reponse</em>}</li>
+ *   <li>{@link MMUI.CheckBox#isChecked <em>Checked</em>}</li>
+ *   <li>{@link MMUI.CheckBox#getReponse <em>Reponse</em>}</li>
  * </ul>
  * </p>
  *
- * @see MMUI.MMUIPackage#getCheckbox()
+ * @see MMUI.MMUIPackage#getCheckBox()
  * @model
  * @generated
  */
-public interface Checkbox extends Widget {
+public interface CheckBox extends Widget {
 	/**
 	 * Returns the value of the '<em><b>Checked</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,14 +31,14 @@ public interface Checkbox extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Checked</em>' attribute.
 	 * @see #setChecked(boolean)
-	 * @see MMUI.MMUIPackage#getCheckbox_Checked()
+	 * @see MMUI.MMUIPackage#getCheckBox_Checked()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isChecked();
 
 	/**
-	 * Sets the value of the '{@link MMUI.Checkbox#isChecked <em>Checked</em>}' attribute.
+	 * Sets the value of the '{@link MMUI.CheckBox#isChecked <em>Checked</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Checked</em>' attribute.
@@ -57,14 +57,14 @@ public interface Checkbox extends Widget {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Reponse</em>' attribute.
 	 * @see #setReponse(String)
-	 * @see MMUI.MMUIPackage#getCheckbox_Reponse()
+	 * @see MMUI.MMUIPackage#getCheckBox_Reponse()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getReponse();
 
 	/**
-	 * Sets the value of the '{@link MMUI.Checkbox#getReponse <em>Reponse</em>}' attribute.
+	 * Sets the value of the '{@link MMUI.CheckBox#getReponse <em>Reponse</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Reponse</em>' attribute.
@@ -73,4 +73,4 @@ public interface Checkbox extends Widget {
 	 */
 	void setReponse(String value);
 
-} // Checkbox
+} // CheckBox

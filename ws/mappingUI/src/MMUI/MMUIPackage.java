@@ -123,14 +123,14 @@ public interface MMUIPackage extends EPackage {
 	int WIDGET_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link MMUI.impl.CheckboxImpl <em>Checkbox</em>}' class.
+	 * The meta object id for the '{@link MMUI.impl.CheckBoxImpl <em>Check Box</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see MMUI.impl.CheckboxImpl
-	 * @see MMUI.impl.MMUIPackageImpl#getCheckbox()
+	 * @see MMUI.impl.CheckBoxImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getCheckBox()
 	 * @generated
 	 */
-	int CHECKBOX = 0;
+	int CHECK_BOX = 0;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -139,7 +139,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX__WIDTH = WIDGET__WIDTH;
+	int CHECK_BOX__WIDTH = WIDGET__WIDTH;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -148,7 +148,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX__LENGTH = WIDGET__LENGTH;
+	int CHECK_BOX__LENGTH = WIDGET__LENGTH;
 
 	/**
 	 * The feature id for the '<em><b>Checked</b></em>' attribute.
@@ -157,7 +157,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX__CHECKED = WIDGET_FEATURE_COUNT + 0;
+	int CHECK_BOX__CHECKED = WIDGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
@@ -166,25 +166,25 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX__REPONSE = WIDGET_FEATURE_COUNT + 1;
+	int CHECK_BOX__REPONSE = WIDGET_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Checkbox</em>' class.
+	 * The number of structural features of the '<em>Check Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+	int CHECK_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Checkbox</em>' class.
+	 * The number of operations of the '<em>Check Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
+	int CHECK_BOX_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link MMUI.impl.LabelImpl <em>Label</em>}' class.
@@ -416,6 +416,103 @@ public interface MMUIPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link MMUI.impl.RadioButtonImpl <em>Radio Button</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.RadioButtonImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getRadioButton()
+	 * @generated
+	 */
+	int RADIO_BUTTON = 7;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON__WIDTH = WIDGET__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON__LENGTH = WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON__REPONSE = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON__GROUP = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Radio Button</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Radio Button</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_BUTTON_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.CheckBox <em>Check Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Check Box</em>'.
+	 * @see MMUI.CheckBox
+	 * @generated
+	 */
+	EClass getCheckBox();
+
+	/**
+	 * Returns the meta object for the attribute '{@link MMUI.CheckBox#isChecked <em>Checked</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Checked</em>'.
+	 * @see MMUI.CheckBox#isChecked()
+	 * @see #getCheckBox()
+	 * @generated
+	 */
+	EAttribute getCheckBox_Checked();
+
+	/**
+	 * Returns the meta object for the attribute '{@link MMUI.CheckBox#getReponse <em>Reponse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reponse</em>'.
+	 * @see MMUI.CheckBox#getReponse()
+	 * @see #getCheckBox()
+	 * @generated
+	 */
+	EAttribute getCheckBox_Reponse();
+
+	/**
 	 * Returns the meta object for class '{@link MMUI.Ui <em>Ui</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -522,36 +619,36 @@ public interface MMUIPackage extends EPackage {
 	EReference getSuperContainer_Containers();
 
 	/**
-	 * Returns the meta object for class '{@link MMUI.Checkbox <em>Checkbox</em>}'.
+	 * Returns the meta object for class '{@link MMUI.RadioButton <em>Radio Button</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Checkbox</em>'.
-	 * @see MMUI.Checkbox
+	 * @return the meta object for class '<em>Radio Button</em>'.
+	 * @see MMUI.RadioButton
 	 * @generated
 	 */
-	EClass getCheckbox();
+	EClass getRadioButton();
 
 	/**
-	 * Returns the meta object for the attribute '{@link MMUI.Checkbox#isChecked <em>Checked</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Checked</em>'.
-	 * @see MMUI.Checkbox#isChecked()
-	 * @see #getCheckbox()
-	 * @generated
-	 */
-	EAttribute getCheckbox_Checked();
-
-	/**
-	 * Returns the meta object for the attribute '{@link MMUI.Checkbox#getReponse <em>Reponse</em>}'.
+	 * Returns the meta object for the attribute '{@link MMUI.RadioButton#getReponse <em>Reponse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Reponse</em>'.
-	 * @see MMUI.Checkbox#getReponse()
-	 * @see #getCheckbox()
+	 * @see MMUI.RadioButton#getReponse()
+	 * @see #getRadioButton()
 	 * @generated
 	 */
-	EAttribute getCheckbox_Reponse();
+	EAttribute getRadioButton_Reponse();
+
+	/**
+	 * Returns the meta object for the attribute '{@link MMUI.RadioButton#getGroup <em>Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Group</em>'.
+	 * @see MMUI.RadioButton#getGroup()
+	 * @see #getRadioButton()
+	 * @generated
+	 */
+	EAttribute getRadioButton_Group();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Label <em>Label</em>}'.
@@ -618,6 +715,32 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.CheckBoxImpl <em>Check Box</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.CheckBoxImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getCheckBox()
+		 * @generated
+		 */
+		EClass CHECK_BOX = eINSTANCE.getCheckBox();
+
+		/**
+		 * The meta object literal for the '<em><b>Checked</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHECK_BOX__CHECKED = eINSTANCE.getCheckBox_Checked();
+
+		/**
+		 * The meta object literal for the '<em><b>Reponse</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHECK_BOX__REPONSE = eINSTANCE.getCheckBox_Reponse();
+
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.UiImpl <em>Ui</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -707,22 +830,14 @@ public interface MMUIPackage extends EPackage {
 		EReference SUPER_CONTAINER__CONTAINERS = eINSTANCE.getSuperContainer_Containers();
 
 		/**
-		 * The meta object literal for the '{@link MMUI.impl.CheckboxImpl <em>Checkbox</em>}' class.
+		 * The meta object literal for the '{@link MMUI.impl.RadioButtonImpl <em>Radio Button</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see MMUI.impl.CheckboxImpl
-		 * @see MMUI.impl.MMUIPackageImpl#getCheckbox()
+		 * @see MMUI.impl.RadioButtonImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getRadioButton()
 		 * @generated
 		 */
-		EClass CHECKBOX = eINSTANCE.getCheckbox();
-
-		/**
-		 * The meta object literal for the '<em><b>Checked</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHECKBOX__CHECKED = eINSTANCE.getCheckbox_Checked();
+		EClass RADIO_BUTTON = eINSTANCE.getRadioButton();
 
 		/**
 		 * The meta object literal for the '<em><b>Reponse</b></em>' attribute feature.
@@ -730,7 +845,15 @@ public interface MMUIPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CHECKBOX__REPONSE = eINSTANCE.getCheckbox_Reponse();
+		EAttribute RADIO_BUTTON__REPONSE = eINSTANCE.getRadioButton_Reponse();
+
+		/**
+		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RADIO_BUTTON__GROUP = eINSTANCE.getRadioButton_Group();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.LabelImpl <em>Label</em>}' class.

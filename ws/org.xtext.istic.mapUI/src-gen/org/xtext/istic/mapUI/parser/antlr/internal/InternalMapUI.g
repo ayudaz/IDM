@@ -181,16 +181,55 @@ ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getTypeAccess().getCheckboxParserRuleCall()); 
+        newCompositeNode(grammarAccess.getTypeAccess().getCheckBoxParserRuleCall_0()); 
     }
-    this_Checkbox_0=ruleCheckbox    {
-		$current.merge(this_Checkbox_0);
+    this_CheckBox_0=ruleCheckBox    {
+		$current.merge(this_CheckBox_0);
     }
 
     { 
         afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getRadioButtonParserRuleCall_1()); 
+    }
+    this_RadioButton_1=ruleRadioButton    {
+		$current.merge(this_RadioButton_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleCheckBox
+entryRuleCheckBox returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCheckBoxRule()); } 
+	 iv_ruleCheckBox=ruleCheckBox 
+	 { $current=$iv_ruleCheckBox.current.getText(); }  
+	 EOF 
+;
+
+// Rule CheckBox
+ruleCheckBox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='CheckBox' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); 
     }
 
     ;
@@ -199,25 +238,25 @@ ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-// Entry rule entryRuleCheckbox
-entryRuleCheckbox returns [String current=null] 
+// Entry rule entryRuleRadioButton
+entryRuleRadioButton returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getCheckboxRule()); } 
-	 iv_ruleCheckbox=ruleCheckbox 
-	 { $current=$iv_ruleCheckbox.current.getText(); }  
+	{ newCompositeNode(grammarAccess.getRadioButtonRule()); } 
+	 iv_ruleRadioButton=ruleRadioButton 
+	 { $current=$iv_ruleRadioButton.current.getText(); }  
 	 EOF 
 ;
 
-// Rule Checkbox
-ruleCheckbox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+// Rule RadioButton
+ruleRadioButton returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 
-	kw='Checkbox' 
+	kw='RadioButton' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCheckboxAccess().getCheckboxKeyword()); 
+        newLeafNode(kw, grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); 
     }
 
     ;

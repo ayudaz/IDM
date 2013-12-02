@@ -22,6 +22,15 @@ public interface MMUIFactory extends EFactory {
 	MMUIFactory eINSTANCE = MMUI.impl.MMUIFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Check Box</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Check Box</em>'.
+	 * @generated
+	 */
+	CheckBox createCheckBox();
+
+	/**
 	 * Returns a new object of class '<em>Ui</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,15 +38,6 @@ public interface MMUIFactory extends EFactory {
 	 * @generated
 	 */
 	Ui createUi();
-
-	/**
-	 * Returns a new object of class '<em>Widget</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Widget</em>'.
-	 * @generated
-	 */
-	Widget createWidget();
 
 	/**
 	 * Returns a new object of class '<em>Super Container</em>'.
@@ -49,13 +49,13 @@ public interface MMUIFactory extends EFactory {
 	SuperContainer createSuperContainer();
 
 	/**
-	 * Returns a new object of class '<em>Checkbox</em>'.
+	 * Returns a new object of class '<em>Radio Button</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Checkbox</em>'.
+	 * @return a new object of class '<em>Radio Button</em>'.
 	 * @generated
 	 */
-	Checkbox createCheckbox();
+	RadioButton createRadioButton();
 
 	/**
 	 * Returns a new object of class '<em>Label</em>'.

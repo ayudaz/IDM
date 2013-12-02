@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class WidgetImpl extends MinimalEObjectImpl.Container implements Widget {
+public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements Widget {
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->

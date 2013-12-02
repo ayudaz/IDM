@@ -1,9 +1,10 @@
 package mapping.visitor;
 
 import MMUI.AbstractContainer;
-import MMUI.Checkbox;
+import MMUI.CheckBox;
 import MMUI.Container;
 import MMUI.MMUIFactory;
+import MMUI.RadioButton;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 import MMUI.Widget;
@@ -76,13 +77,25 @@ public class SodaVisitorImpl implements SodaVisitor {
     final String _switchValue = _get;
     boolean _matched = false;
     if (!_matched) {
-      if (Objects.equal(_switchValue,"Checkbox")) {
+      if (Objects.equal(_switchValue,"CheckBox")) {
         _matched=true;
-        Checkbox _createCheckbox = MMUIFactory.eINSTANCE.createCheckbox();
-        widget = _createCheckbox;
-        Checkbox tmp = ((Checkbox) widget);
+        CheckBox _createCheckBox = MMUIFactory.eINSTANCE.createCheckBox();
+        widget = _createCheckBox;
+        CheckBox tmp = ((CheckBox) widget);
         String _reponse = option.getReponse();
         tmp.setReponse(_reponse);
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"RadioButton")) {
+        _matched=true;
+        RadioButton _createRadioButton = MMUIFactory.eINSTANCE.createRadioButton();
+        widget = _createRadioButton;
+        RadioButton tmp_1 = ((RadioButton) widget);
+        String _reponse_1 = option.getReponse();
+        tmp_1.setReponse(_reponse_1);
+        String _id_1 = containerQuestion.getId();
+        tmp_1.setGroup(_id_1);
       }
     }
     boolean _notEquals = (!Objects.equal(widget, null));

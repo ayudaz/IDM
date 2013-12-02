@@ -1,9 +1,8 @@
 package mapping.visitor
 
+import org.xtext.istic.soda.soDa.Option
 import org.xtext.istic.soda.soDa.Poll
 import org.xtext.istic.soda.soDa.Question
-import org.xtext.istic.soda.soDa.Option
-import MMUI.Ui
 import org.xtext.istic.soda.soDa.Soda
 
 public interface SodaVisitor {

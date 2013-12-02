@@ -1,11 +1,8 @@
 package mapping.visitor
 
-import mapping.visitor.MapUiVisitor
-import org.xtext.istic.mapUI.mapUI.MapUI
-import MMUI.Ui
-import org.xtext.istic.mapUI.mapUI.Mapping
-import MMUI.MMUIFactory
 import java.util.HashMap
+import org.xtext.istic.mapUI.mapUI.MapUI
+import org.xtext.istic.mapUI.mapUI.Mapping
 
 class MapUiVisitorImpl implements MapUiVisitor {
 	

@@ -68,8 +68,8 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 	protected MMUISwitch<Adapter> modelSwitch =
 		new MMUISwitch<Adapter>() {
 			@Override
-			public Adapter caseCheckbox(Checkbox object) {
-				return createCheckboxAdapter();
+			public Adapter caseCheckBox(CheckBox object) {
+				return createCheckBoxAdapter();
 			}
 			@Override
 			public Adapter caseLabel(Label object) {
@@ -96,6 +96,10 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 				return createSuperContainerAdapter();
 			}
 			@Override
+			public Adapter caseRadioButton(RadioButton object) {
+				return createRadioButtonAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -114,6 +118,20 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link MMUI.CheckBox <em>Check Box</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see MMUI.CheckBox
+	 * @generated
+	 */
+	public Adapter createCheckBoxAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link MMUI.Ui <em>Ui</em>}'.
@@ -172,16 +190,16 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link MMUI.Checkbox <em>Checkbox</em>}'.
+	 * Creates a new adapter for an object of class '{@link MMUI.RadioButton <em>Radio Button</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see MMUI.Checkbox
+	 * @see MMUI.RadioButton
 	 * @generated
 	 */
-	public Adapter createCheckboxAdapter() {
+	public Adapter createRadioButtonAdapter() {
 		return null;
 	}
 

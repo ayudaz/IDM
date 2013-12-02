@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MMUI" nsURI="www.google.fr" nsPrefix="mapping">
-  <eClassifiers xsi:type="ecore:EClass" name="Checkbox" eSuperTypes="#//Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//Widget">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checked" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reponse" lowerBound="1"
@@ -17,7 +17,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Ui">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Body" lowerBound="1" eType="#//AbstractContainer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Widget">
+  <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -29,5 +29,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="SuperContainer" eSuperTypes="#//AbstractContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
         eType="#//AbstractContainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RadioButton" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reponse" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -1,10 +1,7 @@
 package mapping.visitor
 
 import org.xtext.istic.mapUI.mapUI.MapUI
-import mapping.visitor.MapUiVisitor
-import MMUI.Ui
 import org.xtext.istic.mapUI.mapUI.Mapping
-import MMUI.MMUIFactory
 
 static class MapUIExtension {
 	

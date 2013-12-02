@@ -66,10 +66,10 @@ public class MMUISwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MMUIPackage.CHECKBOX: {
-				Checkbox checkbox = (Checkbox)theEObject;
-				T result = caseCheckbox(checkbox);
-				if (result == null) result = caseWidget(checkbox);
+			case MMUIPackage.CHECK_BOX: {
+				CheckBox checkBox = (CheckBox)theEObject;
+				T result = caseCheckBox(checkBox);
+				if (result == null) result = caseWidget(checkBox);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -112,8 +112,30 @@ public class MMUISwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MMUIPackage.RADIO_BUTTON: {
+				RadioButton radioButton = (RadioButton)theEObject;
+				T result = caseRadioButton(radioButton);
+				if (result == null) result = caseWidget(radioButton);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Check Box</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Check Box</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCheckBox(CheckBox object) {
+		return null;
 	}
 
 	/**
@@ -177,17 +199,17 @@ public class MMUISwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Checkbox</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Radio Button</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Checkbox</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Radio Button</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCheckbox(Checkbox object) {
+	public T caseRadioButton(RadioButton object) {
 		return null;
 	}
 

@@ -35,6 +35,7 @@ public class Help {
     Mapping _mapping = new Mapping();
     Mapping mapping = _mapping;
     Ui ui = mapping.transfo(soda, mapUi);
-    TransfoHTML.TransfoEnHTML(ui);
+    String html = mapping.generation(ui);
+    TransfoHTML.writeFileObject(html);
   }
 }

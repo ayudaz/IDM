@@ -22,12 +22,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMapUIParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Checkbox'", "'Question '", "':'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'CheckBox'", "'RadioButton'", "'Question '", "':'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
     public static final int T__12=12;
     public static final int T__11=11;
+    public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
@@ -123,7 +124,7 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
@@ -276,25 +277,31 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleType"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:125:1: ruleType : ( ruleCheckbox ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:125:1: ruleType : ( ( rule__Type__Alternatives ) ) ;
     public final void ruleType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:129:2: ( ( ruleCheckbox ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:130:1: ( ruleCheckbox )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:129:2: ( ( ( rule__Type__Alternatives ) ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:130:1: ( ( rule__Type__Alternatives ) )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:130:1: ( ruleCheckbox )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:131:1: ruleCheckbox
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:130:1: ( ( rule__Type__Alternatives ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:131:1: ( rule__Type__Alternatives )
             {
-             before(grammarAccess.getTypeAccess().getCheckboxParserRuleCall()); 
-            pushFollow(FOLLOW_ruleCheckbox_in_ruleType215);
-            ruleCheckbox();
+             before(grammarAccess.getTypeAccess().getAlternatives()); 
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:132:1: ( rule__Type__Alternatives )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:132:2: rule__Type__Alternatives
+            {
+            pushFollow(FOLLOW_rule__Type__Alternatives_in_ruleType215);
+            rule__Type__Alternatives();
 
             state._fsp--;
 
-             after(grammarAccess.getTypeAccess().getCheckboxParserRuleCall()); 
+
+            }
+
+             after(grammarAccess.getTypeAccess().getAlternatives()); 
 
             }
 
@@ -316,21 +323,21 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleType"
 
 
-    // $ANTLR start "entryRuleCheckbox"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:144:1: entryRuleCheckbox : ruleCheckbox EOF ;
-    public final void entryRuleCheckbox() throws RecognitionException {
+    // $ANTLR start "entryRuleCheckBox"
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:144:1: entryRuleCheckBox : ruleCheckBox EOF ;
+    public final void entryRuleCheckBox() throws RecognitionException {
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:145:1: ( ruleCheckbox EOF )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:146:1: ruleCheckbox EOF
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:145:1: ( ruleCheckBox EOF )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:146:1: ruleCheckBox EOF
             {
-             before(grammarAccess.getCheckboxRule()); 
-            pushFollow(FOLLOW_ruleCheckbox_in_entryRuleCheckbox241);
-            ruleCheckbox();
+             before(grammarAccess.getCheckBoxRule()); 
+            pushFollow(FOLLOW_ruleCheckBox_in_entryRuleCheckBox242);
+            ruleCheckBox();
 
             state._fsp--;
 
-             after(grammarAccess.getCheckboxRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckbox248); 
+             after(grammarAccess.getCheckBoxRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBox249); 
 
             }
 
@@ -343,25 +350,25 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleCheckbox"
+    // $ANTLR end "entryRuleCheckBox"
 
 
-    // $ANTLR start "ruleCheckbox"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:153:1: ruleCheckbox : ( 'Checkbox' ) ;
-    public final void ruleCheckbox() throws RecognitionException {
+    // $ANTLR start "ruleCheckBox"
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:153:1: ruleCheckBox : ( 'CheckBox' ) ;
+    public final void ruleCheckBox() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:157:2: ( ( 'Checkbox' ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:158:1: ( 'Checkbox' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:157:2: ( ( 'CheckBox' ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:158:1: ( 'CheckBox' )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:158:1: ( 'Checkbox' )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:159:1: 'Checkbox'
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:158:1: ( 'CheckBox' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:159:1: 'CheckBox'
             {
-             before(grammarAccess.getCheckboxAccess().getCheckboxKeyword()); 
-            match(input,11,FOLLOW_11_in_ruleCheckbox275); 
-             after(grammarAccess.getCheckboxAccess().getCheckboxKeyword()); 
+             before(grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); 
+            match(input,11,FOLLOW_11_in_ruleCheckBox276); 
+             after(grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); 
 
             }
 
@@ -380,25 +387,171 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleCheckbox"
+    // $ANTLR end "ruleCheckBox"
+
+
+    // $ANTLR start "entryRuleRadioButton"
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:174:1: entryRuleRadioButton : ruleRadioButton EOF ;
+    public final void entryRuleRadioButton() throws RecognitionException {
+        try {
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:175:1: ( ruleRadioButton EOF )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:176:1: ruleRadioButton EOF
+            {
+             before(grammarAccess.getRadioButtonRule()); 
+            pushFollow(FOLLOW_ruleRadioButton_in_entryRuleRadioButton304);
+            ruleRadioButton();
+
+            state._fsp--;
+
+             after(grammarAccess.getRadioButtonRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioButton311); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleRadioButton"
+
+
+    // $ANTLR start "ruleRadioButton"
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:183:1: ruleRadioButton : ( 'RadioButton' ) ;
+    public final void ruleRadioButton() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:187:2: ( ( 'RadioButton' ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:188:1: ( 'RadioButton' )
+            {
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:188:1: ( 'RadioButton' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:189:1: 'RadioButton'
+            {
+             before(grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); 
+            match(input,12,FOLLOW_12_in_ruleRadioButton338); 
+             after(grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleRadioButton"
+
+
+    // $ANTLR start "rule__Type__Alternatives"
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:204:1: rule__Type__Alternatives : ( ( ruleCheckBox ) | ( ruleRadioButton ) );
+    public final void rule__Type__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:208:1: ( ( ruleCheckBox ) | ( ruleRadioButton ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==11) ) {
+                alt2=1;
+            }
+            else if ( (LA2_0==12) ) {
+                alt2=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+            switch (alt2) {
+                case 1 :
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:209:1: ( ruleCheckBox )
+                    {
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:209:1: ( ruleCheckBox )
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:210:1: ruleCheckBox
+                    {
+                     before(grammarAccess.getTypeAccess().getCheckBoxParserRuleCall_0()); 
+                    pushFollow(FOLLOW_ruleCheckBox_in_rule__Type__Alternatives375);
+                    ruleCheckBox();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getCheckBoxParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:215:6: ( ruleRadioButton )
+                    {
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:215:6: ( ruleRadioButton )
+                    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:216:1: ruleRadioButton
+                    {
+                     before(grammarAccess.getTypeAccess().getRadioButtonParserRuleCall_1()); 
+                    pushFollow(FOLLOW_ruleRadioButton_in_rule__Type__Alternatives392);
+                    ruleRadioButton();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getTypeAccess().getRadioButtonParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Type__Alternatives"
 
 
     // $ANTLR start "rule__Mapping__Group__0"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:176:1: rule__Mapping__Group__0 : rule__Mapping__Group__0__Impl rule__Mapping__Group__1 ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:228:1: rule__Mapping__Group__0 : rule__Mapping__Group__0__Impl rule__Mapping__Group__1 ;
     public final void rule__Mapping__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:180:1: ( rule__Mapping__Group__0__Impl rule__Mapping__Group__1 )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:181:2: rule__Mapping__Group__0__Impl rule__Mapping__Group__1
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:232:1: ( rule__Mapping__Group__0__Impl rule__Mapping__Group__1 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:233:2: rule__Mapping__Group__0__Impl rule__Mapping__Group__1
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__0310);
+            pushFollow(FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__0422);
             rule__Mapping__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__0313);
+            pushFollow(FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__0425);
             rule__Mapping__Group__1();
 
             state._fsp--;
@@ -422,20 +575,20 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__0__Impl"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:188:1: rule__Mapping__Group__0__Impl : ( 'Question ' ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:240:1: rule__Mapping__Group__0__Impl : ( 'Question ' ) ;
     public final void rule__Mapping__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:192:1: ( ( 'Question ' ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:193:1: ( 'Question ' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:244:1: ( ( 'Question ' ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:245:1: ( 'Question ' )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:193:1: ( 'Question ' )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:194:1: 'Question '
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:245:1: ( 'Question ' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:246:1: 'Question '
             {
              before(grammarAccess.getMappingAccess().getQuestionKeyword_0()); 
-            match(input,12,FOLLOW_12_in_rule__Mapping__Group__0__Impl341); 
+            match(input,13,FOLLOW_13_in_rule__Mapping__Group__0__Impl453); 
              after(grammarAccess.getMappingAccess().getQuestionKeyword_0()); 
 
             }
@@ -459,21 +612,21 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__1"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:207:1: rule__Mapping__Group__1 : rule__Mapping__Group__1__Impl rule__Mapping__Group__2 ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:259:1: rule__Mapping__Group__1 : rule__Mapping__Group__1__Impl rule__Mapping__Group__2 ;
     public final void rule__Mapping__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:211:1: ( rule__Mapping__Group__1__Impl rule__Mapping__Group__2 )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:212:2: rule__Mapping__Group__1__Impl rule__Mapping__Group__2
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:263:1: ( rule__Mapping__Group__1__Impl rule__Mapping__Group__2 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:264:2: rule__Mapping__Group__1__Impl rule__Mapping__Group__2
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__1372);
+            pushFollow(FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__1484);
             rule__Mapping__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__1375);
+            pushFollow(FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__1487);
             rule__Mapping__Group__2();
 
             state._fsp--;
@@ -497,23 +650,23 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__1__Impl"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:219:1: rule__Mapping__Group__1__Impl : ( ( rule__Mapping__NameAssignment_1 ) ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:271:1: rule__Mapping__Group__1__Impl : ( ( rule__Mapping__NameAssignment_1 ) ) ;
     public final void rule__Mapping__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:223:1: ( ( ( rule__Mapping__NameAssignment_1 ) ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:224:1: ( ( rule__Mapping__NameAssignment_1 ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:275:1: ( ( ( rule__Mapping__NameAssignment_1 ) ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:276:1: ( ( rule__Mapping__NameAssignment_1 ) )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:224:1: ( ( rule__Mapping__NameAssignment_1 ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:225:1: ( rule__Mapping__NameAssignment_1 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:276:1: ( ( rule__Mapping__NameAssignment_1 ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:277:1: ( rule__Mapping__NameAssignment_1 )
             {
              before(grammarAccess.getMappingAccess().getNameAssignment_1()); 
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:226:1: ( rule__Mapping__NameAssignment_1 )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:226:2: rule__Mapping__NameAssignment_1
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:278:1: ( rule__Mapping__NameAssignment_1 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:278:2: rule__Mapping__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Mapping__NameAssignment_1_in_rule__Mapping__Group__1__Impl402);
+            pushFollow(FOLLOW_rule__Mapping__NameAssignment_1_in_rule__Mapping__Group__1__Impl514);
             rule__Mapping__NameAssignment_1();
 
             state._fsp--;
@@ -544,21 +697,21 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__2"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:236:1: rule__Mapping__Group__2 : rule__Mapping__Group__2__Impl rule__Mapping__Group__3 ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:288:1: rule__Mapping__Group__2 : rule__Mapping__Group__2__Impl rule__Mapping__Group__3 ;
     public final void rule__Mapping__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:240:1: ( rule__Mapping__Group__2__Impl rule__Mapping__Group__3 )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:241:2: rule__Mapping__Group__2__Impl rule__Mapping__Group__3
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:292:1: ( rule__Mapping__Group__2__Impl rule__Mapping__Group__3 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:293:2: rule__Mapping__Group__2__Impl rule__Mapping__Group__3
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__2432);
+            pushFollow(FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__2544);
             rule__Mapping__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mapping__Group__3_in_rule__Mapping__Group__2435);
+            pushFollow(FOLLOW_rule__Mapping__Group__3_in_rule__Mapping__Group__2547);
             rule__Mapping__Group__3();
 
             state._fsp--;
@@ -582,20 +735,20 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__2__Impl"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:248:1: rule__Mapping__Group__2__Impl : ( ':' ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:300:1: rule__Mapping__Group__2__Impl : ( ':' ) ;
     public final void rule__Mapping__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:252:1: ( ( ':' ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:253:1: ( ':' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:304:1: ( ( ':' ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:305:1: ( ':' )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:253:1: ( ':' )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:254:1: ':'
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:305:1: ( ':' )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:306:1: ':'
             {
              before(grammarAccess.getMappingAccess().getColonKeyword_2()); 
-            match(input,13,FOLLOW_13_in_rule__Mapping__Group__2__Impl463); 
+            match(input,14,FOLLOW_14_in_rule__Mapping__Group__2__Impl575); 
              after(grammarAccess.getMappingAccess().getColonKeyword_2()); 
 
             }
@@ -619,16 +772,16 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__3"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:267:1: rule__Mapping__Group__3 : rule__Mapping__Group__3__Impl ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:319:1: rule__Mapping__Group__3 : rule__Mapping__Group__3__Impl ;
     public final void rule__Mapping__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:271:1: ( rule__Mapping__Group__3__Impl )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:272:2: rule__Mapping__Group__3__Impl
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:323:1: ( rule__Mapping__Group__3__Impl )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:324:2: rule__Mapping__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__3__Impl_in_rule__Mapping__Group__3494);
+            pushFollow(FOLLOW_rule__Mapping__Group__3__Impl_in_rule__Mapping__Group__3606);
             rule__Mapping__Group__3__Impl();
 
             state._fsp--;
@@ -652,23 +805,23 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__3__Impl"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:278:1: rule__Mapping__Group__3__Impl : ( ( rule__Mapping__TypeAssignment_3 ) ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:330:1: rule__Mapping__Group__3__Impl : ( ( rule__Mapping__TypeAssignment_3 ) ) ;
     public final void rule__Mapping__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:282:1: ( ( ( rule__Mapping__TypeAssignment_3 ) ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:283:1: ( ( rule__Mapping__TypeAssignment_3 ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:334:1: ( ( ( rule__Mapping__TypeAssignment_3 ) ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:335:1: ( ( rule__Mapping__TypeAssignment_3 ) )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:283:1: ( ( rule__Mapping__TypeAssignment_3 ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:284:1: ( rule__Mapping__TypeAssignment_3 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:335:1: ( ( rule__Mapping__TypeAssignment_3 ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:336:1: ( rule__Mapping__TypeAssignment_3 )
             {
              before(grammarAccess.getMappingAccess().getTypeAssignment_3()); 
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:285:1: ( rule__Mapping__TypeAssignment_3 )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:285:2: rule__Mapping__TypeAssignment_3
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:337:1: ( rule__Mapping__TypeAssignment_3 )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:337:2: rule__Mapping__TypeAssignment_3
             {
-            pushFollow(FOLLOW_rule__Mapping__TypeAssignment_3_in_rule__Mapping__Group__3__Impl521);
+            pushFollow(FOLLOW_rule__Mapping__TypeAssignment_3_in_rule__Mapping__Group__3__Impl633);
             rule__Mapping__TypeAssignment_3();
 
             state._fsp--;
@@ -699,20 +852,20 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MapUI__MappingsAssignment"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:304:1: rule__MapUI__MappingsAssignment : ( ruleMapping ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:356:1: rule__MapUI__MappingsAssignment : ( ruleMapping ) ;
     public final void rule__MapUI__MappingsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:308:1: ( ( ruleMapping ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:309:1: ( ruleMapping )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:360:1: ( ( ruleMapping ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:361:1: ( ruleMapping )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:309:1: ( ruleMapping )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:310:1: ruleMapping
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:361:1: ( ruleMapping )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:362:1: ruleMapping
             {
              before(grammarAccess.getMapUIAccess().getMappingsMappingParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleMapping_in_rule__MapUI__MappingsAssignment564);
+            pushFollow(FOLLOW_ruleMapping_in_rule__MapUI__MappingsAssignment676);
             ruleMapping();
 
             state._fsp--;
@@ -740,20 +893,20 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__NameAssignment_1"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:319:1: rule__Mapping__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:371:1: rule__Mapping__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Mapping__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:323:1: ( ( RULE_ID ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:324:1: ( RULE_ID )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:375:1: ( ( RULE_ID ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:376:1: ( RULE_ID )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:324:1: ( RULE_ID )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:325:1: RULE_ID
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:376:1: ( RULE_ID )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:377:1: RULE_ID
             {
              before(grammarAccess.getMappingAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Mapping__NameAssignment_1595); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Mapping__NameAssignment_1707); 
              after(grammarAccess.getMappingAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -777,20 +930,20 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__TypeAssignment_3"
-    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:334:1: rule__Mapping__TypeAssignment_3 : ( ruleType ) ;
+    // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:386:1: rule__Mapping__TypeAssignment_3 : ( ruleType ) ;
     public final void rule__Mapping__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:338:1: ( ( ruleType ) )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:339:1: ( ruleType )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:390:1: ( ( ruleType ) )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:391:1: ( ruleType )
             {
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:339:1: ( ruleType )
-            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:340:1: ruleType
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:391:1: ( ruleType )
+            // ../org.xtext.istic.mapUI.ui/src-gen/org/xtext/istic/mapUI/ui/contentassist/antlr/internal/InternalMapUI.g:392:1: ruleType
             {
              before(grammarAccess.getMappingAccess().getTypeTypeParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleType_in_rule__Mapping__TypeAssignment_3626);
+            pushFollow(FOLLOW_ruleType_in_rule__Mapping__TypeAssignment_3738);
             ruleType();
 
             state._fsp--;
@@ -823,29 +976,34 @@ public class InternalMapUIParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_ruleMapUI_in_entryRuleMapUI61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMapUI68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MapUI__MappingsAssignment_in_ruleMapUI94 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_rule__MapUI__MappingsAssignment_in_ruleMapUI94 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleMapping_in_entryRuleMapping122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMapping129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Mapping__Group__0_in_ruleMapping155 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_entryRuleType182 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleType189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCheckbox_in_ruleType215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCheckbox_in_entryRuleCheckbox241 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCheckbox248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleCheckbox275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__0310 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__0313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Mapping__Group__0__Impl341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__1372 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__1375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__NameAssignment_1_in_rule__Mapping__Group__1__Impl402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__2432 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__3_in_rule__Mapping__Group__2435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Mapping__Group__2__Impl463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__3__Impl_in_rule__Mapping__Group__3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__TypeAssignment_3_in_rule__Mapping__Group__3__Impl521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapping_in_rule__MapUI__MappingsAssignment564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Mapping__NameAssignment_1595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_rule__Mapping__TypeAssignment_3626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Type__Alternatives_in_ruleType215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBox_in_entryRuleCheckBox242 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBox249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleCheckBox276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioButton_in_entryRuleRadioButton304 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRadioButton311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleRadioButton338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBox_in_rule__Type__Alternatives375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioButton_in_rule__Type__Alternatives392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__0422 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__0425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Mapping__Group__0__Impl453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__1484 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__1487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__NameAssignment_1_in_rule__Mapping__Group__1__Impl514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__2544 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__3_in_rule__Mapping__Group__2547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Mapping__Group__2__Impl575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__3__Impl_in_rule__Mapping__Group__3606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__TypeAssignment_3_in_rule__Mapping__Group__3__Impl633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapping_in_rule__MapUI__MappingsAssignment676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Mapping__NameAssignment_1707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_rule__Mapping__TypeAssignment_3738 = new BitSet(new long[]{0x0000000000000002L});
 
 }

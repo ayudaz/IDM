@@ -8,8 +8,10 @@ MapUI:
 Mapping:
 	'Question ' name=ID ':' type=Type;
 
-Type: Checkbox;
+Type: CheckBox | RadioButton;
 
-Checkbox:
-	'Checkbox';
+CheckBox:
+	'CheckBox';
 
+RadioButton:
+	'RadioButton';

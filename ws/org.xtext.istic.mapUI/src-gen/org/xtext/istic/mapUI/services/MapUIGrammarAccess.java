@@ -72,33 +72,54 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
-		private final RuleCall cCheckboxParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cCheckBoxParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRadioButtonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Type:
-		//	Checkbox;
+		//	CheckBox | RadioButton;
 		public ParserRule getRule() { return rule; }
 
-		//Checkbox
-		public RuleCall getCheckboxParserRuleCall() { return cCheckboxParserRuleCall; }
+		//CheckBox | RadioButton
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//CheckBox
+		public RuleCall getCheckBoxParserRuleCall_0() { return cCheckBoxParserRuleCall_0; }
+
+		//RadioButton
+		public RuleCall getRadioButtonParserRuleCall_1() { return cRadioButtonParserRuleCall_1; }
 	}
 
-	public class CheckboxElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Checkbox");
-		private final Keyword cCheckboxKeyword = (Keyword)rule.eContents().get(1);
+	public class CheckBoxElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CheckBox");
+		private final Keyword cCheckBoxKeyword = (Keyword)rule.eContents().get(1);
 		
-		//Checkbox:
-		//	"Checkbox";
+		//CheckBox:
+		//	"CheckBox";
 		public ParserRule getRule() { return rule; }
 
-		//"Checkbox"
-		public Keyword getCheckboxKeyword() { return cCheckboxKeyword; }
+		//"CheckBox"
+		public Keyword getCheckBoxKeyword() { return cCheckBoxKeyword; }
+	}
+
+	public class RadioButtonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RadioButton");
+		private final Keyword cRadioButtonKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RadioButton:
+		//	"RadioButton";
+		public ParserRule getRule() { return rule; }
+
+		//"RadioButton"
+		public Keyword getRadioButtonKeyword() { return cRadioButtonKeyword; }
 	}
 	
 	
 	private MapUIElements pMapUI;
 	private MappingElements pMapping;
 	private TypeElements pType;
-	private CheckboxElements pCheckbox;
+	private CheckBoxElements pCheckBox;
+	private RadioButtonElements pRadioButton;
 	
 	private final Grammar grammar;
 
@@ -159,7 +180,7 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Type:
-	//	Checkbox;
+	//	CheckBox | RadioButton;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
@@ -168,14 +189,24 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeAccess().getRule();
 	}
 
-	//Checkbox:
-	//	"Checkbox";
-	public CheckboxElements getCheckboxAccess() {
-		return (pCheckbox != null) ? pCheckbox : (pCheckbox = new CheckboxElements());
+	//CheckBox:
+	//	"CheckBox";
+	public CheckBoxElements getCheckBoxAccess() {
+		return (pCheckBox != null) ? pCheckBox : (pCheckBox = new CheckBoxElements());
 	}
 	
-	public ParserRule getCheckboxRule() {
-		return getCheckboxAccess().getRule();
+	public ParserRule getCheckBoxRule() {
+		return getCheckBoxAccess().getRule();
+	}
+
+	//RadioButton:
+	//	"RadioButton";
+	public RadioButtonElements getRadioButtonAccess() {
+		return (pRadioButton != null) ? pRadioButton : (pRadioButton = new RadioButtonElements());
+	}
+	
+	public ParserRule getRadioButtonRule() {
+		return getRadioButtonAccess().getRule();
 	}
 
 	//terminal ID:

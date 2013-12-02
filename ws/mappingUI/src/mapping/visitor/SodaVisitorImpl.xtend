@@ -1,18 +1,17 @@
 package mapping.visitor
 
-import mapping.visitor.SodaVisitor
+import MMUI.CheckBox
+import MMUI.Container
+import MMUI.MMUIFactory
+import MMUI.SuperContainer
+import MMUI.Ui
+import MMUI.Widget
+import java.util.HashMap
+import org.xtext.istic.soda.soDa.Option
 import org.xtext.istic.soda.soDa.Poll
 import org.xtext.istic.soda.soDa.Question
-import org.xtext.istic.soda.soDa.Option
-import MMUI.MMUIFactory
-import MMUI.Ui
 import org.xtext.istic.soda.soDa.Soda
-import MMUI.SuperContainer
-import MMUI.Container
-import java.util.HashMap
-import MMUI.Widget
-import MMUI.Checkbox
-import MMUI.impl.CheckboxImpl
+import MMUI.RadioButton
 
 class SodaVisitorImpl implements SodaVisitor {
 
@@ -50,10 +49,16 @@ class SodaVisitorImpl implements SodaVisitor {
 
 		var Widget widget = null;
 		switch map.get(containerQuestion.id) {
-			case "Checkbox": {
-				widget = MMUIFactory.eINSTANCE.createCheckbox
-				var tmp = widget as Checkbox
+			case "CheckBox": {
+				widget = MMUIFactory.eINSTANCE.createCheckBox
+				var tmp = widget as CheckBox
 				tmp.reponse = option.reponse
+			}
+			case "RadioButton": {
+				widget = MMUIFactory.eINSTANCE.createRadioButton
+				var tmp = widget as RadioButton
+				tmp.reponse = option.reponse
+				tmp.group = containerQuestion.id
 			}
 		}
 

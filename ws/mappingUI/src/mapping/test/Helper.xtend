@@ -1,6 +1,7 @@
 package mapping.test
 
-import mapping.visitor.MapUiVisitorImpl
+import mapping.launch.Mapping
+import mapping.transformation.TransfoHTML
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
@@ -8,11 +9,6 @@ import org.xtext.istic.mapUI.MapUIStandaloneSetup
 import org.xtext.istic.mapUI.mapUI.MapUI
 import org.xtext.istic.soda.SoDaStandaloneSetup
 import org.xtext.istic.soda.soDa.Soda
-import static extension mapping.visitor.MapUIExtension.*
-import static extension mapping.visitor.SodaExtension.*
-import mapping.visitor.SodaVisitorImpl
-import mapping.launch.Mapping
-import mapping.transformation.TransfoHTML
 
 class Help {
 
@@ -31,7 +27,7 @@ class Help {
 		
 		var mapping = new Mapping
 		var ui = mapping.transfo(soda, mapUi)
-		
-		TransfoHTML.TransfoEnHTML(ui)
+		var html = mapping.generation(ui)
+		TransfoHTML.writeFileObject(html)
 	}
 }

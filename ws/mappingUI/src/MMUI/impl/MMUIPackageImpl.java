@@ -3,19 +3,18 @@
 package MMUI.impl;
 
 import MMUI.AbstractContainer;
-import MMUI.Checkbox;
+import MMUI.CheckBox;
 import MMUI.Label;
 import MMUI.MMUIFactory;
 import MMUI.MMUIPackage;
+import MMUI.RadioButton;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 import MMUI.Widget;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -25,6 +24,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass checkBoxEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +64,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass checkboxEClass = null;
+	private EClass radioButtonEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +139,33 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MMUIPackage.eNS_URI, theMMUIPackage);
 		return theMMUIPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCheckBox() {
+		return checkBoxEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCheckBox_Checked() {
+		return (EAttribute)checkBoxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCheckBox_Reponse() {
+		return (EAttribute)checkBoxEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -230,8 +263,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCheckbox() {
-		return checkboxEClass;
+	public EClass getRadioButton() {
+		return radioButtonEClass;
 	}
 
 	/**
@@ -239,8 +272,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCheckbox_Checked() {
-		return (EAttribute)checkboxEClass.getEStructuralFeatures().get(0);
+	public EAttribute getRadioButton_Reponse() {
+		return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -248,8 +281,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCheckbox_Reponse() {
-		return (EAttribute)checkboxEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRadioButton_Group() {
+		return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -316,9 +349,9 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		checkboxEClass = createEClass(CHECKBOX);
-		createEAttribute(checkboxEClass, CHECKBOX__CHECKED);
-		createEAttribute(checkboxEClass, CHECKBOX__REPONSE);
+		checkBoxEClass = createEClass(CHECK_BOX);
+		createEAttribute(checkBoxEClass, CHECK_BOX__CHECKED);
+		createEAttribute(checkBoxEClass, CHECK_BOX__REPONSE);
 
 		labelEClass = createEClass(LABEL);
 		createEAttribute(labelEClass, LABEL__TEXT);
@@ -339,6 +372,10 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		superContainerEClass = createEClass(SUPER_CONTAINER);
 		createEReference(superContainerEClass, SUPER_CONTAINER__CONTAINERS);
+
+		radioButtonEClass = createEClass(RADIO_BUTTON);
+		createEAttribute(radioButtonEClass, RADIO_BUTTON__REPONSE);
+		createEAttribute(radioButtonEClass, RADIO_BUTTON__GROUP);
 	}
 
 	/**
@@ -369,15 +406,16 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		checkboxEClass.getESuperTypes().add(this.getWidget());
+		checkBoxEClass.getESuperTypes().add(this.getWidget());
 		labelEClass.getESuperTypes().add(this.getWidget());
 		containerEClass.getESuperTypes().add(this.getAbstractContainer());
 		superContainerEClass.getESuperTypes().add(this.getAbstractContainer());
+		radioButtonEClass.getESuperTypes().add(this.getWidget());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(checkboxEClass, Checkbox.class, "Checkbox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCheckbox_Checked(), ecorePackage.getEBoolean(), "checked", null, 1, 1, Checkbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCheckbox_Reponse(), ecorePackage.getEString(), "reponse", null, 1, 1, Checkbox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCheckBox_Checked(), ecorePackage.getEBoolean(), "checked", null, 1, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCheckBox_Reponse(), ecorePackage.getEString(), "reponse", null, 1, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabel_Text(), ecorePackage.getEString(), "text", null, 1, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -388,7 +426,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		initEClass(uiEClass, Ui.class, "Ui", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUi_Body(), this.getAbstractContainer(), null, "Body", null, 1, 1, Ui.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(widgetEClass, Widget.class, "Widget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(widgetEClass, Widget.class, "Widget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidget_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidget_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -398,6 +436,10 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 
 		initEClass(superContainerEClass, SuperContainer.class, "SuperContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSuperContainer_Containers(), this.getAbstractContainer(), null, "containers", null, 0, -1, SuperContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRadioButton_Reponse(), ecorePackage.getEString(), "reponse", "", 1, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRadioButton_Group(), ecorePackage.getEString(), "group", null, 1, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

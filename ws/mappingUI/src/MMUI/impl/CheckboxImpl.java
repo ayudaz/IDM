@@ -2,7 +2,7 @@
  */
 package MMUI.impl;
 
-import MMUI.Checkbox;
+import MMUI.CheckBox;
 import MMUI.MMUIPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -13,19 +13,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Checkbox</b></em>'.
+ * An implementation of the model object '<em><b>Check Box</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link MMUI.impl.CheckboxImpl#isChecked <em>Checked</em>}</li>
- *   <li>{@link MMUI.impl.CheckboxImpl#getReponse <em>Reponse</em>}</li>
+ *   <li>{@link MMUI.impl.CheckBoxImpl#isChecked <em>Checked</em>}</li>
+ *   <li>{@link MMUI.impl.CheckBoxImpl#getReponse <em>Reponse</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CheckboxImpl extends WidgetImpl implements Checkbox {
+public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	/**
 	 * The default value of the '{@link #isChecked() <em>Checked</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CheckboxImpl() {
+	protected CheckBoxImpl() {
 		super();
 	}
 
@@ -82,7 +82,7 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MMUIPackage.Literals.CHECKBOX;
+		return MMUIPackage.Literals.CHECK_BOX;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 		boolean oldChecked = checked;
 		checked = newChecked;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CHECKBOX__CHECKED, oldChecked, checked));
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CHECK_BOX__CHECKED, oldChecked, checked));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 		String oldReponse = reponse;
 		reponse = newReponse;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CHECKBOX__REPONSE, oldReponse, reponse));
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CHECK_BOX__REPONSE, oldReponse, reponse));
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MMUIPackage.CHECKBOX__CHECKED:
+			case MMUIPackage.CHECK_BOX__CHECKED:
 				return isChecked();
-			case MMUIPackage.CHECKBOX__REPONSE:
+			case MMUIPackage.CHECK_BOX__REPONSE:
 				return getReponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +151,10 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MMUIPackage.CHECKBOX__CHECKED:
+			case MMUIPackage.CHECK_BOX__CHECKED:
 				setChecked((Boolean)newValue);
 				return;
-			case MMUIPackage.CHECKBOX__REPONSE:
+			case MMUIPackage.CHECK_BOX__REPONSE:
 				setReponse((String)newValue);
 				return;
 		}
@@ -169,10 +169,10 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.CHECKBOX__CHECKED:
+			case MMUIPackage.CHECK_BOX__CHECKED:
 				setChecked(CHECKED_EDEFAULT);
 				return;
-			case MMUIPackage.CHECKBOX__REPONSE:
+			case MMUIPackage.CHECK_BOX__REPONSE:
 				setReponse(REPONSE_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.CHECKBOX__CHECKED:
+			case MMUIPackage.CHECK_BOX__CHECKED:
 				return checked != CHECKED_EDEFAULT;
-			case MMUIPackage.CHECKBOX__REPONSE:
+			case MMUIPackage.CHECK_BOX__REPONSE:
 				return REPONSE_EDEFAULT == null ? reponse != null : !REPONSE_EDEFAULT.equals(reponse);
 		}
 		return super.eIsSet(featureID);
@@ -213,4 +213,4 @@ public class CheckboxImpl extends WidgetImpl implements Checkbox {
 		return result.toString();
 	}
 
-} //CheckboxImpl
+} //CheckBoxImpl

@@ -128,9 +128,9 @@ ruleType
     }
 	:
 (
-{ before(grammarAccess.getTypeAccess().getCheckboxParserRuleCall()); }
-	ruleCheckbox
-{ after(grammarAccess.getTypeAccess().getCheckboxParserRuleCall()); }
+{ before(grammarAccess.getTypeAccess().getAlternatives()); }
+(rule__Type__Alternatives)
+{ after(grammarAccess.getTypeAccess().getAlternatives()); }
 )
 
 ;
@@ -140,27 +140,27 @@ finally {
 
 
 
-// Entry rule entryRuleCheckbox
-entryRuleCheckbox 
+// Entry rule entryRuleCheckBox
+entryRuleCheckBox 
 :
-{ before(grammarAccess.getCheckboxRule()); }
-	 ruleCheckbox
-{ after(grammarAccess.getCheckboxRule()); } 
+{ before(grammarAccess.getCheckBoxRule()); }
+	 ruleCheckBox
+{ after(grammarAccess.getCheckBoxRule()); } 
 	 EOF 
 ;
 
-// Rule Checkbox
-ruleCheckbox
+// Rule CheckBox
+ruleCheckBox
     @init {
 		int stackSize = keepStackSize();
     }
 	:
 (
-{ before(grammarAccess.getCheckboxAccess().getCheckboxKeyword()); }
+{ before(grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); }
 
-	'Checkbox' 
+	'CheckBox' 
 
-{ after(grammarAccess.getCheckboxAccess().getCheckboxKeyword()); }
+{ after(grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); }
 )
 
 ;
@@ -170,6 +170,58 @@ finally {
 
 
 
+// Entry rule entryRuleRadioButton
+entryRuleRadioButton 
+:
+{ before(grammarAccess.getRadioButtonRule()); }
+	 ruleRadioButton
+{ after(grammarAccess.getRadioButtonRule()); } 
+	 EOF 
+;
+
+// Rule RadioButton
+ruleRadioButton
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); }
+
+	'RadioButton' 
+
+{ after(grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+rule__Type__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTypeAccess().getCheckBoxParserRuleCall_0()); }
+	ruleCheckBox
+{ after(grammarAccess.getTypeAccess().getCheckBoxParserRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getTypeAccess().getRadioButtonParserRuleCall_1()); }
+	ruleRadioButton
+{ after(grammarAccess.getTypeAccess().getRadioButtonParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 

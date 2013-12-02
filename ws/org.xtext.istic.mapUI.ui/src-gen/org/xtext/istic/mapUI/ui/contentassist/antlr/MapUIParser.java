@@ -37,6 +37,7 @@ public class MapUIParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");
 					put(grammarAccess.getMapUIAccess().getMappingsAssignment(), "rule__MapUI__MappingsAssignment");
 					put(grammarAccess.getMappingAccess().getNameAssignment_1(), "rule__Mapping__NameAssignment_1");

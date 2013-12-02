@@ -5,9 +5,10 @@ import org.xtext.istic.mapUI.mapUI.MapUI
 import org.xtext.istic.soda.soDa.Soda
 import mapping.visitor.MapUiVisitorImpl
 import mapping.visitor.SodaVisitorImpl
+import mapping.visitor.UiVisitorImplHtml
 import static extension mapping.visitor.MapUIExtension.*
 import static extension mapping.visitor.SodaExtension.*
-
+import static extension mapping.visitor.UiExtension.*
 
 class Mapping {
 // guillaume.becan@inria.fr
@@ -21,7 +22,9 @@ class Mapping {
 	}
 	
 	def String generation(Ui ui) {
-		
+		var htmlUiVisiteur = new UiVisitorImplHtml();
+		ui.accept(htmlUiVisiteur)
+		return htmlUiVisiteur.html
 	}
 	
 	
