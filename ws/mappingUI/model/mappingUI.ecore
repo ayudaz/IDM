@@ -39,4 +39,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//DecorateurWidget"/>
   <eClassifiers xsi:type="ecore:EClass" name="Son" eSuperTypes="#//DecorateurWidget"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Video" eSuperTypes="#//DecorateurWidget"/>
 </ecore:EPackage>

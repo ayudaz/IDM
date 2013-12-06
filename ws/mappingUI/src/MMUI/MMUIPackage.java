@@ -694,6 +694,71 @@ public interface MMUIPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link MMUI.impl.VideoImpl <em>Video</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.VideoImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getVideo()
+	 * @generated
+	 */
+	int VIDEO = 11;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__WIDTH = DECORATEUR_WIDGET__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__LENGTH = DECORATEUR_WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__REPONSE = DECORATEUR_WIDGET__REPONSE;
+
+	/**
+	 * The feature id for the '<em><b>Widget</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__WIDGET = DECORATEUR_WIDGET__WIDGET;
+
+	/**
+	 * The number of structural features of the '<em>Video</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO_FEATURE_COUNT = DECORATEUR_WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Video</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO_OPERATION_COUNT = DECORATEUR_WIDGET_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link MMUI.CheckBox <em>Check Box</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -892,6 +957,16 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSon();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.Video <em>Video</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Video</em>'.
+	 * @see MMUI.Video
+	 * @generated
+	 */
+	EClass getVideo();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Label <em>Label</em>}'.
@@ -1127,6 +1202,16 @@ public interface MMUIPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SON = eINSTANCE.getSon();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.VideoImpl <em>Video</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.VideoImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getVideo()
+		 * @generated
+		 */
+		EClass VIDEO = eINSTANCE.getVideo();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.LabelImpl <em>Label</em>}' class.

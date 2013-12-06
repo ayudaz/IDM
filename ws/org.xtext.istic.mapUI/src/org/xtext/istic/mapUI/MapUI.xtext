@@ -8,7 +8,10 @@ MapUI:
 Mapping:
 	name=ID ':' type=Type;
 
-Type: CheckBox | RadioButton | Image | Son;
+Type: CheckBox | RadioButton | Image | Son | Video ;
+
+Video:
+	'VideoCheck' | "VideoRadio";
 
 Image:
 	'ImageCheck' | "ImageRadio";

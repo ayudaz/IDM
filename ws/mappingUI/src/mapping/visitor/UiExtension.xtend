@@ -9,6 +9,7 @@ import MMUI.SuperContainer
 import MMUI.Ui
 import MMUI.Widget
 import MMUI.Son
+import MMUI.Video
 
 static class UiExtension {
 	
@@ -52,8 +53,17 @@ static class UiExtension {
 				var son = widget as Son
 				son.accept(visitor)				
 			}
+			else if(widget instanceof Video){
+				var video = widget as Video
+				video.accept(visitor)				
+			}
 		}
 		visitor.exit(container)
+	}
+	
+	def static void accept(Video video, UiVisitor visitor){
+		visitor.entry(video)
+		visitor.exit(video)
 	}
 	
 	def static void accept(Son son, UiVisitor visitor){

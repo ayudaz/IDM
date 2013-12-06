@@ -7,6 +7,7 @@ import MMUI.SuperContainer
 import MMUI.Ui
 import MMUI.Image
 import MMUI.Son
+import MMUI.Video
 
 interface UiVisitor {
 	def void entry(Ui ui)
@@ -23,5 +24,6 @@ interface UiVisitor {
 	def void exit(Image image)
 	def void entry(Son son)
 	def void exit(Son son)
-
+	def void entry(Video video)
+	def void exit(Video video)
 }

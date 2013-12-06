@@ -224,6 +224,52 @@ ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     { 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getVideoParserRuleCall_4()); 
+    }
+    this_Video_4=ruleVideo    {
+		$current.merge(this_Video_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleVideo
+entryRuleVideo returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getVideoRule()); } 
+	 iv_ruleVideo=ruleVideo 
+	 { $current=$iv_ruleVideo.current.getText(); }  
+	 EOF 
+;
+
+// Rule Video
+ruleVideo returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='VideoCheck' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVideoAccess().getVideoCheckKeyword_0()); 
+    }
+
+    |
+	kw='VideoRadio' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVideoAccess().getVideoRadioKeyword_1()); 
+    }
 )
     ;
 

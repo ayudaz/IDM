@@ -9,6 +9,7 @@ import MMUI.Image
 import java.awt.Checkbox
 import MMUI.Widget
 import MMUI.Son
+import MMUI.Video
 
 class UiVisitorImplHtml implements UiVisitor {
 	
@@ -77,10 +78,20 @@ class UiVisitorImplHtml implements UiVisitor {
 	
 	override entry(Son son) {
 		this.entry(son.widget)
-		html = html + '<audio controls> <source src="' + son.widget.reponse +'" /></audio>'
+		html = html + '<audio controls> <source src="' + son.widget.reponse +'" /></audio></br>\n'
 	}
 	
 	override exit(Son son) {		
+	}
+	
+	override entry(Video video) {
+		this.entry(video.widget)
+		html = html + '<video controls="controls" width="400" height="300">'
+    	html = html + '<source src="'+ video.widget.reponse +'" />	</video></br>\n'
+	}
+	
+	override exit(Video video) {
+		
 	}
 	
 	def entry(Widget widget)
@@ -97,7 +108,4 @@ class UiVisitorImplHtml implements UiVisitor {
 				entry(image)				
 			}
 	}
-	
-	
-	
 }

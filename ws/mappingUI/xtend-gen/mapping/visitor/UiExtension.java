@@ -8,6 +8,7 @@ import MMUI.RadioButton;
 import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
+import MMUI.Video;
 import MMUI.Widget;
 import mapping.visitor.UiVisitor;
 import org.eclipse.emf.common.util.EList;
@@ -58,12 +59,22 @@ public class UiExtension {
             if ((widget instanceof Son)) {
               Son son = ((Son) widget);
               UiExtension.accept(son, visitor);
+            } else {
+              if ((widget instanceof Video)) {
+                Video video = ((Video) widget);
+                UiExtension.accept(video, visitor);
+              }
             }
           }
         }
       }
     }
     visitor.exit(container);
+  }
+  
+  public static void accept(final Video video, final UiVisitor visitor) {
+    visitor.entry(video);
+    visitor.exit(video);
   }
   
   public static void accept(final Son son, final UiVisitor visitor) {

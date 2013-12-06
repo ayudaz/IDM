@@ -73,12 +73,13 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRadioButtonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cImageParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cSonParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cVideoParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Type:
-		//	CheckBox | RadioButton | Image | Son;
+		//	CheckBox | RadioButton | Image | Son | Video;
 		public ParserRule getRule() { return rule; }
 
-		//CheckBox | RadioButton | Image | Son
+		//CheckBox | RadioButton | Image | Son | Video
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//CheckBox
@@ -92,6 +93,29 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Son
 		public RuleCall getSonParserRuleCall_3() { return cSonParserRuleCall_3; }
+
+		//Video
+		public RuleCall getVideoParserRuleCall_4() { return cVideoParserRuleCall_4; }
+	}
+
+	public class VideoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Video");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cVideoCheckKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cVideoRadioKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Video:
+		//	"VideoCheck" | "VideoRadio";
+		public ParserRule getRule() { return rule; }
+
+		//"VideoCheck" | "VideoRadio"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"VideoCheck"
+		public Keyword getVideoCheckKeyword_0() { return cVideoCheckKeyword_0; }
+
+		//"VideoRadio"
+		public Keyword getVideoRadioKeyword_1() { return cVideoRadioKeyword_1; }
 	}
 
 	public class ImageElements extends AbstractParserRuleElementFinder {
@@ -162,6 +186,7 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	private MapUIElements pMapUI;
 	private MappingElements pMapping;
 	private TypeElements pType;
+	private VideoElements pVideo;
 	private ImageElements pImage;
 	private CheckBoxElements pCheckBox;
 	private RadioButtonElements pRadioButton;
@@ -226,13 +251,23 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Type:
-	//	CheckBox | RadioButton | Image | Son;
+	//	CheckBox | RadioButton | Image | Son | Video;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
 	
 	public ParserRule getTypeRule() {
 		return getTypeAccess().getRule();
+	}
+
+	//Video:
+	//	"VideoCheck" | "VideoRadio";
+	public VideoElements getVideoAccess() {
+		return (pVideo != null) ? pVideo : (pVideo = new VideoElements());
+	}
+	
+	public ParserRule getVideoRule() {
+		return getVideoAccess().getRule();
 	}
 
 	//Image:

@@ -64,6 +64,7 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 			case MMUIPackage.RADIO_BUTTON: return createRadioButton();
 			case MMUIPackage.IMAGE: return createImage();
 			case MMUIPackage.SON: return createSon();
+			case MMUIPackage.VIDEO: return createVideo();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -127,6 +128,16 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 	public Son createSon() {
 		SonImpl son = new SonImpl();
 		return son;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Video createVideo() {
+		VideoImpl video = new VideoImpl();
+		return video;
 	}
 
 	/**

@@ -9,6 +9,7 @@ import MMUI.RadioButton;
 import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
+import MMUI.Video;
 import MMUI.Widget;
 import com.google.common.base.Objects;
 import java.util.HashMap;
@@ -149,12 +150,36 @@ public class SodaVisitorImpl implements SodaVisitor {
       }
     }
     if (!_matched) {
+      if (Objects.equal(_switchValue,"VideoRadio")) {
+        _matched=true;
+        Video _createVideo = MMUIFactory.eINSTANCE.createVideo();
+        widget = _createVideo;
+        RadioButton radio_2 = MMUIFactory.eINSTANCE.createRadioButton();
+        String _reponse_6 = option.getReponse();
+        radio_2.setReponse(_reponse_6);
+        Video tmp_6 = ((Video) widget);
+        tmp_6.setWidget(radio_2);
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_switchValue,"VideoCheck")) {
+        _matched=true;
+        Video _createVideo_1 = MMUIFactory.eINSTANCE.createVideo();
+        widget = _createVideo_1;
+        CheckBox checkbox_2 = MMUIFactory.eINSTANCE.createCheckBox();
+        String _reponse_7 = option.getReponse();
+        checkbox_2.setReponse(_reponse_7);
+        Video tmp_7 = ((Video) widget);
+        tmp_7.setWidget(checkbox_2);
+      }
+    }
+    if (!_matched) {
       {
         CheckBox _createCheckBox_1 = MMUIFactory.eINSTANCE.createCheckBox();
         widget = _createCheckBox_1;
-        CheckBox tmp_6 = ((CheckBox) widget);
-        String _reponse_6 = option.getReponse();
-        tmp_6.setReponse(_reponse_6);
+        CheckBox tmp_8 = ((CheckBox) widget);
+        String _reponse_8 = option.getReponse();
+        tmp_8.setReponse(_reponse_8);
       }
     }
     boolean _notEquals = (!Objects.equal(widget, null));

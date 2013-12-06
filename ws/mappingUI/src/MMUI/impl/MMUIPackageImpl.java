@@ -13,6 +13,7 @@ import MMUI.RadioButton;
 import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
+import MMUI.Video;
 import MMUI.Widget;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -89,6 +90,13 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * @generated
 	 */
 	private EClass sonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass videoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -341,6 +349,15 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVideo() {
+		return videoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLabel() {
 		return labelEClass;
 	}
@@ -433,6 +450,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		imageEClass = createEClass(IMAGE);
 
 		sonEClass = createEClass(SON);
+
+		videoEClass = createEClass(VIDEO);
 	}
 
 	/**
@@ -471,6 +490,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		decorateurWidgetEClass.getESuperTypes().add(this.getWidget());
 		imageEClass.getESuperTypes().add(this.getDecorateurWidget());
 		sonEClass.getESuperTypes().add(this.getDecorateurWidget());
+		videoEClass.getESuperTypes().add(this.getDecorateurWidget());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -506,6 +526,8 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sonEClass, Son.class, "Son", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(videoEClass, Video.class, "Video", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

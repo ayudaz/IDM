@@ -14,6 +14,7 @@ import org.xtext.istic.soda.soDa.Soda
 import MMUI.RadioButton
 import MMUI.Image
 import MMUI.Son
+import MMUI.Video
 
 class SodaVisitorImpl implements SodaVisitor {
 
@@ -88,6 +89,20 @@ class SodaVisitorImpl implements SodaVisitor {
 				var checkbox = MMUIFactory.eINSTANCE.createCheckBox
 				checkbox.reponse = option.reponse
 				var tmp = widget as Son
+				tmp.widget = checkbox
+			}
+			case "VideoRadio" : {
+				widget = MMUIFactory.eINSTANCE.createVideo
+				var radio = MMUIFactory.eINSTANCE.createRadioButton
+				radio.reponse = option.reponse
+				var tmp = widget as Video
+				tmp.widget = radio
+			}
+			case "VideoCheck" : {
+				widget = MMUIFactory.eINSTANCE.createVideo
+				var checkbox = MMUIFactory.eINSTANCE.createCheckBox
+				checkbox.reponse = option.reponse
+				var tmp = widget as Video
 				tmp.widget = checkbox
 			}
 			

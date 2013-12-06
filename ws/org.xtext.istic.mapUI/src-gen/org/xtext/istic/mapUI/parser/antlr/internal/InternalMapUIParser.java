@@ -21,12 +21,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMapUIParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'ImageCheck'", "'ImageRadio'", "'CheckBox'", "'RadioButton'", "'SonCheck'", "'SonRadio'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':'", "'VideoCheck'", "'VideoRadio'", "'ImageCheck'", "'ImageRadio'", "'CheckBox'", "'RadioButton'", "'SonCheck'", "'SonRadio'"
     };
+    public static final int T__19=19;
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
+    public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
@@ -366,7 +368,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:176:1: ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon ) ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:176:1: ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon | this_Video_4= ruleVideo ) ;
     public final AntlrDatatypeRuleToken ruleType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -378,36 +380,44 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken this_Son_3 = null;
 
+        AntlrDatatypeRuleToken this_Video_4 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:179:28: ( (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon ) )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:180:1: (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:179:28: ( (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon | this_Video_4= ruleVideo ) )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:180:1: (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon | this_Video_4= ruleVideo )
             {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:180:1: (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon )
-            int alt2=4;
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:180:1: (this_CheckBox_0= ruleCheckBox | this_RadioButton_1= ruleRadioButton | this_Image_2= ruleImage | this_Son_3= ruleSon | this_Video_4= ruleVideo )
+            int alt2=5;
             switch ( input.LA(1) ) {
-            case 14:
+            case 16:
                 {
                 alt2=1;
                 }
                 break;
-            case 15:
+            case 17:
                 {
                 alt2=2;
+                }
+                break;
+            case 14:
+            case 15:
+                {
+                alt2=3;
+                }
+                break;
+            case 18:
+            case 19:
+                {
+                alt2=4;
                 }
                 break;
             case 12:
             case 13:
                 {
-                alt2=3;
-                }
-                break;
-            case 16:
-            case 17:
-                {
-                alt2=4;
+                alt2=5;
                 }
                 break;
             default:
@@ -498,6 +508,26 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 5 :
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:229:5: this_Video_4= ruleVideo
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTypeAccess().getVideoParserRuleCall_4()); 
+                        
+                    pushFollow(FOLLOW_ruleVideo_in_ruleType483);
+                    this_Video_4=ruleVideo();
+
+                    state._fsp--;
+
+
+                    		current.merge(this_Video_4);
+                        
+                     
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
 
             }
 
@@ -518,26 +548,26 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleType"
 
 
-    // $ANTLR start "entryRuleImage"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:235:1: entryRuleImage returns [String current=null] : iv_ruleImage= ruleImage EOF ;
-    public final String entryRuleImage() throws RecognitionException {
+    // $ANTLR start "entryRuleVideo"
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:247:1: entryRuleVideo returns [String current=null] : iv_ruleVideo= ruleVideo EOF ;
+    public final String entryRuleVideo() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleImage = null;
+        AntlrDatatypeRuleToken iv_ruleVideo = null;
 
 
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:236:2: (iv_ruleImage= ruleImage EOF )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:237:2: iv_ruleImage= ruleImage EOF
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:248:2: (iv_ruleVideo= ruleVideo EOF )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:249:2: iv_ruleVideo= ruleVideo EOF
             {
-             newCompositeNode(grammarAccess.getImageRule()); 
-            pushFollow(FOLLOW_ruleImage_in_entryRuleImage496);
-            iv_ruleImage=ruleImage();
+             newCompositeNode(grammarAccess.getVideoRule()); 
+            pushFollow(FOLLOW_ruleVideo_in_entryRuleVideo529);
+            iv_ruleVideo=ruleVideo();
 
             state._fsp--;
 
-             current =iv_ruleImage.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleImage507); 
+             current =iv_ruleVideo.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVideo540); 
 
             }
 
@@ -551,12 +581,12 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleImage"
+    // $ANTLR end "entryRuleVideo"
 
 
-    // $ANTLR start "ruleImage"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:244:1: ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ImageCheck' | kw= 'ImageRadio' ) ;
-    public final AntlrDatatypeRuleToken ruleImage() throws RecognitionException {
+    // $ANTLR start "ruleVideo"
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:256:1: ruleVideo returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'VideoCheck' | kw= 'VideoRadio' ) ;
+    public final AntlrDatatypeRuleToken ruleVideo() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token kw=null;
@@ -564,10 +594,10 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:247:28: ( (kw= 'ImageCheck' | kw= 'ImageRadio' ) )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:248:1: (kw= 'ImageCheck' | kw= 'ImageRadio' )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:259:28: ( (kw= 'VideoCheck' | kw= 'VideoRadio' ) )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:260:1: (kw= 'VideoCheck' | kw= 'VideoRadio' )
             {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:248:1: (kw= 'ImageCheck' | kw= 'ImageRadio' )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:260:1: (kw= 'VideoCheck' | kw= 'VideoRadio' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -585,9 +615,117 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:249:2: kw= 'ImageCheck'
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:261:2: kw= 'VideoCheck'
                     {
-                    kw=(Token)match(input,12,FOLLOW_12_in_ruleImage545); 
+                    kw=(Token)match(input,12,FOLLOW_12_in_ruleVideo578); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getVideoAccess().getVideoCheckKeyword_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:268:2: kw= 'VideoRadio'
+                    {
+                    kw=(Token)match(input,13,FOLLOW_13_in_ruleVideo597); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getVideoAccess().getVideoRadioKeyword_1()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVideo"
+
+
+    // $ANTLR start "entryRuleImage"
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:281:1: entryRuleImage returns [String current=null] : iv_ruleImage= ruleImage EOF ;
+    public final String entryRuleImage() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleImage = null;
+
+
+        try {
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:282:2: (iv_ruleImage= ruleImage EOF )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:283:2: iv_ruleImage= ruleImage EOF
+            {
+             newCompositeNode(grammarAccess.getImageRule()); 
+            pushFollow(FOLLOW_ruleImage_in_entryRuleImage638);
+            iv_ruleImage=ruleImage();
+
+            state._fsp--;
+
+             current =iv_ruleImage.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleImage649); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleImage"
+
+
+    // $ANTLR start "ruleImage"
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:290:1: ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ImageCheck' | kw= 'ImageRadio' ) ;
+    public final AntlrDatatypeRuleToken ruleImage() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:293:28: ( (kw= 'ImageCheck' | kw= 'ImageRadio' ) )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:294:1: (kw= 'ImageCheck' | kw= 'ImageRadio' )
+            {
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:294:1: (kw= 'ImageCheck' | kw= 'ImageRadio' )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==14) ) {
+                alt4=1;
+            }
+            else if ( (LA4_0==15) ) {
+                alt4=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 4, 0, input);
+
+                throw nvae;
+            }
+            switch (alt4) {
+                case 1 :
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:295:2: kw= 'ImageCheck'
+                    {
+                    kw=(Token)match(input,14,FOLLOW_14_in_ruleImage687); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getImageAccess().getImageCheckKeyword_0()); 
@@ -596,9 +734,9 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:256:2: kw= 'ImageRadio'
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:302:2: kw= 'ImageRadio'
                     {
-                    kw=(Token)match(input,13,FOLLOW_13_in_ruleImage564); 
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleImage706); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getImageAccess().getImageRadioKeyword_1()); 
@@ -627,7 +765,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCheckBox"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:269:1: entryRuleCheckBox returns [String current=null] : iv_ruleCheckBox= ruleCheckBox EOF ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:315:1: entryRuleCheckBox returns [String current=null] : iv_ruleCheckBox= ruleCheckBox EOF ;
     public final String entryRuleCheckBox() throws RecognitionException {
         String current = null;
 
@@ -635,17 +773,17 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:270:2: (iv_ruleCheckBox= ruleCheckBox EOF )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:271:2: iv_ruleCheckBox= ruleCheckBox EOF
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:316:2: (iv_ruleCheckBox= ruleCheckBox EOF )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:317:2: iv_ruleCheckBox= ruleCheckBox EOF
             {
              newCompositeNode(grammarAccess.getCheckBoxRule()); 
-            pushFollow(FOLLOW_ruleCheckBox_in_entryRuleCheckBox605);
+            pushFollow(FOLLOW_ruleCheckBox_in_entryRuleCheckBox747);
             iv_ruleCheckBox=ruleCheckBox();
 
             state._fsp--;
 
              current =iv_ruleCheckBox.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBox616); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCheckBox758); 
 
             }
 
@@ -663,7 +801,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCheckBox"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:278:1: ruleCheckBox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CheckBox' ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:324:1: ruleCheckBox returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'CheckBox' ;
     public final AntlrDatatypeRuleToken ruleCheckBox() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -672,10 +810,10 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:281:28: (kw= 'CheckBox' )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:283:2: kw= 'CheckBox'
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:327:28: (kw= 'CheckBox' )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:329:2: kw= 'CheckBox'
             {
-            kw=(Token)match(input,14,FOLLOW_14_in_ruleCheckBox653); 
+            kw=(Token)match(input,16,FOLLOW_16_in_ruleCheckBox795); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getCheckBoxAccess().getCheckBoxKeyword()); 
@@ -698,7 +836,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRadioButton"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:296:1: entryRuleRadioButton returns [String current=null] : iv_ruleRadioButton= ruleRadioButton EOF ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:342:1: entryRuleRadioButton returns [String current=null] : iv_ruleRadioButton= ruleRadioButton EOF ;
     public final String entryRuleRadioButton() throws RecognitionException {
         String current = null;
 
@@ -706,17 +844,17 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:297:2: (iv_ruleRadioButton= ruleRadioButton EOF )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:298:2: iv_ruleRadioButton= ruleRadioButton EOF
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:343:2: (iv_ruleRadioButton= ruleRadioButton EOF )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:344:2: iv_ruleRadioButton= ruleRadioButton EOF
             {
              newCompositeNode(grammarAccess.getRadioButtonRule()); 
-            pushFollow(FOLLOW_ruleRadioButton_in_entryRuleRadioButton693);
+            pushFollow(FOLLOW_ruleRadioButton_in_entryRuleRadioButton835);
             iv_ruleRadioButton=ruleRadioButton();
 
             state._fsp--;
 
              current =iv_ruleRadioButton.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioButton704); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRadioButton846); 
 
             }
 
@@ -734,7 +872,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadioButton"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:305:1: ruleRadioButton returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'RadioButton' ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:351:1: ruleRadioButton returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'RadioButton' ;
     public final AntlrDatatypeRuleToken ruleRadioButton() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -743,10 +881,10 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:308:28: (kw= 'RadioButton' )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:310:2: kw= 'RadioButton'
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:354:28: (kw= 'RadioButton' )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:356:2: kw= 'RadioButton'
             {
-            kw=(Token)match(input,15,FOLLOW_15_in_ruleRadioButton741); 
+            kw=(Token)match(input,17,FOLLOW_17_in_ruleRadioButton883); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); 
@@ -769,7 +907,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSon"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:323:1: entryRuleSon returns [String current=null] : iv_ruleSon= ruleSon EOF ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:369:1: entryRuleSon returns [String current=null] : iv_ruleSon= ruleSon EOF ;
     public final String entryRuleSon() throws RecognitionException {
         String current = null;
 
@@ -777,17 +915,17 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:324:2: (iv_ruleSon= ruleSon EOF )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:325:2: iv_ruleSon= ruleSon EOF
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:370:2: (iv_ruleSon= ruleSon EOF )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:371:2: iv_ruleSon= ruleSon EOF
             {
              newCompositeNode(grammarAccess.getSonRule()); 
-            pushFollow(FOLLOW_ruleSon_in_entryRuleSon781);
+            pushFollow(FOLLOW_ruleSon_in_entryRuleSon923);
             iv_ruleSon=ruleSon();
 
             state._fsp--;
 
              current =iv_ruleSon.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSon792); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSon934); 
 
             }
 
@@ -805,7 +943,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSon"
-    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:332:1: ruleSon returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'SonCheck' | kw= 'SonRadio' ) ;
+    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:378:1: ruleSon returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'SonCheck' | kw= 'SonRadio' ) ;
     public final AntlrDatatypeRuleToken ruleSon() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -814,30 +952,30 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:335:28: ( (kw= 'SonCheck' | kw= 'SonRadio' ) )
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:336:1: (kw= 'SonCheck' | kw= 'SonRadio' )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:381:28: ( (kw= 'SonCheck' | kw= 'SonRadio' ) )
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:382:1: (kw= 'SonCheck' | kw= 'SonRadio' )
             {
-            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:336:1: (kw= 'SonCheck' | kw= 'SonRadio' )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:382:1: (kw= 'SonCheck' | kw= 'SonRadio' )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA4_0==16) ) {
-                alt4=1;
+            if ( (LA5_0==18) ) {
+                alt5=1;
             }
-            else if ( (LA4_0==17) ) {
-                alt4=2;
+            else if ( (LA5_0==19) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:337:2: kw= 'SonCheck'
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:383:2: kw= 'SonCheck'
                     {
-                    kw=(Token)match(input,16,FOLLOW_16_in_ruleSon830); 
+                    kw=(Token)match(input,18,FOLLOW_18_in_ruleSon972); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSonAccess().getSonCheckKeyword_0()); 
@@ -846,9 +984,9 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:344:2: kw= 'SonRadio'
+                    // ../org.xtext.istic.mapUI/src-gen/org/xtext/istic/mapUI/parser/antlr/internal/InternalMapUI.g:390:2: kw= 'SonRadio'
                     {
-                    kw=(Token)match(input,17,FOLLOW_17_in_ruleSon849); 
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleSon991); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSonAccess().getSonRadioKeyword_1()); 
@@ -886,7 +1024,7 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleMapping_in_entryRuleMapping166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMapping176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleMapping218 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_11_in_ruleMapping235 = new BitSet(new long[]{0x000000000003F000L});
+    public static final BitSet FOLLOW_11_in_ruleMapping235 = new BitSet(new long[]{0x00000000000FF000L});
     public static final BitSet FOLLOW_ruleType_in_ruleMapping256 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_entryRuleType293 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleType304 = new BitSet(new long[]{0x0000000000000002L});
@@ -894,19 +1032,24 @@ public class InternalMapUIParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleRadioButton_in_ruleType384 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImage_in_ruleType417 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSon_in_ruleType450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImage_in_entryRuleImage496 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleImage507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleImage545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleImage564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCheckBox_in_entryRuleCheckBox605 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBox616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleCheckBox653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadioButton_in_entryRuleRadioButton693 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRadioButton704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleRadioButton741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSon_in_entryRuleSon781 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSon792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleSon830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleSon849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVideo_in_ruleType483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVideo_in_entryRuleVideo529 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVideo540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleVideo578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleVideo597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImage_in_entryRuleImage638 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleImage649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleImage687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleImage706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCheckBox_in_entryRuleCheckBox747 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCheckBox758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleCheckBox795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadioButton_in_entryRuleRadioButton835 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRadioButton846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleRadioButton883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSon_in_entryRuleSon923 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSon934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleSon972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleSon991 = new BitSet(new long[]{0x0000000000000002L});
 
 }

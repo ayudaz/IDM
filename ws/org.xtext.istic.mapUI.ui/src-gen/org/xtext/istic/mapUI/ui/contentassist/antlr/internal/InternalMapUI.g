@@ -140,6 +140,34 @@ finally {
 
 
 
+// Entry rule entryRuleVideo
+entryRuleVideo 
+:
+{ before(grammarAccess.getVideoRule()); }
+	 ruleVideo
+{ after(grammarAccess.getVideoRule()); } 
+	 EOF 
+;
+
+// Rule Video
+ruleVideo
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getVideoAccess().getAlternatives()); }
+(rule__Video__Alternatives)
+{ after(grammarAccess.getVideoAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleImage
 entryRuleImage 
 :
@@ -284,6 +312,38 @@ rule__Type__Alternatives
 { before(grammarAccess.getTypeAccess().getSonParserRuleCall_3()); }
 	ruleSon
 { after(grammarAccess.getTypeAccess().getSonParserRuleCall_3()); }
+)
+
+    |(
+{ before(grammarAccess.getTypeAccess().getVideoParserRuleCall_4()); }
+	ruleVideo
+{ after(grammarAccess.getTypeAccess().getVideoParserRuleCall_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Video__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getVideoAccess().getVideoCheckKeyword_0()); }
+
+	'VideoCheck' 
+
+{ after(grammarAccess.getVideoAccess().getVideoCheckKeyword_0()); }
+)
+
+    |(
+{ before(grammarAccess.getVideoAccess().getVideoRadioKeyword_1()); }
+
+	'VideoRadio' 
+
+{ after(grammarAccess.getVideoAccess().getVideoRadioKeyword_1()); }
 )
 
 ;

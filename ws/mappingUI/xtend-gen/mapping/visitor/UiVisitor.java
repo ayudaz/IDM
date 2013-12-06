@@ -7,6 +7,7 @@ import MMUI.RadioButton;
 import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
+import MMUI.Video;
 
 @SuppressWarnings("all")
 public interface UiVisitor {
@@ -37,4 +38,8 @@ public interface UiVisitor {
   public abstract void entry(final Son son);
   
   public abstract void exit(final Son son);
+  
+  public abstract void entry(final Video video);
+  
+  public abstract void exit(final Video video);
 }

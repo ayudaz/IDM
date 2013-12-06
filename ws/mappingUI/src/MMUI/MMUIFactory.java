@@ -76,6 +76,15 @@ public interface MMUIFactory extends EFactory {
 	Son createSon();
 
 	/**
+	 * Returns a new object of class '<em>Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Video</em>'.
+	 * @generated
+	 */
+	Video createVideo();
+
+	/**
 	 * Returns a new object of class '<em>Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

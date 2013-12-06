@@ -38,6 +38,7 @@ public class MapUIParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+					put(grammarAccess.getVideoAccess().getAlternatives(), "rule__Video__Alternatives");
 					put(grammarAccess.getImageAccess().getAlternatives(), "rule__Image__Alternatives");
 					put(grammarAccess.getSonAccess().getAlternatives(), "rule__Son__Alternatives");
 					put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");

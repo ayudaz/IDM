@@ -2,7 +2,6 @@
  */
 package MMUI;
 
-import mapping.visitor.UiVisitor;
 
 
 /**

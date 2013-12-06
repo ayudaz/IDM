@@ -112,6 +112,10 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 				return createSonAdapter();
 			}
 			@Override
+			public Adapter caseVideo(Video object) {
+				return createVideoAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -254,6 +258,20 @@ public class MMUIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSonAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link MMUI.Video <em>Video</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see MMUI.Video
+	 * @generated
+	 */
+	public Adapter createVideoAdapter() {
 		return null;
 	}
 

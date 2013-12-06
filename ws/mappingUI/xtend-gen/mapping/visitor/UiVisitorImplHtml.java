@@ -7,6 +7,7 @@ import MMUI.RadioButton;
 import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
+import MMUI.Video;
 import MMUI.Widget;
 import com.google.common.base.Objects;
 import mapping.visitor.UiVisitor;
@@ -130,11 +131,27 @@ public class UiVisitorImplHtml implements UiVisitor {
     Widget _widget_1 = son.getWidget();
     String _reponse = _widget_1.getReponse();
     String _plus_1 = (_plus + _reponse);
-    String _plus_2 = (_plus_1 + "\" /></audio>");
+    String _plus_2 = (_plus_1 + "\" /></audio></br>\n");
     this.html = _plus_2;
   }
   
   public void exit(final Son son) {
+  }
+  
+  public void entry(final Video video) {
+    Widget _widget = video.getWidget();
+    this.entry(_widget);
+    String _plus = (this.html + "<video controls=\"controls\" width=\"400\" height=\"300\">");
+    this.html = _plus;
+    String _plus_1 = (this.html + "<source src=\"");
+    Widget _widget_1 = video.getWidget();
+    String _reponse = _widget_1.getReponse();
+    String _plus_2 = (_plus_1 + _reponse);
+    String _plus_3 = (_plus_2 + "\" />\t</video></br>\n");
+    this.html = _plus_3;
+  }
+  
+  public void exit(final Video video) {
   }
   
   public void entry(final Widget widget) {
