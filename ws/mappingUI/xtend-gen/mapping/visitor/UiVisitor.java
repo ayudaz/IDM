@@ -2,7 +2,9 @@ package mapping.visitor;
 
 import MMUI.CheckBox;
 import MMUI.Container;
+import MMUI.Image;
 import MMUI.RadioButton;
+import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 
@@ -27,4 +29,12 @@ public interface UiVisitor {
   public abstract void entry(final RadioButton radioButton);
   
   public abstract void exit(final RadioButton radioButton);
+  
+  public abstract void entry(final Image image);
+  
+  public abstract void exit(final Image image);
+  
+  public abstract void entry(final Son son);
+  
+  public abstract void exit(final Son son);
 }

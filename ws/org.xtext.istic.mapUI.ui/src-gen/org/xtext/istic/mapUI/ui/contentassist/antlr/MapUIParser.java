@@ -38,10 +38,12 @@ public class MapUIParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+					put(grammarAccess.getImageAccess().getAlternatives(), "rule__Image__Alternatives");
+					put(grammarAccess.getSonAccess().getAlternatives(), "rule__Son__Alternatives");
 					put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");
 					put(grammarAccess.getMapUIAccess().getMappingsAssignment(), "rule__MapUI__MappingsAssignment");
-					put(grammarAccess.getMappingAccess().getNameAssignment_1(), "rule__Mapping__NameAssignment_1");
-					put(grammarAccess.getMappingAccess().getTypeAssignment_3(), "rule__Mapping__TypeAssignment_3");
+					put(grammarAccess.getMappingAccess().getNameAssignment_0(), "rule__Mapping__NameAssignment_0");
+					put(grammarAccess.getMappingAccess().getTypeAssignment_2(), "rule__Mapping__TypeAssignment_2");
 				}
 			};
 		}

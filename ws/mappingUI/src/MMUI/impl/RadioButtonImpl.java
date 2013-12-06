@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link MMUI.impl.RadioButtonImpl#getReponse <em>Reponse</em>}</li>
  *   <li>{@link MMUI.impl.RadioButtonImpl#getGroup <em>Group</em>}</li>
  * </ul>
  * </p>
@@ -26,26 +25,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class RadioButtonImpl extends WidgetImpl implements RadioButton {
-	/**
-	 * The default value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReponse()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REPONSE_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReponse()
-	 * @generated
-	 * @ordered
-	 */
-	protected String reponse = REPONSE_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,27 +69,6 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getReponse() {
-		return reponse;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReponse(String newReponse) {
-		String oldReponse = reponse;
-		reponse = newReponse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.RADIO_BUTTON__REPONSE, oldReponse, reponse));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getGroup() {
 		return group;
 	}
@@ -135,8 +93,6 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MMUIPackage.RADIO_BUTTON__REPONSE:
-				return getReponse();
 			case MMUIPackage.RADIO_BUTTON__GROUP:
 				return getGroup();
 		}
@@ -151,9 +107,6 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MMUIPackage.RADIO_BUTTON__REPONSE:
-				setReponse((String)newValue);
-				return;
 			case MMUIPackage.RADIO_BUTTON__GROUP:
 				setGroup((String)newValue);
 				return;
@@ -169,9 +122,6 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.RADIO_BUTTON__REPONSE:
-				setReponse(REPONSE_EDEFAULT);
-				return;
 			case MMUIPackage.RADIO_BUTTON__GROUP:
 				setGroup(GROUP_EDEFAULT);
 				return;
@@ -187,8 +137,6 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.RADIO_BUTTON__REPONSE:
-				return REPONSE_EDEFAULT == null ? reponse != null : !REPONSE_EDEFAULT.equals(reponse);
 			case MMUIPackage.RADIO_BUTTON__GROUP:
 				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
 		}
@@ -205,9 +153,7 @@ public class RadioButtonImpl extends WidgetImpl implements RadioButton {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (reponse: ");
-		result.append(reponse);
-		result.append(", group: ");
+		result.append(" (group: ");
 		result.append(group);
 		result.append(')');
 		return result.toString();

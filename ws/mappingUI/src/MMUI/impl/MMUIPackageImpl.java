@@ -4,10 +4,13 @@ package MMUI.impl;
 
 import MMUI.AbstractContainer;
 import MMUI.CheckBox;
+import MMUI.DecorateurWidget;
+import MMUI.Image;
 import MMUI.Label;
 import MMUI.MMUIFactory;
 import MMUI.MMUIPackage;
 import MMUI.RadioButton;
+import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 import MMUI.Widget;
@@ -65,6 +68,27 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * @generated
 	 */
 	private EClass radioButtonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass decorateurWidgetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sonEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,15 +188,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCheckBox_Reponse() {
-		return (EAttribute)checkBoxEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getUi() {
 		return uiEClass;
 	}
@@ -211,6 +226,15 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 */
 	public EAttribute getWidget_Length() {
 		return (EAttribute)widgetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWidget_Reponse() {
+		return (EAttribute)widgetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -272,7 +296,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRadioButton_Reponse() {
+	public EAttribute getRadioButton_Group() {
 		return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -281,8 +305,35 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRadioButton_Group() {
-		return (EAttribute)radioButtonEClass.getEStructuralFeatures().get(1);
+	public EClass getDecorateurWidget() {
+		return decorateurWidgetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDecorateurWidget_Widget() {
+		return (EReference)decorateurWidgetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImage() {
+		return imageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSon() {
+		return sonEClass;
 	}
 
 	/**
@@ -351,7 +402,6 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		// Create classes and their features
 		checkBoxEClass = createEClass(CHECK_BOX);
 		createEAttribute(checkBoxEClass, CHECK_BOX__CHECKED);
-		createEAttribute(checkBoxEClass, CHECK_BOX__REPONSE);
 
 		labelEClass = createEClass(LABEL);
 		createEAttribute(labelEClass, LABEL__TEXT);
@@ -365,6 +415,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		widgetEClass = createEClass(WIDGET);
 		createEAttribute(widgetEClass, WIDGET__WIDTH);
 		createEAttribute(widgetEClass, WIDGET__LENGTH);
+		createEAttribute(widgetEClass, WIDGET__REPONSE);
 
 		abstractContainerEClass = createEClass(ABSTRACT_CONTAINER);
 		createEAttribute(abstractContainerEClass, ABSTRACT_CONTAINER__ID);
@@ -374,8 +425,14 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		createEReference(superContainerEClass, SUPER_CONTAINER__CONTAINERS);
 
 		radioButtonEClass = createEClass(RADIO_BUTTON);
-		createEAttribute(radioButtonEClass, RADIO_BUTTON__REPONSE);
 		createEAttribute(radioButtonEClass, RADIO_BUTTON__GROUP);
+
+		decorateurWidgetEClass = createEClass(DECORATEUR_WIDGET);
+		createEReference(decorateurWidgetEClass, DECORATEUR_WIDGET__WIDGET);
+
+		imageEClass = createEClass(IMAGE);
+
+		sonEClass = createEClass(SON);
 	}
 
 	/**
@@ -411,11 +468,13 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		containerEClass.getESuperTypes().add(this.getAbstractContainer());
 		superContainerEClass.getESuperTypes().add(this.getAbstractContainer());
 		radioButtonEClass.getESuperTypes().add(this.getWidget());
+		decorateurWidgetEClass.getESuperTypes().add(this.getWidget());
+		imageEClass.getESuperTypes().add(this.getDecorateurWidget());
+		sonEClass.getESuperTypes().add(this.getDecorateurWidget());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(checkBoxEClass, CheckBox.class, "CheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCheckBox_Checked(), ecorePackage.getEBoolean(), "checked", null, 1, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCheckBox_Reponse(), ecorePackage.getEString(), "reponse", null, 1, 1, CheckBox.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLabel_Text(), ecorePackage.getEString(), "text", null, 1, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -429,6 +488,7 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		initEClass(widgetEClass, Widget.class, "Widget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWidget_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWidget_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWidget_Reponse(), ecorePackage.getEString(), "reponse", null, 1, 1, Widget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractContainerEClass, AbstractContainer.class, "AbstractContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractContainer_Id(), ecorePackage.getEString(), "id", null, 0, 1, AbstractContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -438,8 +498,14 @@ public class MMUIPackageImpl extends EPackageImpl implements MMUIPackage {
 		initEReference(getSuperContainer_Containers(), this.getAbstractContainer(), null, "containers", null, 0, -1, SuperContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(radioButtonEClass, RadioButton.class, "RadioButton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRadioButton_Reponse(), ecorePackage.getEString(), "reponse", "", 1, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRadioButton_Group(), ecorePackage.getEString(), "group", null, 1, 1, RadioButton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(decorateurWidgetEClass, DecorateurWidget.class, "DecorateurWidget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDecorateurWidget_Widget(), this.getWidget(), null, "widget", null, 1, 1, DecorateurWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sonEClass, Son.class, "Son", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

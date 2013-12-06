@@ -12,7 +12,6 @@ package MMUI;
  * The following features are supported:
  * <ul>
  *   <li>{@link MMUI.CheckBox#isChecked <em>Checked</em>}</li>
- *   <li>{@link MMUI.CheckBox#getReponse <em>Reponse</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,31 +45,5 @@ public interface CheckBox extends Widget {
 	 * @generated
 	 */
 	void setChecked(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Reponse</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Reponse</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reponse</em>' attribute.
-	 * @see #setReponse(String)
-	 * @see MMUI.MMUIPackage#getCheckBox_Reponse()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getReponse();
-
-	/**
-	 * Sets the value of the '{@link MMUI.CheckBox#getReponse <em>Reponse</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reponse</em>' attribute.
-	 * @see #getReponse()
-	 * @generated
-	 */
-	void setReponse(String value);
 
 } // CheckBox

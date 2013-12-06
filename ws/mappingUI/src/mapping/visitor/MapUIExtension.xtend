@@ -9,8 +9,7 @@ static class MapUIExtension {
 		visitor.visit(mapUI)
 		for(Mapping m : mapUI.mappings){
 			m.accept(visitor)
-		}
-		
+		}		
 	}
 	
 	def static void accept(Mapping mapping, MapUiVisitor visitor){

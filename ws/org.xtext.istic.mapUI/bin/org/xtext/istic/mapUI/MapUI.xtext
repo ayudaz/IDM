@@ -6,12 +6,18 @@ MapUI:
 	Mappings+=Mapping*;
 	
 Mapping:
-	'Question ' name=ID ':' type=Type;
+	name=ID ':' type=Type;
 
-Type: CheckBox | RadioButton;
+Type: CheckBox | RadioButton | Image | Son;
+
+Image:
+	'ImageCheck' | "ImageRadio";
 
 CheckBox:
 	'CheckBox';
 
 RadioButton:
 	'RadioButton';
+	
+Son :
+	'SonCheck' | "SonRadio";

@@ -5,6 +5,8 @@ import MMUI.Container
 import MMUI.RadioButton
 import MMUI.SuperContainer
 import MMUI.Ui
+import MMUI.Image
+import MMUI.Son
 
 interface UiVisitor {
 	def void entry(Ui ui)
@@ -17,4 +19,9 @@ interface UiVisitor {
 	def void exit(CheckBox checkbox)
 	def void entry(RadioButton radioButton)
 	def void exit(RadioButton radioButton)
+	def void entry(Image image)
+	def void exit(Image image)
+	def void entry(Son son)
+	def void exit(Son son)
+
 }

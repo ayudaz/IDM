@@ -1,14 +1,22 @@
 Poll {
 	Question q1 {
-		"Q ?"
+		"Q1 ?"
 			options
-			"Oui"
-			"Non"
+			o1 => "Oui"
+			o2 => "Non"
 	}
 	Question q2 {
 		"Q2 ?"
 			options
 			"Oui2"
 			"Non2"
+			"NSPP"
+	}
+	Question q3 {
+		"Q3 ?"
+			options
+			o5 => "https://upload.wikimedia.org/wikipedia/commons/8/85/Smiley.svg"
+			o4 => "http://www.crystalxp.net/forum/mesimages/327855/smiley%20clin%20d'%C5%93il.png"
+			o6 => "boulette.mp3"
 	}
 }

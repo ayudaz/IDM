@@ -2,55 +2,44 @@
  */
 package MMUI.impl;
 
-import MMUI.CheckBox;
+import MMUI.DecorateurWidget;
 import MMUI.MMUIPackage;
-
+import MMUI.Widget;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Check Box</b></em>'.
+ * An implementation of the model object '<em><b>Decorateur Widget</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link MMUI.impl.CheckBoxImpl#isChecked <em>Checked</em>}</li>
+ *   <li>{@link MMUI.impl.DecorateurWidgetImpl#getWidget <em>Widget</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CheckBoxImpl extends WidgetImpl implements CheckBox {
+public abstract class DecorateurWidgetImpl extends WidgetImpl implements DecorateurWidget {
 	/**
-	 * The default value of the '{@link #isChecked() <em>Checked</em>}' attribute.
+	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isChecked()
+	 * @see #getWidget()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean CHECKED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isChecked() <em>Checked</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isChecked()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean checked = CHECKED_EDEFAULT;
+	protected Widget widget;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CheckBoxImpl() {
+	protected DecorateurWidgetImpl() {
 		super();
 	}
 
@@ -61,7 +50,7 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MMUIPackage.Literals.CHECK_BOX;
+		return MMUIPackage.Literals.DECORATEUR_WIDGET;
 	}
 
 	/**
@@ -69,8 +58,16 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isChecked() {
-		return checked;
+	public Widget getWidget() {
+		if (widget != null && widget.eIsProxy()) {
+			InternalEObject oldWidget = (InternalEObject)widget;
+			widget = (Widget)eResolveProxy(oldWidget);
+			if (widget != oldWidget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MMUIPackage.DECORATEUR_WIDGET__WIDGET, oldWidget, widget));
+			}
+		}
+		return widget;
 	}
 
 	/**
@@ -78,11 +75,20 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChecked(boolean newChecked) {
-		boolean oldChecked = checked;
-		checked = newChecked;
+	public Widget basicGetWidget() {
+		return widget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWidget(Widget newWidget) {
+		Widget oldWidget = widget;
+		widget = newWidget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.CHECK_BOX__CHECKED, oldChecked, checked));
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.DECORATEUR_WIDGET__WIDGET, oldWidget, widget));
 	}
 
 	/**
@@ -93,8 +99,9 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MMUIPackage.CHECK_BOX__CHECKED:
-				return isChecked();
+			case MMUIPackage.DECORATEUR_WIDGET__WIDGET:
+				if (resolve) return getWidget();
+				return basicGetWidget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,11 +111,12 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MMUIPackage.CHECK_BOX__CHECKED:
-				setChecked((Boolean)newValue);
+			case MMUIPackage.DECORATEUR_WIDGET__WIDGET:
+				setWidget((Widget)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +130,8 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.CHECK_BOX__CHECKED:
-				setChecked(CHECKED_EDEFAULT);
+			case MMUIPackage.DECORATEUR_WIDGET__WIDGET:
+				setWidget((Widget)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,26 +145,10 @@ public class CheckBoxImpl extends WidgetImpl implements CheckBox {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MMUIPackage.CHECK_BOX__CHECKED:
-				return checked != CHECKED_EDEFAULT;
+			case MMUIPackage.DECORATEUR_WIDGET__WIDGET:
+				return widget != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (checked: ");
-		result.append(checked);
-		result.append(')');
-		return result.toString();
-	}
-
-} //CheckBoxImpl
+} //DecorateurWidgetImpl

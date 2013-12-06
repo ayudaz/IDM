@@ -1,2 +1,6 @@
-Question q1 : CheckBox
-Question q2 : RadioButton
+o1 : RadioButton
+o2 : RadioButton
+q2 : RadioButton
+o5 : ImageCheck
+o4 : ImageRadio
+o6 : SonCheck

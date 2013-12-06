@@ -119,6 +119,29 @@ public class MMUISwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MMUIPackage.DECORATEUR_WIDGET: {
+				DecorateurWidget decorateurWidget = (DecorateurWidget)theEObject;
+				T result = caseDecorateurWidget(decorateurWidget);
+				if (result == null) result = caseWidget(decorateurWidget);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.IMAGE: {
+				Image image = (Image)theEObject;
+				T result = caseImage(image);
+				if (result == null) result = caseDecorateurWidget(image);
+				if (result == null) result = caseWidget(image);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MMUIPackage.SON: {
+				Son son = (Son)theEObject;
+				T result = caseSon(son);
+				if (result == null) result = caseDecorateurWidget(son);
+				if (result == null) result = caseWidget(son);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -210,6 +233,51 @@ public class MMUISwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRadioButton(RadioButton object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Decorateur Widget</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Decorateur Widget</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDecorateurWidget(DecorateurWidget object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImage(Image object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Son</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Son</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSon(Son object) {
 		return null;
 	}
 

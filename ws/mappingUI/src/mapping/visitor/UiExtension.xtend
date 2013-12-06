@@ -3,10 +3,12 @@ package mapping.visitor
 import MMUI.AbstractContainer
 import MMUI.CheckBox
 import MMUI.Container
+import MMUI.Image
+import MMUI.RadioButton
 import MMUI.SuperContainer
 import MMUI.Ui
 import MMUI.Widget
-import MMUI.RadioButton
+import MMUI.Son
 
 static class UiExtension {
 	
@@ -42,11 +44,28 @@ static class UiExtension {
 			else if(widget instanceof RadioButton){
 				var radioButton = widget as RadioButton
 				radioButton.accept(visitor)
+			} else if(widget instanceof Image){
+				var image = widget as Image
+				image.accept(visitor)				
+			}
+			else if(widget instanceof Son){
+				var son = widget as Son
+				son.accept(visitor)				
 			}
 		}
 		visitor.exit(container)
 	}
 	
+	def static void accept(Son son, UiVisitor visitor){
+		visitor.entry(son)
+		visitor.exit(son)
+	}
+	
+	def static void accept(Image image, UiVisitor visitor){
+		visitor.entry(image)
+		visitor.exit(image)
+	}
+		
 	def static void accept(CheckBox checkbox, UiVisitor visitor){
 		visitor.entry(checkbox)
 		visitor.exit(checkbox)

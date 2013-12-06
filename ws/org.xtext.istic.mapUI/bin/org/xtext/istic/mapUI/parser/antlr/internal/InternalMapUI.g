@@ -116,15 +116,11 @@ ruleMapping returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='Question ' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getMappingAccess().getQuestionKeyword_0());
-    }
+((
 (
-(
-		lv_name_1_0=RULE_ID
+		lv_name_0_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getMappingAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getMappingAccess().getNameIDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -133,28 +129,28 @@ ruleMapping returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_0_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_2=':' 
+)	otherlv_1=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getMappingAccess().getColonKeyword_2());
+    	newLeafNode(otherlv_1, grammarAccess.getMappingAccess().getColonKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMappingAccess().getTypeTypeParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getMappingAccess().getTypeTypeParserRuleCall_2_0()); 
 	    }
-		lv_type_3_0=ruleType		{
+		lv_type_2_0=ruleType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMappingRule());
 	        }
        		set(
        			$current, 
        			"type",
-        		lv_type_3_0, 
+        		lv_type_2_0, 
         		"Type");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -203,6 +199,64 @@ ruleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
     { 
         afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getImageParserRuleCall_2()); 
+    }
+    this_Image_2=ruleImage    {
+		$current.merge(this_Image_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getSonParserRuleCall_3()); 
+    }
+    this_Son_3=ruleSon    {
+		$current.merge(this_Son_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleImage
+entryRuleImage returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getImageRule()); } 
+	 iv_ruleImage=ruleImage 
+	 { $current=$iv_ruleImage.current.getText(); }  
+	 EOF 
+;
+
+// Rule Image
+ruleImage returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='ImageCheck' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getImageAccess().getImageCheckKeyword_0()); 
+    }
+
+    |
+	kw='ImageRadio' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getImageAccess().getImageRadioKeyword_1()); 
     }
 )
     ;
@@ -259,6 +313,40 @@ ruleRadioButton returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
         newLeafNode(kw, grammarAccess.getRadioButtonAccess().getRadioButtonKeyword()); 
     }
 
+    ;
+
+
+
+
+
+// Entry rule entryRuleSon
+entryRuleSon returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSonRule()); } 
+	 iv_ruleSon=ruleSon 
+	 { $current=$iv_ruleSon.current.getText(); }  
+	 EOF 
+;
+
+// Rule Son
+ruleSon returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='SonCheck' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSonAccess().getSonCheckKeyword_0()); 
+    }
+
+    |
+	kw='SonRadio' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSonAccess().getSonRadioKeyword_1()); 
+    }
+)
     ;
 
 

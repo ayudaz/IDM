@@ -62,6 +62,8 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 			case MMUIPackage.UI: return createUi();
 			case MMUIPackage.SUPER_CONTAINER: return createSuperContainer();
 			case MMUIPackage.RADIO_BUTTON: return createRadioButton();
+			case MMUIPackage.IMAGE: return createImage();
+			case MMUIPackage.SON: return createSon();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +107,26 @@ public class MMUIFactoryImpl extends EFactoryImpl implements MMUIFactory {
 	public RadioButton createRadioButton() {
 		RadioButtonImpl radioButton = new RadioButtonImpl();
 		return radioButton;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Image createImage() {
+		ImageImpl image = new ImageImpl();
+		return image;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Son createSon() {
+		SonImpl son = new SonImpl();
+		return son;
 	}
 
 	/**

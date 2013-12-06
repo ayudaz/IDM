@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link MMUI.impl.WidgetImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link MMUI.impl.WidgetImpl#getLength <em>Length</em>}</li>
+ *   <li>{@link MMUI.impl.WidgetImpl#getReponse <em>Reponse</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected int length = LENGTH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REPONSE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getReponse() <em>Reponse</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected String reponse = REPONSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getReponse() {
+		return reponse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReponse(String newReponse) {
+		String oldReponse = reponse;
+		reponse = newReponse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MMUIPackage.WIDGET__REPONSE, oldReponse, reponse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 				return getWidth();
 			case MMUIPackage.WIDGET__LENGTH:
 				return getLength();
+			case MMUIPackage.WIDGET__REPONSE:
+				return getReponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case MMUIPackage.WIDGET__LENGTH:
 				setLength((Integer)newValue);
+				return;
+			case MMUIPackage.WIDGET__REPONSE:
+				setReponse((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 			case MMUIPackage.WIDGET__LENGTH:
 				setLength(LENGTH_EDEFAULT);
 				return;
+			case MMUIPackage.WIDGET__REPONSE:
+				setReponse(REPONSE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 				return width != WIDTH_EDEFAULT;
 			case MMUIPackage.WIDGET__LENGTH:
 				return length != LENGTH_EDEFAULT;
+			case MMUIPackage.WIDGET__REPONSE:
+				return REPONSE_EDEFAULT == null ? reponse != null : !REPONSE_EDEFAULT.equals(reponse);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public abstract class WidgetImpl extends MinimalEObjectImpl.Container implements
 		result.append(width);
 		result.append(", length: ");
 		result.append(length);
+		result.append(", reponse: ");
+		result.append(reponse);
 		result.append(')');
 		return result.toString();
 	}

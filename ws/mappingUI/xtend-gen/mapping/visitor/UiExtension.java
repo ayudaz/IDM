@@ -3,7 +3,9 @@ package mapping.visitor;
 import MMUI.AbstractContainer;
 import MMUI.CheckBox;
 import MMUI.Container;
+import MMUI.Image;
 import MMUI.RadioButton;
+import MMUI.Son;
 import MMUI.SuperContainer;
 import MMUI.Ui;
 import MMUI.Widget;
@@ -48,10 +50,30 @@ public class UiExtension {
         if ((widget instanceof RadioButton)) {
           RadioButton radioButton = ((RadioButton) widget);
           UiExtension.accept(radioButton, visitor);
+        } else {
+          if ((widget instanceof Image)) {
+            Image image = ((Image) widget);
+            UiExtension.accept(image, visitor);
+          } else {
+            if ((widget instanceof Son)) {
+              Son son = ((Son) widget);
+              UiExtension.accept(son, visitor);
+            }
+          }
         }
       }
     }
     visitor.exit(container);
+  }
+  
+  public static void accept(final Son son, final UiVisitor visitor) {
+    visitor.entry(son);
+    visitor.exit(son);
+  }
+  
+  public static void accept(final Image image, final UiVisitor visitor) {
+    visitor.entry(image);
+    visitor.exit(image);
   }
   
   public static void accept(final CheckBox checkbox, final UiVisitor visitor) {

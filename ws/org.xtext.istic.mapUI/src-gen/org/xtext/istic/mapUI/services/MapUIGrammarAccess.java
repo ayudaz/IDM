@@ -37,37 +37,33 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	public class MappingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTypeTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//Mapping:
-		//	"Question " name=ID ":" type=Type;
+		//	name=ID ":" type=Type;
 		public ParserRule getRule() { return rule; }
 
-		//"Question " name=ID ":" type=Type
+		//name=ID ":" type=Type
 		public Group getGroup() { return cGroup; }
 
-		//"Question "
-		public Keyword getQuestionKeyword_0() { return cQuestionKeyword_0; }
-
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
 		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
 		//type=Type
-		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
 		//Type
-		public RuleCall getTypeTypeParserRuleCall_3_0() { return cTypeTypeParserRuleCall_3_0; }
+		public RuleCall getTypeTypeParserRuleCall_2_0() { return cTypeTypeParserRuleCall_2_0; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -75,12 +71,14 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cCheckBoxParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cRadioButtonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cImageParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSonParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Type:
-		//	CheckBox | RadioButton;
+		//	CheckBox | RadioButton | Image | Son;
 		public ParserRule getRule() { return rule; }
 
-		//CheckBox | RadioButton
+		//CheckBox | RadioButton | Image | Son
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//CheckBox
@@ -88,6 +86,32 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 
 		//RadioButton
 		public RuleCall getRadioButtonParserRuleCall_1() { return cRadioButtonParserRuleCall_1; }
+
+		//Image
+		public RuleCall getImageParserRuleCall_2() { return cImageParserRuleCall_2; }
+
+		//Son
+		public RuleCall getSonParserRuleCall_3() { return cSonParserRuleCall_3; }
+	}
+
+	public class ImageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Image");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cImageCheckKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cImageRadioKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Image:
+		//	"ImageCheck" | "ImageRadio";
+		public ParserRule getRule() { return rule; }
+
+		//"ImageCheck" | "ImageRadio"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"ImageCheck"
+		public Keyword getImageCheckKeyword_0() { return cImageCheckKeyword_0; }
+
+		//"ImageRadio"
+		public Keyword getImageRadioKeyword_1() { return cImageRadioKeyword_1; }
 	}
 
 	public class CheckBoxElements extends AbstractParserRuleElementFinder {
@@ -113,13 +137,35 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 		//"RadioButton"
 		public Keyword getRadioButtonKeyword() { return cRadioButtonKeyword; }
 	}
+
+	public class SonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Son");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cSonCheckKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cSonRadioKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Son:
+		//	"SonCheck" | "SonRadio";
+		public ParserRule getRule() { return rule; }
+
+		//"SonCheck" | "SonRadio"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"SonCheck"
+		public Keyword getSonCheckKeyword_0() { return cSonCheckKeyword_0; }
+
+		//"SonRadio"
+		public Keyword getSonRadioKeyword_1() { return cSonRadioKeyword_1; }
+	}
 	
 	
 	private MapUIElements pMapUI;
 	private MappingElements pMapping;
 	private TypeElements pType;
+	private ImageElements pImage;
 	private CheckBoxElements pCheckBox;
 	private RadioButtonElements pRadioButton;
+	private SonElements pSon;
 	
 	private final Grammar grammar;
 
@@ -170,7 +216,7 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Mapping:
-	//	"Question " name=ID ":" type=Type;
+	//	name=ID ":" type=Type;
 	public MappingElements getMappingAccess() {
 		return (pMapping != null) ? pMapping : (pMapping = new MappingElements());
 	}
@@ -180,13 +226,23 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Type:
-	//	CheckBox | RadioButton;
+	//	CheckBox | RadioButton | Image | Son;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
 	
 	public ParserRule getTypeRule() {
 		return getTypeAccess().getRule();
+	}
+
+	//Image:
+	//	"ImageCheck" | "ImageRadio";
+	public ImageElements getImageAccess() {
+		return (pImage != null) ? pImage : (pImage = new ImageElements());
+	}
+	
+	public ParserRule getImageRule() {
+		return getImageAccess().getRule();
 	}
 
 	//CheckBox:
@@ -207,6 +263,16 @@ public class MapUIGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRadioButtonRule() {
 		return getRadioButtonAccess().getRule();
+	}
+
+	//Son:
+	//	"SonCheck" | "SonRadio";
+	public SonElements getSonAccess() {
+		return (pSon != null) ? pSon : (pSon = new SonElements());
+	}
+	
+	public ParserRule getSonRule() {
+		return getSonAccess().getRule();
 	}
 
 	//terminal ID:

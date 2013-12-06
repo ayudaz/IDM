@@ -105,13 +105,22 @@ public interface MMUIPackage extends EPackage {
 	int WIDGET__LENGTH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WIDGET__REPONSE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Widget</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WIDGET_FEATURE_COUNT = 2;
+	int WIDGET_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Widget</em>' class.
@@ -151,6 +160,15 @@ public interface MMUIPackage extends EPackage {
 	int CHECK_BOX__LENGTH = WIDGET__LENGTH;
 
 	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECK_BOX__REPONSE = WIDGET__REPONSE;
+
+	/**
 	 * The feature id for the '<em><b>Checked</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,22 +178,13 @@ public interface MMUIPackage extends EPackage {
 	int CHECK_BOX__CHECKED = WIDGET_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHECK_BOX__REPONSE = WIDGET_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Check Box</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECK_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+	int CHECK_BOX_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Check Box</em>' class.
@@ -213,6 +222,15 @@ public interface MMUIPackage extends EPackage {
 	 * @ordered
 	 */
 	int LABEL__LENGTH = WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LABEL__REPONSE = WIDGET__REPONSE;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -450,7 +468,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_BUTTON__REPONSE = WIDGET_FEATURE_COUNT + 0;
+	int RADIO_BUTTON__REPONSE = WIDGET__REPONSE;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -459,7 +477,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_BUTTON__GROUP = WIDGET_FEATURE_COUNT + 1;
+	int RADIO_BUTTON__GROUP = WIDGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Radio Button</em>' class.
@@ -468,7 +486,7 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_BUTTON_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 2;
+	int RADIO_BUTTON_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Radio Button</em>' class.
@@ -478,6 +496,201 @@ public interface MMUIPackage extends EPackage {
 	 * @ordered
 	 */
 	int RADIO_BUTTON_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link MMUI.impl.DecorateurWidgetImpl <em>Decorateur Widget</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.DecorateurWidgetImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getDecorateurWidget()
+	 * @generated
+	 */
+	int DECORATEUR_WIDGET = 8;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET__WIDTH = WIDGET__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET__LENGTH = WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET__REPONSE = WIDGET__REPONSE;
+
+	/**
+	 * The feature id for the '<em><b>Widget</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET__WIDGET = WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Decorateur Widget</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET_FEATURE_COUNT = WIDGET_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Decorateur Widget</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATEUR_WIDGET_OPERATION_COUNT = WIDGET_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link MMUI.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.ImageImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__WIDTH = DECORATEUR_WIDGET__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__LENGTH = DECORATEUR_WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__REPONSE = DECORATEUR_WIDGET__REPONSE;
+
+	/**
+	 * The feature id for the '<em><b>Widget</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__WIDGET = DECORATEUR_WIDGET__WIDGET;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = DECORATEUR_WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_OPERATION_COUNT = DECORATEUR_WIDGET_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link MMUI.impl.SonImpl <em>Son</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see MMUI.impl.SonImpl
+	 * @see MMUI.impl.MMUIPackageImpl#getSon()
+	 * @generated
+	 */
+	int SON = 10;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON__WIDTH = DECORATEUR_WIDGET__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON__LENGTH = DECORATEUR_WIDGET__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Reponse</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON__REPONSE = DECORATEUR_WIDGET__REPONSE;
+
+	/**
+	 * The feature id for the '<em><b>Widget</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON__WIDGET = DECORATEUR_WIDGET__WIDGET;
+
+	/**
+	 * The number of structural features of the '<em>Son</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON_FEATURE_COUNT = DECORATEUR_WIDGET_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Son</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SON_OPERATION_COUNT = DECORATEUR_WIDGET_OPERATION_COUNT + 0;
 
 
 	/**
@@ -500,17 +713,6 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCheckBox_Checked();
-
-	/**
-	 * Returns the meta object for the attribute '{@link MMUI.CheckBox#getReponse <em>Reponse</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reponse</em>'.
-	 * @see MMUI.CheckBox#getReponse()
-	 * @see #getCheckBox()
-	 * @generated
-	 */
-	EAttribute getCheckBox_Reponse();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Ui <em>Ui</em>}'.
@@ -564,6 +766,17 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWidget_Length();
+
+	/**
+	 * Returns the meta object for the attribute '{@link MMUI.Widget#getReponse <em>Reponse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reponse</em>'.
+	 * @see MMUI.Widget#getReponse()
+	 * @see #getWidget()
+	 * @generated
+	 */
+	EAttribute getWidget_Reponse();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.AbstractContainer <em>Abstract Container</em>}'.
@@ -629,17 +842,6 @@ public interface MMUIPackage extends EPackage {
 	EClass getRadioButton();
 
 	/**
-	 * Returns the meta object for the attribute '{@link MMUI.RadioButton#getReponse <em>Reponse</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reponse</em>'.
-	 * @see MMUI.RadioButton#getReponse()
-	 * @see #getRadioButton()
-	 * @generated
-	 */
-	EAttribute getRadioButton_Reponse();
-
-	/**
 	 * Returns the meta object for the attribute '{@link MMUI.RadioButton#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -649,6 +851,47 @@ public interface MMUIPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRadioButton_Group();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.DecorateurWidget <em>Decorateur Widget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Decorateur Widget</em>'.
+	 * @see MMUI.DecorateurWidget
+	 * @generated
+	 */
+	EClass getDecorateurWidget();
+
+	/**
+	 * Returns the meta object for the reference '{@link MMUI.DecorateurWidget#getWidget <em>Widget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Widget</em>'.
+	 * @see MMUI.DecorateurWidget#getWidget()
+	 * @see #getDecorateurWidget()
+	 * @generated
+	 */
+	EReference getDecorateurWidget_Widget();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image</em>'.
+	 * @see MMUI.Image
+	 * @generated
+	 */
+	EClass getImage();
+
+	/**
+	 * Returns the meta object for class '{@link MMUI.Son <em>Son</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Son</em>'.
+	 * @see MMUI.Son
+	 * @generated
+	 */
+	EClass getSon();
 
 	/**
 	 * Returns the meta object for class '{@link MMUI.Label <em>Label</em>}'.
@@ -734,14 +977,6 @@ public interface MMUIPackage extends EPackage {
 		EAttribute CHECK_BOX__CHECKED = eINSTANCE.getCheckBox_Checked();
 
 		/**
-		 * The meta object literal for the '<em><b>Reponse</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHECK_BOX__REPONSE = eINSTANCE.getCheckBox_Reponse();
-
-		/**
 		 * The meta object literal for the '{@link MMUI.impl.UiImpl <em>Ui</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -784,6 +1019,14 @@ public interface MMUIPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WIDGET__LENGTH = eINSTANCE.getWidget_Length();
+
+		/**
+		 * The meta object literal for the '<em><b>Reponse</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WIDGET__REPONSE = eINSTANCE.getWidget_Reponse();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.AbstractContainerImpl <em>Abstract Container</em>}' class.
@@ -840,20 +1083,50 @@ public interface MMUIPackage extends EPackage {
 		EClass RADIO_BUTTON = eINSTANCE.getRadioButton();
 
 		/**
-		 * The meta object literal for the '<em><b>Reponse</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RADIO_BUTTON__REPONSE = eINSTANCE.getRadioButton_Reponse();
-
-		/**
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute RADIO_BUTTON__GROUP = eINSTANCE.getRadioButton_Group();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.DecorateurWidgetImpl <em>Decorateur Widget</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.DecorateurWidgetImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getDecorateurWidget()
+		 * @generated
+		 */
+		EClass DECORATEUR_WIDGET = eINSTANCE.getDecorateurWidget();
+
+		/**
+		 * The meta object literal for the '<em><b>Widget</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECORATEUR_WIDGET__WIDGET = eINSTANCE.getDecorateurWidget_Widget();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.ImageImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getImage()
+		 * @generated
+		 */
+		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '{@link MMUI.impl.SonImpl <em>Son</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see MMUI.impl.SonImpl
+		 * @see MMUI.impl.MMUIPackageImpl#getSon()
+		 * @generated
+		 */
+		EClass SON = eINSTANCE.getSon();
 
 		/**
 		 * The meta object literal for the '{@link MMUI.impl.LabelImpl <em>Label</em>}' class.
