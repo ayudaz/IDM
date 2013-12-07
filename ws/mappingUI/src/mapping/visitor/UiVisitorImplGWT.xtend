@@ -22,6 +22,7 @@ class UiVisitorImplGWT implements UiVisitor {
 	private String image
 	private String horizontalPan
 	private String current
+	private String sizeImg = '"100px","10em"'
 	
 	private int nbHorizontalPan
 	private int nbImage
@@ -117,10 +118,12 @@ class UiVisitorImplGWT implements UiVisitor {
 		gwt.append('img'+nbImage+'.setUrl("'+image.widget.reponse+'");')
 		gwt.append('hpanel'+nbHorizontalPan+'.add( img'+nbImage+ ' );')	
 		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
+		gwt.append('img'+nbImage+'.setSize('+sizeImg+');')
 	}
 
 	override exit(Image image) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		nbHorizontalPan = nbHorizontalPan +1
+		nbImage = nbImage+1
 	}
 
 	override entry(Son son) {

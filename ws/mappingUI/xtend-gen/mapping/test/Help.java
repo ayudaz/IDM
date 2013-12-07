@@ -22,9 +22,9 @@ public class Help {
     ResourceSet resourceSet = _resourceSetImpl;
     SoDaStandaloneSetup.doSetup();
     MapUIStandaloneSetup.doSetup();
-    URI _createURI = URI.createURI("../org.xtext.istic.soda.tests/ressources/e2.soda");
+    URI _createURI = URI.createURI("../org.xtext.istic.soda.tests/ressources/e1.soda");
     Resource resourceSoda = resourceSet.getResource(_createURI, true);
-    URI _createURI_1 = URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e2.MapUI");
+    URI _createURI_1 = URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e1.MapUI");
     Resource resourceMapUi = resourceSet.getResource(_createURI_1, true);
     EList<EObject> _contents = resourceSoda.getContents();
     EObject _head = IterableExtensions.<EObject>head(_contents);

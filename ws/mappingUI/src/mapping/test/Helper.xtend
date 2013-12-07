@@ -18,8 +18,8 @@ class Help {
 		var ResourceSet resourceSet = new ResourceSetImpl();
 		SoDaStandaloneSetup.doSetup
 		MapUIStandaloneSetup.doSetup
-		var resourceSoda = resourceSet.getResource(URI.createURI("../org.xtext.istic.soda.tests/ressources/e2.soda"), true)
-		var resourceMapUi = resourceSet.getResource(URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e2.MapUI"), true)
+		var resourceSoda = resourceSet.getResource(URI.createURI("../org.xtext.istic.soda.tests/ressources/e1.soda"), true)
+		var resourceMapUi = resourceSet.getResource(URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e1.MapUI"), true)
 		
 		var soda = resourceSoda.contents.head as Soda
 		var mapUi = resourceMapUi.contents.head as MapUI

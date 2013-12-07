@@ -31,6 +31,8 @@ public class UiVisitorImplGWT implements UiVisitor {
   
   private String current;
   
+  private String sizeImg = "\"100px\",\"10em\"";
+  
   private int nbHorizontalPan;
   
   private int nbImage;
@@ -181,9 +183,18 @@ public class UiVisitorImplGWT implements UiVisitor {
     String _plus_18 = (_plus_17 + Integer.valueOf(this.nbHorizontalPan));
     String _plus_19 = (_plus_18 + ");");
     this.gwt.append(_plus_19);
+    String _plus_20 = ("img" + Integer.valueOf(this.nbImage));
+    String _plus_21 = (_plus_20 + ".setSize(");
+    String _plus_22 = (_plus_21 + this.sizeImg);
+    String _plus_23 = (_plus_22 + ");");
+    this.gwt.append(_plus_23);
   }
   
   public void exit(final Image image) {
+    int _plus = (this.nbHorizontalPan + 1);
+    this.nbHorizontalPan = _plus;
+    int _plus_1 = (this.nbImage + 1);
+    this.nbImage = _plus_1;
   }
   
   public void entry(final Son son) {
