@@ -1,0 +1,8 @@
+Poll {
+	Question q1 {
+		"Q ?"
+			options
+			o1 => "Oui"
+			o2 => "Non"
+	}
+}

@@ -9,6 +9,7 @@ import mapping.visitor.UiVisitorImplHtml
 import static extension mapping.visitor.MapUIExtension.*
 import static extension mapping.visitor.SodaExtension.*
 import static extension mapping.visitor.UiExtension.*
+import mapping.visitor.UiVisitorImplGWT
 
 class Mapping {
 // guillaume.becan@inria.fr
@@ -21,13 +22,17 @@ class Mapping {
 		return sodaVisitor.ui
 	}
 	
-	def String generation(Ui ui) {
+	def String generationHTML(Ui ui) {
 		var htmlUiVisiteur = new UiVisitorImplHtml();
 		ui.accept(htmlUiVisiteur)
 		return htmlUiVisiteur.html
 	}
 	
-	
+	def String generationGWT(Ui ui) {
+		var gwtUiVisiteur = new UiVisitorImplGWT();
+		ui.accept(gwtUiVisiteur)
+		return gwtUiVisiteur.gwt.toString
+	}
 	
 	
 

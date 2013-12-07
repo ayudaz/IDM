@@ -2,7 +2,7 @@ package mapping.test;
 
 import MMUI.Ui;
 import mapping.launch.Mapping;
-import mapping.transformation.TransfoHTML;
+import mapping.transformation.TransfoPrinter;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -22,9 +22,9 @@ public class Help {
     ResourceSet resourceSet = _resourceSetImpl;
     SoDaStandaloneSetup.doSetup();
     MapUIStandaloneSetup.doSetup();
-    URI _createURI = URI.createURI("../org.xtext.istic.soda.tests/ressources/e1.soda");
+    URI _createURI = URI.createURI("../org.xtext.istic.soda.tests/ressources/e2.soda");
     Resource resourceSoda = resourceSet.getResource(_createURI, true);
-    URI _createURI_1 = URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e1.MapUI");
+    URI _createURI_1 = URI.createURI("../org.xtext.istic.mapUI.tests/ressources/e2.MapUI");
     Resource resourceMapUi = resourceSet.getResource(_createURI_1, true);
     EList<EObject> _contents = resourceSoda.getContents();
     EObject _head = IterableExtensions.<EObject>head(_contents);
@@ -35,7 +35,9 @@ public class Help {
     Mapping _mapping = new Mapping();
     Mapping mapping = _mapping;
     Ui ui = mapping.transfo(soda, mapUi);
-    String html = mapping.generation(ui);
-    TransfoHTML.writeFileObject(html);
+    String html = mapping.generationHTML(ui);
+    String gwt = mapping.generationGWT(ui);
+    TransfoPrinter.writeHTMLFileObject(html);
+    TransfoPrinter.writeGWTFileObject(gwt);
   }
 }
