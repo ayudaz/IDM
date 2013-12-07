@@ -30,11 +30,16 @@ class UiVisitorImplGWT implements UiVisitor {
 	private int nbPan
 	private int nbCheckBox
 	private int nbRadioButton
+	private int nbSon	
+	private int nbVideo
+	
+
 
 	new() {
 		gwt = new StringBuilder(
 			"package org.istic.idm.gwt.client;
-
+				import com.google.gwt.media.client.Video;	
+				import com.google.gwt.media.client.Audio;
 				import com.google.gwt.core.client.EntryPoint;
 				import com.google.gwt.user.client.ui.Label;
 				import com.google.gwt.user.client.ui.RadioButton;
@@ -54,7 +59,32 @@ class UiVisitorImplGWT implements UiVisitor {
 	}
 
 	override exit(Ui ui) {
-		gwt.append("} }")
+		gwt.append("}
+
+			 public static Audio createAudio(String url)
+			    {
+			        Audio audio = Audio.createIfSupported();
+			        if(audio==null)
+			            return null;
+			        
+			        audio.setSrc( url );
+			       
+			        audio.setControls( true );
+			        return audio;        
+			        
+			    } 
+
+			 public static Video createVideo( String url )
+			    {
+			        Video video = Video.createIfSupported();
+			        if ( video == null )
+			            return null;
+			
+			        video.setSrc( url );
+			
+			        video.setControls( true );
+			        return video;
+			    }}")
 	}
 
 	override entry(SuperContainer superContainer) {
@@ -110,7 +140,7 @@ class UiVisitorImplGWT implements UiVisitor {
 
 	override entry(Image image) {
 		this.entry(image.widget)
-		//on créer un horizontal panel pour mettre la checkbox
+		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
 		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
         gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
 		//puis l'image
@@ -127,19 +157,37 @@ class UiVisitorImplGWT implements UiVisitor {
 	}
 
 	override entry(Son son) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		this.entry(son.widget)
+		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
+		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		
+     	//puis le son
+		gwt.append('Audio audio'+nbSon+' = createAudio( "'+son.widget.reponse+'" );')
+		gwt.append('hpanel'+nbHorizontalPan+'.add( audio'+nbSon+ ' );')	
+		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
 	}
 
 	override exit(Son son) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		nbHorizontalPan = nbHorizontalPan +1
+		nbSon = nbSon+1
 	}
 
 	override entry(Video video) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		this.entry(video.widget)
+		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
+		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		
+     	//puis la vidéo
+		gwt.append('Video video'+nbVideo+' = createVideo( "'+video.widget.reponse+'" );')
+		gwt.append('hpanel'+nbHorizontalPan+'.add( video'+nbVideo+ ' );')	
+		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
 	}
 
 	override exit(Video video) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		nbHorizontalPan = nbHorizontalPan +1
+		nbVideo = nbVideo +1 
 	}
 
 	def entry(Widget widget)
@@ -147,10 +195,12 @@ class UiVisitorImplGWT implements UiVisitor {
 		if(widget instanceof CheckBox){
 				var check = widget as CheckBox
 				entry(check)
+				nbCheckBox=nbCheckBox+1
 			}
 			else if(widget instanceof RadioButton){
 				var radioButton = widget as RadioButton
 				entry(radioButton)
+				nbRadioButton=nbRadioButton+1
 			} else if(widget instanceof Image){
 				var image = widget as Image
 				entry(image)				

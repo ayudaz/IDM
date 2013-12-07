@@ -45,9 +45,13 @@ public class UiVisitorImplGWT implements UiVisitor {
   
   private int nbRadioButton;
   
+  private int nbSon;
+  
+  private int nbVideo;
+  
   public UiVisitorImplGWT() {
     StringBuilder _stringBuilder = new StringBuilder(
-      "package org.istic.idm.gwt.client;\r\n\r\n\t\t\t\timport com.google.gwt.core.client.EntryPoint;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Label;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RadioButton;\r\n\t\t\t\timport com.google.gwt.user.client.ui.CheckBox;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RootPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.VerticalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.HorizontalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Image;");
+      "package org.istic.idm.gwt.client;\r\n\t\t\t\timport com.google.gwt.media.client.Video;\t\r\n\t\t\t\timport com.google.gwt.media.client.Audio;\r\n\t\t\t\timport com.google.gwt.core.client.EntryPoint;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Label;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RadioButton;\r\n\t\t\t\timport com.google.gwt.user.client.ui.CheckBox;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RootPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.VerticalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.HorizontalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Image;");
     this.gwt = _stringBuilder;
   }
   
@@ -57,7 +61,7 @@ public class UiVisitorImplGWT implements UiVisitor {
   }
   
   public void exit(final Ui ui) {
-    this.gwt.append("} }");
+    this.gwt.append("}\r\n\r\n\t\t\t public static Audio createAudio(String url)\r\n\t\t\t    {\r\n\t\t\t        Audio audio = Audio.createIfSupported();\r\n\t\t\t        if(audio==null)\r\n\t\t\t            return null;\r\n\t\t\t        \r\n\t\t\t        audio.setSrc( url );\r\n\t\t\t       \r\n\t\t\t        audio.setControls( true );\r\n\t\t\t        return audio;        \r\n\t\t\t        \r\n\t\t\t    } \r\n\r\n\t\t\t public static Video createVideo( String url )\r\n\t\t\t    {\r\n\t\t\t        Video video = Video.createIfSupported();\r\n\t\t\t        if ( video == null )\r\n\t\t\t            return null;\r\n\t\t\t\r\n\t\t\t        video.setSrc( url );\r\n\t\t\t\r\n\t\t\t        video.setControls( true );\r\n\t\t\t        return video;\r\n\t\t\t    }}");
   }
   
   public void entry(final SuperContainer superContainer) {
@@ -198,31 +202,111 @@ public class UiVisitorImplGWT implements UiVisitor {
   }
   
   public void entry(final Son son) {
+    Widget _widget = son.getWidget();
+    this.entry(_widget);
+    String _plus = ("HorizontalPanel hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_1 = (_plus + " = new HorizontalPanel();");
+    this.gwt.append(_plus_1);
+    String _plus_2 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_3 = (_plus_2 + ".add( ");
+    String _plus_4 = (_plus_3 + this.current);
+    String _plus_5 = (_plus_4 + " );");
+    this.gwt.append(_plus_5);
+    String _plus_6 = ("Audio audio" + Integer.valueOf(this.nbSon));
+    String _plus_7 = (_plus_6 + " = createAudio( \"");
+    Widget _widget_1 = son.getWidget();
+    String _reponse = _widget_1.getReponse();
+    String _plus_8 = (_plus_7 + _reponse);
+    String _plus_9 = (_plus_8 + "\" );");
+    this.gwt.append(_plus_9);
+    String _plus_10 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_11 = (_plus_10 + ".add( audio");
+    String _plus_12 = (_plus_11 + Integer.valueOf(this.nbSon));
+    String _plus_13 = (_plus_12 + " );");
+    this.gwt.append(_plus_13);
+    String _plus_14 = ("panel" + Integer.valueOf(this.nbPanel));
+    String _plus_15 = (_plus_14 + ".add( hpanel");
+    String _plus_16 = (_plus_15 + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_17 = (_plus_16 + ");");
+    this.gwt.append(_plus_17);
   }
   
   public void exit(final Son son) {
+    int _plus = (this.nbHorizontalPan + 1);
+    this.nbHorizontalPan = _plus;
+    int _plus_1 = (this.nbSon + 1);
+    this.nbSon = _plus_1;
   }
   
   public void entry(final Video video) {
+    Widget _widget = video.getWidget();
+    this.entry(_widget);
+    String _plus = ("HorizontalPanel hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_1 = (_plus + " = new HorizontalPanel();");
+    this.gwt.append(_plus_1);
+    String _plus_2 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_3 = (_plus_2 + ".add( ");
+    String _plus_4 = (_plus_3 + this.current);
+    String _plus_5 = (_plus_4 + " );");
+    this.gwt.append(_plus_5);
+    String _plus_6 = ("Video video" + Integer.valueOf(this.nbVideo));
+    String _plus_7 = (_plus_6 + " = createVideo( \"");
+    Widget _widget_1 = video.getWidget();
+    String _reponse = _widget_1.getReponse();
+    String _plus_8 = (_plus_7 + _reponse);
+    String _plus_9 = (_plus_8 + "\" );");
+    this.gwt.append(_plus_9);
+    String _plus_10 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_11 = (_plus_10 + ".add( video");
+    String _plus_12 = (_plus_11 + Integer.valueOf(this.nbVideo));
+    String _plus_13 = (_plus_12 + " );");
+    this.gwt.append(_plus_13);
+    String _plus_14 = ("panel" + Integer.valueOf(this.nbPanel));
+    String _plus_15 = (_plus_14 + ".add( hpanel");
+    String _plus_16 = (_plus_15 + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_17 = (_plus_16 + ");");
+    this.gwt.append(_plus_17);
   }
   
   public void exit(final Video video) {
+    int _plus = (this.nbHorizontalPan + 1);
+    this.nbHorizontalPan = _plus;
+    int _plus_1 = (this.nbVideo + 1);
+    this.nbVideo = _plus_1;
   }
   
-  public void entry(final Widget widget) {
+  public Integer entry(final Widget widget) {
+    int _xifexpression = (int) 0;
     if ((widget instanceof CheckBox)) {
-      CheckBox check = ((CheckBox) widget);
-      this.entry(check);
+      int _xblockexpression = (int) 0;
+      {
+        CheckBox check = ((CheckBox) widget);
+        this.entry(check);
+        int _plus = (this.nbCheckBox + 1);
+        int _nbCheckBox = this.nbCheckBox = _plus;
+        _xblockexpression = (_nbCheckBox);
+      }
+      _xifexpression = _xblockexpression;
     } else {
+      int _xifexpression_1 = (int) 0;
       if ((widget instanceof RadioButton)) {
-        RadioButton radioButton = ((RadioButton) widget);
-        this.entry(radioButton);
+        int _xblockexpression_1 = (int) 0;
+        {
+          RadioButton radioButton = ((RadioButton) widget);
+          this.entry(radioButton);
+          int _plus = (this.nbRadioButton + 1);
+          int _nbRadioButton = this.nbRadioButton = _plus;
+          _xblockexpression_1 = (_nbRadioButton);
+        }
+        _xifexpression_1 = _xblockexpression_1;
       } else {
         if ((widget instanceof Image)) {
           Image image = ((Image) widget);
           this.entry(image);
         }
       }
+      _xifexpression = _xifexpression_1;
     }
+    return _xifexpression;
   }
 }
