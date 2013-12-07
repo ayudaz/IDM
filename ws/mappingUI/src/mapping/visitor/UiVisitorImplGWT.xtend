@@ -8,12 +8,23 @@ import MMUI.RadioButton
 import MMUI.Image
 import MMUI.Son
 import MMUI.Video
+import MMUI.Widget
 
 class UiVisitorImplGWT implements UiVisitor {
 	public StringBuilder gwt;
+	
+	private String rb = 'rb'
+	private String cb = 'cb'
+	
 	private String tmpContainer
 	private String panel
 	private String pan
+	private String image
+	private String horizontalPan
+	private String current
+	
+	private int nbHorizontalPan
+	private int nbImage
 	private int nbPanel
 	private int nbPan
 	private int nbCheckBox
@@ -21,18 +32,21 @@ class UiVisitorImplGWT implements UiVisitor {
 
 	new() {
 		gwt = new StringBuilder(
-			"package org.xtext.istic.testGWT.client;
+			"package org.istic.idm.gwt.client;
 
 				import com.google.gwt.core.client.EntryPoint;
 				import com.google.gwt.user.client.ui.Label;
 				import com.google.gwt.user.client.ui.RadioButton;
+				import com.google.gwt.user.client.ui.CheckBox;
 				import com.google.gwt.user.client.ui.RootPanel;
-				import com.google.gwt.user.client.ui.VerticalPanel;")
+				import com.google.gwt.user.client.ui.VerticalPanel;
+				import com.google.gwt.user.client.ui.HorizontalPanel;
+				import com.google.gwt.user.client.ui.Image;")
 	}
 
 	override entry(Ui ui) {
 		gwt.append(
-			"public class Formulaire implements EntryPoint { 
+			"public class FormulaireGWT implements EntryPoint { 
 						public void onModuleLoad() {
 						")
 
@@ -70,25 +84,39 @@ class UiVisitorImplGWT implements UiVisitor {
 	}
 
 	override entry(CheckBox checkbox) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	override exit(CheckBox checkbox) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-	override entry(RadioButton radioButton) {
-		gwt.append('RadioButton rb'+nbRadioButton+' = new RadioButton("'+radioButton.group+'", "'+radioButton.reponse+'");')
-		gwt.append('panel'+nbPanel+'.add(rb'+nbRadioButton+');')
-		nbRadioButton  = nbRadioButton+1;  
-	}
-
-	override exit(RadioButton radioButton) {
+		current = cb+nbCheckBox
+		gwt.append('CheckBox '+cb+nbCheckBox+' = new CheckBox();')
 		
 	}
 
+	override exit(CheckBox checkbox) {
+		gwt.append(cb+nbCheckBox+'.setText("'+ checkbox.reponse+'");')
+		gwt.append('panel'+nbPanel+'.add('+cb+nbCheckBox+');')
+		nbCheckBox  = nbCheckBox+1;
+	}
+
+	override entry(RadioButton radioButton) {
+		current = rb+nbRadioButton
+		gwt.append('RadioButton '+rb+nbRadioButton+' = new RadioButton("'+radioButton.group+'","");')
+		 
+	}
+
+	override exit(RadioButton radioButton) {
+		gwt.append(rb+nbRadioButton+'.setText( "'+radioButton.reponse+'" );')
+		gwt.append('panel'+nbPanel+'.add('+rb+nbRadioButton+');')
+		nbRadioButton  = nbRadioButton+1; 
+	}
+
 	override entry(Image image) {
-		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		this.entry(image.widget)
+		//on créer un horizontal panel pour mettre la checkbox
+		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		//puis l'image
+		gwt.append('Image img'+nbImage+' = new Image();')
+		gwt.append('img'+nbImage+'.setUrl("'+image.widget.reponse+'");')
+		gwt.append('hpanel'+nbHorizontalPan+'.add( img'+nbImage+ ' );')	
+		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
 	}
 
 	override exit(Image image) {
@@ -111,4 +139,18 @@ class UiVisitorImplGWT implements UiVisitor {
 		//throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 
+	def entry(Widget widget)
+	{
+		if(widget instanceof CheckBox){
+				var check = widget as CheckBox
+				entry(check)
+			}
+			else if(widget instanceof RadioButton){
+				var radioButton = widget as RadioButton
+				entry(radioButton)
+			} else if(widget instanceof Image){
+				var image = widget as Image
+				entry(image)				
+			}
+	}
 }

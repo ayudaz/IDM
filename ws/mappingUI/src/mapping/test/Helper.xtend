@@ -1,7 +1,6 @@
 package mapping.test
 
 import mapping.launch.Mapping
-import mapping.transformation.TransfoHTML
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
@@ -12,7 +11,6 @@ import org.xtext.istic.soda.soDa.Soda
 import mapping.transformation.TransfoPrinter
 
 class Help {
-
 	
 	def static void main(String[] args) {
 

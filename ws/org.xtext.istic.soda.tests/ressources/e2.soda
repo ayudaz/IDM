@@ -5,4 +5,12 @@ Poll {
 			o1 => "Oui"
 			o2 => "Non"
 	}
+	
+	Question q2 {
+		"Q2 ?"
+			options
+			"Oui"
+			"Non"
+			o3 => "http://www.google.com/images/logo.gif"
+	}
 }
