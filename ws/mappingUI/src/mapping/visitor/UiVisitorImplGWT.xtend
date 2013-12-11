@@ -15,6 +15,13 @@ class UiVisitorImplGWT implements UiVisitor {
 	
 	private String rb = 'rb'
 	private String cb = 'cb'
+	private String sPan = 'pan'
+	private String sPanel = 'panel'
+	private String sImage = 'img'
+	private String sHpanel = 'hpanel'
+	private String sAudio = 'audio'
+	private String sVideo = 'sVideo'
+	
 	
 	private String tmpContainer
 	private String panel
@@ -98,17 +105,17 @@ class UiVisitorImplGWT implements UiVisitor {
 	override entry(Container container) {
 
 		gwt.append(
-			"TitledPanel pan" + nbPan + " = new TitledPanel(\"" + container.label + "\");
-					VerticalPanel panel" + nbPanel + " = new VerticalPanel();")
+			"TitledPanel "+ sPan + nbPan + " = new TitledPanel(\"" + container.label + "\");
+					VerticalPanel " + sPanel + nbPanel + " = new VerticalPanel();")
 
-		panel = "panel" + nbPanel
-		pan = "pan" + nbPan
+		panel = sPanel + nbPanel
+		pan = sPan + nbPan
 	}
 
 	override exit(Container container) {
 		gwt.append(
-			"pan" + nbPan + ".setContent(panel" + nbPanel + ");" +
-			 "RootPanel.get().add(pan" + nbPan + ");"
+			sPan + nbPan + ".setContent(" +sPanel + nbPanel + ");" +
+			 "RootPanel.get().add(" +sPan + nbPan + ");"
 		)
 		nbPanel = nbPanel + 1
 		nbPan = nbPan + 1;
@@ -122,7 +129,7 @@ class UiVisitorImplGWT implements UiVisitor {
 
 	override exit(CheckBox checkbox) {
 		gwt.append(cb+nbCheckBox+'.setText("'+ checkbox.reponse+'");')
-		gwt.append('panel'+nbPanel+'.add('+cb+nbCheckBox+');')
+		gwt.append(sPanel+nbPanel+'.add('+cb+nbCheckBox+');')
 		nbCheckBox  = nbCheckBox+1;
 	}
 
@@ -134,21 +141,21 @@ class UiVisitorImplGWT implements UiVisitor {
 
 	override exit(RadioButton radioButton) {
 		gwt.append(rb+nbRadioButton+'.setText( "'+radioButton.reponse+'" );')
-		gwt.append('panel'+nbPanel+'.add('+rb+nbRadioButton+');')
+		gwt.append(sPanel+nbPanel+'.add('+rb+nbRadioButton+');')
 		nbRadioButton  = nbRadioButton+1; 
 	}
 
 	override entry(Image image) {
 		this.entry(image.widget)
 		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
-		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
-        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		gwt.append( 'HorizontalPanel '+sHpanel+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append(sHpanel+nbHorizontalPan+'.add( '+current + ' );')
 		//puis l'image
-		gwt.append('Image img'+nbImage+' = new Image();')
-		gwt.append('img'+nbImage+'.setUrl("'+image.widget.reponse+'");')
-		gwt.append('hpanel'+nbHorizontalPan+'.add( img'+nbImage+ ' );')	
-		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
-		gwt.append('img'+nbImage+'.setSize('+sizeImg+');')
+		gwt.append('Image '+sImage+nbImage+' = new Image();')
+		gwt.append(sImage+nbImage+'.setUrl("'+image.widget.reponse+'");')
+		gwt.append(sHpanel+nbHorizontalPan+'.add('+sImage+nbImage+ ' );')	
+		gwt.append(sPanel+nbPanel+'.add( '+sHpanel+nbHorizontalPan+');')
+		gwt.append(sImage+nbImage+'.setSize('+sizeImg+');')
 	}
 
 	override exit(Image image) {
@@ -159,13 +166,13 @@ class UiVisitorImplGWT implements UiVisitor {
 	override entry(Son son) {
 		this.entry(son.widget)
 		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
-		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
-        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		gwt.append( 'HorizontalPanel '+sHpanel+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append(sHpanel+nbHorizontalPan+'.add( '+current + ' );')
 		
      	//puis le son
-		gwt.append('Audio audio'+nbSon+' = createAudio( "'+son.widget.reponse+'" );')
-		gwt.append('hpanel'+nbHorizontalPan+'.add( audio'+nbSon+ ' );')	
-		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
+		gwt.append('Audio '+sAudio+nbSon+' = createAudio( "'+son.widget.reponse+'" );')
+		gwt.append(sHpanel+nbHorizontalPan+'.add( audio'+nbSon+ ' );')	
+		gwt.append(sPanel+nbPanel+'.add( '+sHpanel+nbHorizontalPan+');')
 	}
 
 	override exit(Son son) {
@@ -176,13 +183,13 @@ class UiVisitorImplGWT implements UiVisitor {
 	override entry(Video video) {
 		this.entry(video.widget)
 		//on créer un horizontal panel pour mettre la checkbox ou le radiobouton
-		gwt.append( 'HorizontalPanel hpanel'+nbHorizontalPan+' = new HorizontalPanel();')
-        gwt.append('hpanel'+nbHorizontalPan+'.add( '+current + ' );')
+		gwt.append( 'HorizontalPanel '+sHpanel+nbHorizontalPan+' = new HorizontalPanel();')
+        gwt.append(sHpanel+nbHorizontalPan+'.add( '+current + ' );')
 		
      	//puis la vidéo
-		gwt.append('Video video'+nbVideo+' = createVideo( "'+video.widget.reponse+'" );')
-		gwt.append('hpanel'+nbHorizontalPan+'.add( video'+nbVideo+ ' );')	
-		gwt.append('panel'+nbPanel+'.add( hpanel'+nbHorizontalPan+');')
+		gwt.append('Video '+sVideo+nbVideo+' = createVideo( "'+video.widget.reponse+'" );')
+		gwt.append(sHpanel+nbHorizontalPan+'.add( '+sVideo+nbVideo+ ' );')	
+		gwt.append(sPanel+nbPanel+'.add( '+sHpanel+nbHorizontalPan+');')
 	}
 
 	override exit(Video video) {
