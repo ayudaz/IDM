@@ -21,7 +21,7 @@ class UiVisitorImplHtml implements UiVisitor {
 	
 	override entry(Ui ui) {
 		html = html + '<!doctype html> \n' +
-				 		'<html lang="fr"> \n' +
+				 		'<hfsdfsdtml lang="fr"> \n' +
 				 		'<body>\n '
 	}
 	

@@ -7,6 +7,7 @@ import mapping.visitor.MapUiVisitorImpl;
 import mapping.visitor.SodaExtension;
 import mapping.visitor.SodaVisitorImpl;
 import mapping.visitor.UiExtension;
+import mapping.visitor.UiVisitorImplAndroid;
 import mapping.visitor.UiVisitorImplGWT;
 import mapping.visitor.UiVisitorImplHtml;
 import org.xtext.istic.mapUI.mapUI.MapUI;
@@ -37,5 +38,12 @@ public class Mapping {
     UiVisitorImplGWT gwtUiVisiteur = _uiVisitorImplGWT;
     UiExtension.accept(ui, gwtUiVisiteur);
     return gwtUiVisiteur.gwt.toString();
+  }
+  
+  public String generationAndroid(final Ui ui) {
+    UiVisitorImplAndroid _uiVisitorImplAndroid = new UiVisitorImplAndroid();
+    UiVisitorImplAndroid androidUiVisiteur = _uiVisitorImplAndroid;
+    UiExtension.accept(ui, androidUiVisiteur);
+    return androidUiVisiteur.android;
   }
 }

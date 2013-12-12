@@ -37,7 +37,9 @@ public class Help {
     Ui ui = mapping.transfo(soda, mapUi);
     String html = mapping.generationHTML(ui);
     String gwt = mapping.generationGWT(ui);
+    String android = mapping.generationAndroid(ui);
     TransfoPrinter.writeHTMLFileObject(html);
     TransfoPrinter.writeGWTFileObject(gwt);
+    TransfoPrinter.writeAndroidFileObject(android);
   }
 }

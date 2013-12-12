@@ -28,7 +28,9 @@ class Help {
 		var ui = mapping.transfo(soda, mapUi)
 		var html = mapping.generationHTML(ui)
 		var gwt = mapping.generationGWT(ui)
+		var android = mapping.generationAndroid(ui)
 		TransfoPrinter.writeHTMLFileObject(html)
-		TransfoPrinter.writeGWTFileObject(gwt)
-	}
+		TransfoPrinter.writeGWTFileObject(gwt)		
+		TransfoPrinter.writeAndroidFileObject(android)
+	}	
 }

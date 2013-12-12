@@ -19,6 +19,18 @@ public class UiVisitorImplGWT implements UiVisitor {
   
   private String cb = "cb";
   
+  private String sPan = "pan";
+  
+  private String sPanel = "panel";
+  
+  private String sImage = "img";
+  
+  private String sHpanel = "hpanel";
+  
+  private String sAudio = "audio";
+  
+  private String sVideo = "sVideo";
+  
   private String tmpContainer;
   
   private String panel;
@@ -51,17 +63,17 @@ public class UiVisitorImplGWT implements UiVisitor {
   
   public UiVisitorImplGWT() {
     StringBuilder _stringBuilder = new StringBuilder(
-      "package org.istic.idm.gwt.client;\r\n\t\t\t\timport com.google.gwt.media.client.Video;\t\r\n\t\t\t\timport com.google.gwt.media.client.Audio;\r\n\t\t\t\timport com.google.gwt.core.client.EntryPoint;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Label;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RadioButton;\r\n\t\t\t\timport com.google.gwt.user.client.ui.CheckBox;\r\n\t\t\t\timport com.google.gwt.user.client.ui.RootPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.VerticalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.HorizontalPanel;\r\n\t\t\t\timport com.google.gwt.user.client.ui.Image;");
+      "package org.istic.idm.gwt.client;\n\t\t\t\timport com.google.gwt.media.client.Video;\t\n\t\t\t\timport com.google.gwt.media.client.Audio;\n\t\t\t\timport com.google.gwt.core.client.EntryPoint;\n\t\t\t\timport com.google.gwt.user.client.ui.Label;\n\t\t\t\timport com.google.gwt.user.client.ui.RadioButton;\n\t\t\t\timport com.google.gwt.user.client.ui.CheckBox;\n\t\t\t\timport com.google.gwt.user.client.ui.RootPanel;\n\t\t\t\timport com.google.gwt.user.client.ui.VerticalPanel;\n\t\t\t\timport com.google.gwt.user.client.ui.HorizontalPanel;\n\t\t\t\timport com.google.gwt.user.client.ui.Image;");
     this.gwt = _stringBuilder;
   }
   
   public void entry(final Ui ui) {
     this.gwt.append(
-      "public class FormulaireGWT implements EntryPoint { \r\n\t\t\t\t\t\tpublic void onModuleLoad() {\r\n\t\t\t\t\t\t");
+      "public class FormulaireGWT implements EntryPoint { \n\t\t\t\t\t\tpublic void onModuleLoad() {\n\t\t\t\t\t\t");
   }
   
   public void exit(final Ui ui) {
-    this.gwt.append("}\r\n\r\n\t\t\t public static Audio createAudio(String url)\r\n\t\t\t    {\r\n\t\t\t        Audio audio = Audio.createIfSupported();\r\n\t\t\t        if(audio==null)\r\n\t\t\t            return null;\r\n\t\t\t        \r\n\t\t\t        audio.setSrc( url );\r\n\t\t\t       \r\n\t\t\t        audio.setControls( true );\r\n\t\t\t        return audio;        \r\n\t\t\t        \r\n\t\t\t    } \r\n\r\n\t\t\t public static Video createVideo( String url )\r\n\t\t\t    {\r\n\t\t\t        Video video = Video.createIfSupported();\r\n\t\t\t        if ( video == null )\r\n\t\t\t            return null;\r\n\t\t\t\r\n\t\t\t        video.setSrc( url );\r\n\t\t\t\r\n\t\t\t        video.setControls( true );\r\n\t\t\t        return video;\r\n\t\t\t    }}");
+    this.gwt.append("}\n\n\t\t\t public static Audio createAudio(String url)\n\t\t\t    {\n\t\t\t        Audio audio = Audio.createIfSupported();\n\t\t\t        if(audio==null)\n\t\t\t            return null;\n\t\t\t        \n\t\t\t        audio.setSrc( url );\n\t\t\t       \n\t\t\t        audio.setControls( true );\n\t\t\t        return audio;        \n\t\t\t        \n\t\t\t    } \n\n\t\t\t public static Video createVideo( String url )\n\t\t\t    {\n\t\t\t        Video video = Video.createIfSupported();\n\t\t\t        if ( video == null )\n\t\t\t            return null;\n\t\t\t\n\t\t\t        video.setSrc( url );\n\t\t\t\n\t\t\t        video.setControls( true );\n\t\t\t        return video;\n\t\t\t    }}");
   }
   
   public void entry(final SuperContainer superContainer) {
@@ -71,34 +83,38 @@ public class UiVisitorImplGWT implements UiVisitor {
   }
   
   public void entry(final Container container) {
-    String _plus = ("TitledPanel pan" + Integer.valueOf(this.nbPan));
-    String _plus_1 = (_plus + " = new TitledPanel(\"");
+    String _plus = ("TitledPanel " + this.sPan);
+    String _plus_1 = (_plus + Integer.valueOf(this.nbPan));
+    String _plus_2 = (_plus_1 + " = new TitledPanel(\"");
     String _label = container.getLabel();
-    String _plus_2 = (_plus_1 + _label);
-    String _plus_3 = (_plus_2 + "\");\r\n\t\t\t\t\tVerticalPanel panel");
-    String _plus_4 = (_plus_3 + Integer.valueOf(this.nbPanel));
-    String _plus_5 = (_plus_4 + " = new VerticalPanel();");
-    this.gwt.append(_plus_5);
-    String _plus_6 = ("panel" + Integer.valueOf(this.nbPanel));
-    this.panel = _plus_6;
-    String _plus_7 = ("pan" + Integer.valueOf(this.nbPan));
-    this.pan = _plus_7;
+    String _plus_3 = (_plus_2 + _label);
+    String _plus_4 = (_plus_3 + "\");\n\t\t\t\t\tVerticalPanel ");
+    String _plus_5 = (_plus_4 + this.sPanel);
+    String _plus_6 = (_plus_5 + Integer.valueOf(this.nbPanel));
+    String _plus_7 = (_plus_6 + " = new VerticalPanel();");
+    this.gwt.append(_plus_7);
+    String _plus_8 = (this.sPanel + Integer.valueOf(this.nbPanel));
+    this.panel = _plus_8;
+    String _plus_9 = (this.sPan + Integer.valueOf(this.nbPan));
+    this.pan = _plus_9;
   }
   
   public void exit(final Container container) {
-    String _plus = ("pan" + Integer.valueOf(this.nbPan));
-    String _plus_1 = (_plus + ".setContent(panel");
-    String _plus_2 = (_plus_1 + Integer.valueOf(this.nbPanel));
-    String _plus_3 = (_plus_2 + ");");
-    String _plus_4 = (_plus_3 + 
-      "RootPanel.get().add(pan");
-    String _plus_5 = (_plus_4 + Integer.valueOf(this.nbPan));
-    String _plus_6 = (_plus_5 + ");");
-    this.gwt.append(_plus_6);
-    int _plus_7 = (this.nbPanel + 1);
-    this.nbPanel = _plus_7;
-    int _plus_8 = (this.nbPan + 1);
-    this.nbPan = _plus_8;
+    String _plus = (this.sPan + Integer.valueOf(this.nbPan));
+    String _plus_1 = (_plus + ".setContent(");
+    String _plus_2 = (_plus_1 + this.sPanel);
+    String _plus_3 = (_plus_2 + Integer.valueOf(this.nbPanel));
+    String _plus_4 = (_plus_3 + ");");
+    String _plus_5 = (_plus_4 + 
+      "RootPanel.get().add(");
+    String _plus_6 = (_plus_5 + this.sPan);
+    String _plus_7 = (_plus_6 + Integer.valueOf(this.nbPan));
+    String _plus_8 = (_plus_7 + ");");
+    this.gwt.append(_plus_8);
+    int _plus_9 = (this.nbPanel + 1);
+    this.nbPanel = _plus_9;
+    int _plus_10 = (this.nbPan + 1);
+    this.nbPan = _plus_10;
   }
   
   public void entry(final CheckBox checkbox) {
@@ -117,7 +133,7 @@ public class UiVisitorImplGWT implements UiVisitor {
     String _plus_2 = (_plus_1 + _reponse);
     String _plus_3 = (_plus_2 + "\");");
     this.gwt.append(_plus_3);
-    String _plus_4 = ("panel" + Integer.valueOf(this.nbPanel));
+    String _plus_4 = (this.sPanel + Integer.valueOf(this.nbPanel));
     String _plus_5 = (_plus_4 + ".add(");
     String _plus_6 = (_plus_5 + this.cb);
     String _plus_7 = (_plus_6 + Integer.valueOf(this.nbCheckBox));
@@ -146,7 +162,7 @@ public class UiVisitorImplGWT implements UiVisitor {
     String _plus_2 = (_plus_1 + _reponse);
     String _plus_3 = (_plus_2 + "\" );");
     this.gwt.append(_plus_3);
-    String _plus_4 = ("panel" + Integer.valueOf(this.nbPanel));
+    String _plus_4 = (this.sPanel + Integer.valueOf(this.nbPanel));
     String _plus_5 = (_plus_4 + ".add(");
     String _plus_6 = (_plus_5 + this.rb);
     String _plus_7 = (_plus_6 + Integer.valueOf(this.nbRadioButton));
@@ -159,39 +175,43 @@ public class UiVisitorImplGWT implements UiVisitor {
   public void entry(final Image image) {
     Widget _widget = image.getWidget();
     this.entry(_widget);
-    String _plus = ("HorizontalPanel hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_1 = (_plus + " = new HorizontalPanel();");
-    this.gwt.append(_plus_1);
-    String _plus_2 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_3 = (_plus_2 + ".add( ");
-    String _plus_4 = (_plus_3 + this.current);
-    String _plus_5 = (_plus_4 + " );");
-    this.gwt.append(_plus_5);
-    String _plus_6 = ("Image img" + Integer.valueOf(this.nbImage));
-    String _plus_7 = (_plus_6 + " = new Image();");
-    this.gwt.append(_plus_7);
-    String _plus_8 = ("img" + Integer.valueOf(this.nbImage));
-    String _plus_9 = (_plus_8 + ".setUrl(\"");
+    String _plus = ("HorizontalPanel " + this.sHpanel);
+    String _plus_1 = (_plus + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_2 = (_plus_1 + " = new HorizontalPanel();");
+    this.gwt.append(_plus_2);
+    String _plus_3 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_4 = (_plus_3 + ".add( ");
+    String _plus_5 = (_plus_4 + this.current);
+    String _plus_6 = (_plus_5 + " );");
+    this.gwt.append(_plus_6);
+    String _plus_7 = ("Image " + this.sImage);
+    String _plus_8 = (_plus_7 + Integer.valueOf(this.nbImage));
+    String _plus_9 = (_plus_8 + " = new Image();");
+    this.gwt.append(_plus_9);
+    String _plus_10 = (this.sImage + Integer.valueOf(this.nbImage));
+    String _plus_11 = (_plus_10 + ".setUrl(\"");
     Widget _widget_1 = image.getWidget();
     String _reponse = _widget_1.getReponse();
-    String _plus_10 = (_plus_9 + _reponse);
-    String _plus_11 = (_plus_10 + "\");");
-    this.gwt.append(_plus_11);
-    String _plus_12 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_13 = (_plus_12 + ".add( img");
-    String _plus_14 = (_plus_13 + Integer.valueOf(this.nbImage));
-    String _plus_15 = (_plus_14 + " );");
-    this.gwt.append(_plus_15);
-    String _plus_16 = ("panel" + Integer.valueOf(this.nbPanel));
-    String _plus_17 = (_plus_16 + ".add( hpanel");
-    String _plus_18 = (_plus_17 + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_19 = (_plus_18 + ");");
-    this.gwt.append(_plus_19);
-    String _plus_20 = ("img" + Integer.valueOf(this.nbImage));
-    String _plus_21 = (_plus_20 + ".setSize(");
-    String _plus_22 = (_plus_21 + this.sizeImg);
+    String _plus_12 = (_plus_11 + _reponse);
+    String _plus_13 = (_plus_12 + "\");");
+    this.gwt.append(_plus_13);
+    String _plus_14 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_15 = (_plus_14 + ".add(");
+    String _plus_16 = (_plus_15 + this.sImage);
+    String _plus_17 = (_plus_16 + Integer.valueOf(this.nbImage));
+    String _plus_18 = (_plus_17 + " );");
+    this.gwt.append(_plus_18);
+    String _plus_19 = (this.sPanel + Integer.valueOf(this.nbPanel));
+    String _plus_20 = (_plus_19 + ".add( ");
+    String _plus_21 = (_plus_20 + this.sHpanel);
+    String _plus_22 = (_plus_21 + Integer.valueOf(this.nbHorizontalPan));
     String _plus_23 = (_plus_22 + ");");
     this.gwt.append(_plus_23);
+    String _plus_24 = (this.sImage + Integer.valueOf(this.nbImage));
+    String _plus_25 = (_plus_24 + ".setSize(");
+    String _plus_26 = (_plus_25 + this.sizeImg);
+    String _plus_27 = (_plus_26 + ");");
+    this.gwt.append(_plus_27);
   }
   
   public void exit(final Image image) {
@@ -204,31 +224,34 @@ public class UiVisitorImplGWT implements UiVisitor {
   public void entry(final Son son) {
     Widget _widget = son.getWidget();
     this.entry(_widget);
-    String _plus = ("HorizontalPanel hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_1 = (_plus + " = new HorizontalPanel();");
-    this.gwt.append(_plus_1);
-    String _plus_2 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_3 = (_plus_2 + ".add( ");
-    String _plus_4 = (_plus_3 + this.current);
-    String _plus_5 = (_plus_4 + " );");
-    this.gwt.append(_plus_5);
-    String _plus_6 = ("Audio audio" + Integer.valueOf(this.nbSon));
-    String _plus_7 = (_plus_6 + " = createAudio( \"");
+    String _plus = ("HorizontalPanel " + this.sHpanel);
+    String _plus_1 = (_plus + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_2 = (_plus_1 + " = new HorizontalPanel();");
+    this.gwt.append(_plus_2);
+    String _plus_3 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_4 = (_plus_3 + ".add( ");
+    String _plus_5 = (_plus_4 + this.current);
+    String _plus_6 = (_plus_5 + " );");
+    this.gwt.append(_plus_6);
+    String _plus_7 = ("Audio " + this.sAudio);
+    String _plus_8 = (_plus_7 + Integer.valueOf(this.nbSon));
+    String _plus_9 = (_plus_8 + " = createAudio( \"");
     Widget _widget_1 = son.getWidget();
     String _reponse = _widget_1.getReponse();
-    String _plus_8 = (_plus_7 + _reponse);
-    String _plus_9 = (_plus_8 + "\" );");
-    this.gwt.append(_plus_9);
-    String _plus_10 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_11 = (_plus_10 + ".add( audio");
-    String _plus_12 = (_plus_11 + Integer.valueOf(this.nbSon));
-    String _plus_13 = (_plus_12 + " );");
-    this.gwt.append(_plus_13);
-    String _plus_14 = ("panel" + Integer.valueOf(this.nbPanel));
-    String _plus_15 = (_plus_14 + ".add( hpanel");
-    String _plus_16 = (_plus_15 + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_17 = (_plus_16 + ");");
-    this.gwt.append(_plus_17);
+    String _plus_10 = (_plus_9 + _reponse);
+    String _plus_11 = (_plus_10 + "\" );");
+    this.gwt.append(_plus_11);
+    String _plus_12 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_13 = (_plus_12 + ".add( audio");
+    String _plus_14 = (_plus_13 + Integer.valueOf(this.nbSon));
+    String _plus_15 = (_plus_14 + " );");
+    this.gwt.append(_plus_15);
+    String _plus_16 = (this.sPanel + Integer.valueOf(this.nbPanel));
+    String _plus_17 = (_plus_16 + ".add( ");
+    String _plus_18 = (_plus_17 + this.sHpanel);
+    String _plus_19 = (_plus_18 + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_20 = (_plus_19 + ");");
+    this.gwt.append(_plus_20);
   }
   
   public void exit(final Son son) {
@@ -241,31 +264,35 @@ public class UiVisitorImplGWT implements UiVisitor {
   public void entry(final Video video) {
     Widget _widget = video.getWidget();
     this.entry(_widget);
-    String _plus = ("HorizontalPanel hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_1 = (_plus + " = new HorizontalPanel();");
-    this.gwt.append(_plus_1);
-    String _plus_2 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_3 = (_plus_2 + ".add( ");
-    String _plus_4 = (_plus_3 + this.current);
-    String _plus_5 = (_plus_4 + " );");
-    this.gwt.append(_plus_5);
-    String _plus_6 = ("Video video" + Integer.valueOf(this.nbVideo));
-    String _plus_7 = (_plus_6 + " = createVideo( \"");
+    String _plus = ("HorizontalPanel " + this.sHpanel);
+    String _plus_1 = (_plus + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_2 = (_plus_1 + " = new HorizontalPanel();");
+    this.gwt.append(_plus_2);
+    String _plus_3 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_4 = (_plus_3 + ".add( ");
+    String _plus_5 = (_plus_4 + this.current);
+    String _plus_6 = (_plus_5 + " );");
+    this.gwt.append(_plus_6);
+    String _plus_7 = ("Video " + this.sVideo);
+    String _plus_8 = (_plus_7 + Integer.valueOf(this.nbVideo));
+    String _plus_9 = (_plus_8 + " = createVideo( \"");
     Widget _widget_1 = video.getWidget();
     String _reponse = _widget_1.getReponse();
-    String _plus_8 = (_plus_7 + _reponse);
-    String _plus_9 = (_plus_8 + "\" );");
-    this.gwt.append(_plus_9);
-    String _plus_10 = ("hpanel" + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_11 = (_plus_10 + ".add( video");
-    String _plus_12 = (_plus_11 + Integer.valueOf(this.nbVideo));
-    String _plus_13 = (_plus_12 + " );");
-    this.gwt.append(_plus_13);
-    String _plus_14 = ("panel" + Integer.valueOf(this.nbPanel));
-    String _plus_15 = (_plus_14 + ".add( hpanel");
-    String _plus_16 = (_plus_15 + Integer.valueOf(this.nbHorizontalPan));
-    String _plus_17 = (_plus_16 + ");");
-    this.gwt.append(_plus_17);
+    String _plus_10 = (_plus_9 + _reponse);
+    String _plus_11 = (_plus_10 + "\" );");
+    this.gwt.append(_plus_11);
+    String _plus_12 = (this.sHpanel + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_13 = (_plus_12 + ".add( ");
+    String _plus_14 = (_plus_13 + this.sVideo);
+    String _plus_15 = (_plus_14 + Integer.valueOf(this.nbVideo));
+    String _plus_16 = (_plus_15 + " );");
+    this.gwt.append(_plus_16);
+    String _plus_17 = (this.sPanel + Integer.valueOf(this.nbPanel));
+    String _plus_18 = (_plus_17 + ".add( ");
+    String _plus_19 = (_plus_18 + this.sHpanel);
+    String _plus_20 = (_plus_19 + Integer.valueOf(this.nbHorizontalPan));
+    String _plus_21 = (_plus_20 + ");");
+    this.gwt.append(_plus_21);
   }
   
   public void exit(final Video video) {

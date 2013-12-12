@@ -10,6 +10,7 @@ import static extension mapping.visitor.MapUIExtension.*
 import static extension mapping.visitor.SodaExtension.*
 import static extension mapping.visitor.UiExtension.*
 import mapping.visitor.UiVisitorImplGWT
+import mapping.visitor.UiVisitorImplAndroid
 
 class Mapping {
 // guillaume.becan@inria.fr
@@ -34,6 +35,11 @@ class Mapping {
 		return gwtUiVisiteur.gwt.toString
 	}
 	
+	def String generationAndroid(Ui ui) {
+		var androidUiVisiteur = new UiVisitorImplAndroid();
+		ui.accept(androidUiVisiteur)
+		return androidUiVisiteur.android
+	}
 	
 
 }

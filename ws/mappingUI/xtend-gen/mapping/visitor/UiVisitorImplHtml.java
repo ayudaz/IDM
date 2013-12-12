@@ -23,7 +23,7 @@ public class UiVisitorImplHtml implements UiVisitor {
   public void entry(final Ui ui) {
     String _plus = (this.html + "<!doctype html> \n");
     String _plus_1 = (_plus + 
-      "<html lang=\"fr\"> \n");
+      "<hfsdfsdtml lang=\"fr\"> \n");
     String _plus_2 = (_plus_1 + 
       "<body>\n ");
     this.html = _plus_2;
